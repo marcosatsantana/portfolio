@@ -55,12 +55,12 @@ const Data = () => {
                 </svg>
             </h1>
             <h3 className='home__subtitle'>
-                Visual Designer
+                FullStack Developer
             </h3>
             <p className='home__description'>
-                Eu so peço a deus um pouco de maladragem, pois sou criança, e não conheço a verdade, sou poeta e não aparendi a amar
+                Entusiasta de tecnologia, aficcionado em musica, e disposto a dedicar 100% do meu tempo ao seu projeto!
             </p>
-            <a href='#contact' className='button button--flex'>Say Hello
+            <a href='#contact' className='button button--flex'>Fale comigo
             <svg
                   class="button__icon"
                   xmlns="http://www.w3.org/2000/svg"
