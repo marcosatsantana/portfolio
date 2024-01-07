@@ -88,7 +88,7 @@ const Qualification = () => {
             <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">Eng de Software</h3>
-                <span className="qualification__subtitle">Unicesumar</span>
+                <span className="qualification__subtitle">Uni- cesumar</span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2022 - Atual
                 </div>
@@ -106,7 +106,7 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
               <div>
-                <h3 className="qualification__title">WebDesigner</h3>
+                <h3 className="qualification__title">Web Desiger</h3>
                 <span className="qualification__subtitle">Rocketseat</span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2020 - 2022
@@ -116,7 +116,7 @@ const Qualification = () => {
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Analista de Banco de Dados</h3>
+                <h3 className="qualification__title">Anl. de Banco de Dados</h3>
                 <span className="qualification__subtitle">Sesc</span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2022 - Atual

@@ -106,11 +106,17 @@
   .qualification__button {
     margin: 0 var(--mb-0-75);
   }
+  .qualification__data {
+    column-gap: 0;
+  }
 }
 
 /* For small devices */
 @media screen and (max-width: 350px) {
+  .qualification__container{
+    max-width: 100%;
+  }
   .qualification__data {
-    gap: 0.5rem;
+    column-gap: 0;
   }
 }
