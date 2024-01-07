@@ -13,10 +13,10 @@ const Qualification = () => {
       <span className='section__subtitle'>Minha jornada pessoal</span>
       <div className="qualification__container container">
         <div className="qualification__tabs">
-          <div className={toggleState === 2 ? "qualification__button qualification__content-active button--flex" : "qualification__button button--flex"} onClick={() => toggleTab(1)}>
+          <div className={toggleState === 2 ? "qualification__button qualification__content-active button--flex" : "qualification__button button--flex"} onClick={() => toggleTab(2)}>
             <i className="uil uil-graduation-cap qualification__icon"></i> Educação
           </div>
-          <div className={toggleState === 1 ? "qualification__button qualification__content-active button--flex" : "qualification__button button--flex"} onClick={() => toggleTab(2)}>
+          <div className={toggleState === 1 ? "qualification__button qualification__content-active button--flex" : "qualification__button button--flex"} onClick={() => toggleTab(1)}>
             <i className="uil uil-briefcase-alt qualification__icon"></i> Experiencia
           </div>
         </div>
@@ -28,7 +28,7 @@ const Qualification = () => {
                 <h3 className="qualification__title">Ass. T.I.</h3>
                 <span className="qualification__subtitle">Carpal Tratores LTDA</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2022 - Atual
+                  <i className="uil uil-calendar-alt"></i> 2023 - Atual
                 </div>
               </div>
               <div>
@@ -47,7 +47,7 @@ const Qualification = () => {
                 <h3 className="qualification__title">Analista de Sistemas</h3>
                 <span className="qualification__subtitle">Drogaria Santa Marta - LTDA</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2020 - 2022
+                  <i className="uil uil-calendar-alt"></i> 2021 - 2023
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ const Qualification = () => {
                 <h3 className="qualification__title">Suporte Tecnico</h3>
                 <span className="qualification__subtitle">Thato LTDA</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2022 - Atual
+                  <i className="uil uil-calendar-alt"></i> 2018 - 2020
                 </div>
               </div>
               <div>
@@ -66,20 +66,6 @@ const Qualification = () => {
               </div>
             </div>
 
-            <div className="qualification__data">
-              <div></div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-              <div>
-                <h3 className="qualification__title">Aux. Produção</h3>
-                <span className="qualification__subtitle">Menor Aprendiz</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2020 - 2022
-                </div>
-              </div>
-            </div>
 
           </div>
 
@@ -106,10 +92,10 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
               <div>
-                <h3 className="qualification__title">Web Desiger</h3>
+                <h3 className="qualification__title">Explorer e Ignite</h3>
                 <span className="qualification__subtitle">Rocketseat</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2020 - 2022
+                  <i className="uil uil-calendar-alt"></i> 2022 - 2024
                 </div>
               </div>
             </div>
@@ -119,7 +105,7 @@ const Qualification = () => {
                 <h3 className="qualification__title">Anl. de Banco de Dados</h3>
                 <span className="qualification__subtitle">Sesc</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2022 - Atual
+                  <i className="uil uil-calendar-alt"></i> 2022 - 2022
                 </div>
               </div>
               <div>
