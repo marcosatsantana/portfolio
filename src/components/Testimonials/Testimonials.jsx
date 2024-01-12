@@ -12,7 +12,7 @@ import { Pagination } from 'swiper/modules';
 
 const Testimonials = () => {
   return (
-    <section className="testimonials container section">
+    <section className="testimonials container section" id="testimonials">
       <h2 className='section__title'>Avaliações</h2>
       <span className='section__subtitle'>Avaliações de alguns clientes</span>
 
