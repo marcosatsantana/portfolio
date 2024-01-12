@@ -9,10 +9,11 @@ import Qualification from './components/Qualification/Qualification'
 import Testimonials from './components/Testimonials/Testimonials'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import ScrollUp from './components/Scrollup/Scrollup'
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <main className='main'>
         <Home />
@@ -22,9 +23,10 @@ function App() {
         <Qualification />
         <Testimonials />
         <Contact />
-        <Footer />
       </main>
-    </div>
+      <Footer />
+      <ScrollUp />
+    </>
   )
 }
 
