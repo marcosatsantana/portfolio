@@ -3,7 +3,7 @@ import React from 'react';
 
 const Info = () => {
     return (
-        <StyleRoot>
+        <div>
             <div className='about__info grid'>
                 <div className='about__box'>
                     <i className='bx bx-award about__icon'></i>
@@ -21,7 +21,7 @@ const Info = () => {
                     <span className='about__subtitle'>Online 24/7</span>
                 </div>
             </div>
-        </StyleRoot>
+        </div>
     )
 }
 
