@@ -9,6 +9,10 @@
 }
 
 .qualification__button {
+  /* Adicione isso para garantir que a transição ocorra */
+  border-bottom: 2px solid transparent;
+  /* Adicione essa linha para configurar a animação */
+  transition: border-bottom-width 0.3s ease;
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   color: var(--title-color);
@@ -16,8 +20,15 @@
   cursor: pointer;
 }
 
+.qualification__button-active,
 .qualification__button:hover {
   color: var(--title-color-dark);
+}
+
+.qualification__button-active {
+  border-color: var(--title-color-dark);
+  /* Adicione isso para definir a largura do borda ativa */
+  border-bottom-width: 2px;
 }
 
 .qualification__icon {
@@ -103,9 +114,11 @@
   .qualification__sections {
     grid-template-columns: initial;
   }
+
   .qualification__button {
     margin: 0 var(--mb-0-75);
   }
+
   .qualification__data {
     column-gap: 0;
   }
@@ -113,9 +126,10 @@
 
 /* For small devices */
 @media screen and (max-width: 350px) {
-  .qualification__container{
+  .qualification__container {
     max-width: 100%;
   }
+
   .qualification__data {
     column-gap: 0;
   }

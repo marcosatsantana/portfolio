@@ -13,10 +13,10 @@ const Qualification = () => {
       <span className='section__subtitle'>Minha jornada pessoal</span>
       <div className="qualification__container container">
         <div className="qualification__tabs">
-          <div className={toggleState === 2 ? "qualification__button qualification__content-active button--flex" : "qualification__button button--flex"} onClick={() => toggleTab(2)}>
+          <div className={toggleState === 2 ? "qualification__button button--flex qualification__button-active" : "qualification__button button--flex"} onClick={() => toggleTab(2)}>
             <i className="uil uil-graduation-cap qualification__icon"></i> Educação
           </div>
-          <div className={toggleState === 1 ? "qualification__button qualification__content-active button--flex" : "qualification__button button--flex"} onClick={() => toggleTab(1)}>
+          <div className={toggleState === 1 ? "qualification__button button--flex qualification__button-active" : "qualification__button button--flex"} onClick={() => toggleTab(1)}>
             <i className="uil uil-briefcase-alt qualification__icon"></i> Experiencia
           </div>
         </div>
