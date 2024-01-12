@@ -7,6 +7,8 @@ import Skills from './components/Skills/Skills'
 import Services from './components/Services/Services'
 import Qualification from './components/Qualification/Qualification'
 import Testimonials from './components/Testimonials/Testimonials'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -14,11 +16,13 @@ function App() {
       <Header />
       <main className='main'>
         <Home />
-        <About/>
+        <About />
         <Skills />
         <Services />
         <Qualification />
         <Testimonials />
+        <Contact />
+        <Footer />
       </main>
     </div>
   )

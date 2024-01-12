@@ -25,7 +25,7 @@ const Services = () => {
             Veja Mais
             <i className="uil uil-arrow-right services__button-icon"></i>
           </span>
-          <div className={toggleState === 1 ? "services__modal active-modal" : "services__modal"}>
+          <div className={toggleState === 1 ? "services__modal active-modal" : "services__modal"} >
             <div className="services__modal-content">
               <i className="uil uil-times services__modal-close" onClick={() => toggleTab(0)}></i>
               <h3 className="services__modal-title">Designer Produtos</h3>
