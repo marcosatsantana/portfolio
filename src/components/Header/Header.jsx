@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import "./header.css"
 
+
 const Header = () => {
+
     window.addEventListener("scroll", function () {
         const header = document.querySelector(".header");
         if (this.scrollY >= 80) header.classList.add("scroll-header")
@@ -11,10 +13,13 @@ const Header = () => {
     const [activeNav, setActiveNav] = useState("#home")
     return (
         <header className='header'>
+
             <nav className='nav container'>
                 <a href='index.html' className='nav__logo'>
                     MKDesigners
                 </a>
+
+
                 <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
                     <ul className='nav__list'>
                         <li className='nav__item'>
