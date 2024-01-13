@@ -1,7 +1,7 @@
 export const filterableData = [
     {
         name: "UI/UX",
-        src: "https://drive.usercontent.google.com/download?id=1oJsgHJmLCtbi490gP1Jo1DMUA7t0w0xM&authuser=0",
+        src: "https://drive.usercontent.google.com/download?id=1oJsgHJmLCtbi490gP1Jo1DMUA7t0w0xM",
         title: "Projeto de Interface de Usuário",
         text: "Descrição fictícia para um projeto de UI/UX."
     },
