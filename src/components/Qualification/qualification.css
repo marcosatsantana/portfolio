@@ -81,11 +81,13 @@
   height: 13px;
   background-color: var(--text-color);
   border-radius: 50%;
+  margin: 0 .5rem;
 }
 
 .qualification__line {
   display: block;
   width: 1px;
+  margin: 0 .5rem;
   height: 100%;
   background-color: var(--text-color);
   transform: translate(6px, -7px);
