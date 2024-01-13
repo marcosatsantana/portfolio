@@ -7,6 +7,8 @@ const Qualification = () => {
   const toggleTab = (index) => {
     setToggleState(index)
   }
+
+
   return (
     <section className="qualification section" id="qualification">
       <h2 className='section__title'>Qualificações</h2>
@@ -69,7 +71,7 @@ const Qualification = () => {
 
           </div>
 
-          <div className={toggleState === 2 ? "qualification__content qualification__content-active" : "qualification__content"}>
+          <div className={toggleState === 2 ? "qualification__content qualification__content-active" : "qualification__content"} >
 
             <div className="qualification__data">
               <div>

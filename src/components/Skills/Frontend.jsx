@@ -1,10 +1,18 @@
 import React from "react";
+import { useInView, useSpring, animated } from "@react-spring/web";
 
 const Frontend = () => {
+  const [ref2, inView2] = useInView({ triggerOnce: true });
+
+  const spring2 = useSpring({
+    from: { scale: 1 },
+    to: { scale: inView2 ? 1 : 0 },
+  });
+
   return (
-    <div className="skills__content">
+    <animated.div className="skills__content" style={{ ...spring2 }}>
       <h3 className="skills__title">Frontend Developer</h3>
-      <div className="skills__box">
+      <div className="skills__box" ref={ref2}>
         <div className="skills__group">
 
           <div className="skills__data">
@@ -70,7 +78,7 @@ const Frontend = () => {
 
         </div>
       </div>
-    </div>
+    </animated.div>
   )
 }
 

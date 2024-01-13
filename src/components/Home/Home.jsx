@@ -12,16 +12,16 @@ const Home = () => {
     });
 
     const springsToLeft = useSpring({
-        from: { y: -50 },
-        to: { y: inView ? 0 : -50 },
+        from: { rotate: 150 },
+        to: { rotate: inView ? 0 : 150 },
     });
 
     return (
         <section className='home section' id='home'>
-            <div className='home__container container grid' ref={ref}>
+            <div className='home__container container grid'>
                 <div className='home__content grid'>
                     <Social />
-                    <animated.div className='home__img' style={{ ...springsToLeft }}>
+                    <animated.div className='home__img' style={{ ...springsToLeft }} ref={ref}>
 
                     </animated.div>
                     <Data />

@@ -1,11 +1,22 @@
 import React from "react";
 
+import { useInView, useSpring, animated } from "@react-spring/web";
+
+
 const Backend = () => {
+  const [ref1, inView1] = useInView({ triggerOnce: true });
+
+  const spring1 = useSpring({
+    from: { scale: 1 },
+    to: { scale: inView1 ? 1 : 0 },
+  });
+
+
   return (
-    <div className="skills__content">
+    <animated.div className="skills__content" style={{ ...spring1 }}>
       <h3 className="skills__title">Backend Developer</h3>
-      <div className="skills__box">
-        <div className="skills__group">
+      <div className="skills__box" >
+        <div className="skills__group" ref={ref1}>
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
@@ -68,7 +79,7 @@ const Backend = () => {
           </div>
         </div>
       </div>
-    </div>
+    </animated.div>
   )
 }
 
