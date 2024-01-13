@@ -1,7 +1,9 @@
+import Mimics from '../assets/mimics.png';
+
 export const filterableData = [
     {
         name: "UI/UX",
-        src: "https://mkdesigners.online/assets/mimics.png",
+        src: Mimics,
         title: "Mimics - Mimicas",
         text: "Desenvolvimento de UI/UX de um aplicativo para mimicas com uma comidade para compartilhar pacotes de mimicas."
     },
