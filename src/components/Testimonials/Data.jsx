@@ -6,26 +6,26 @@ import Image3 from "../../assets/testimonial3.png"
 export const Data = [
   {
     id: 1,
-    image: Image1,
-    title: "Marcos Teles",
+    image: Image2,
+    title: "Ana Silva",
     description: `
-      Simplesmente a melhor pessoa com quem trabalhei nos últimos tempos
+    Estou extremamente satisfeita com o trabalho excepcional da equipe! Eles superaram todas as expectativas, entregando um produto final de alta qualidade. A abordagem inovadora e a atenção aos detalhes fizeram toda a diferença. Recomendo sem hesitar!
     `
   },
   {
     id: 2,
-    image: Image2,
-    title: "David Souza",
+    image: Image1,
+    title: "Carlos Mendes",
     description: `
-      Simplesmente a melhor pessoa com quem trabalhei nos últimos tempos
+    Trabalhar com essa equipe foi uma experiência incrível. Eles não apenas entenderam nossas necessidades, mas também trouxeram insights valiosos que aprimoraram significativamente o projeto. Profissionais comprometidos e talentosos. Recomendo totalmente!
     `
   },
   {
     id: 3,
     image: Image3,
-    title: "Lucas Souza",
+    title: "Isabela Santos",
     description: `
-      Simplesmente a melhor pessoa com quem trabalhei nos últimos tempos
+    Os serviços prestados foram além das minhas expectativas. A equipe mostrou grande profissionalismo, comunicação eficiente e entregou no prazo. O resultado final foi impressionante e refletiu exatamente o que eu tinha em mente. Definitivamente uma parceria para futuros projetos!
     `
   }
 ]
