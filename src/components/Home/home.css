@@ -116,8 +116,8 @@
 }
 
 .home__player {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 .home__title-content {
@@ -189,6 +189,11 @@
 
     .home__scroll {
         display: none;
+    }
+
+    .home__player {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 

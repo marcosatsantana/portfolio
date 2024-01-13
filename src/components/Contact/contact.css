@@ -90,6 +90,7 @@
   z-index: 1;
   transition: .3s;
 }
+
 .contact__form-input:hover {
   border: 2px solid var(--text-color);
 }
@@ -112,6 +113,11 @@
   resize: none;
 }
 
+.contact__player {
+  align-self: center;
+  width: 25rem;
+  height: 25rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
@@ -134,6 +140,11 @@
 
   .contact__form {
     margin: 0 auto;
+  }
+  .contact__player {
+    align-self: center;
+    width: 15rem;
+    height: 15rem;
   }
 }
 

@@ -22,7 +22,10 @@ const Portfolio = () => {
         <div className="portfolio__options">
           {
             buttonCaptions.map((filter) => (
-              <Button key={filter} onClick={() => handleFilterClick(filter)} type="button" className={`focus:outline-none border-2 border-gray-400 hover:bg-gray-700 font-medium rounded-lg text-sm px-5 text-gray hover:text-white py-2.5 mb-2 capitalize ${activeFilter === filter ? "bg-gray-700 text-white" : " "}`}>
+              <Button key={filter} onClick={() => handleFilterClick(filter)} type="button"
+                className={`focus:outline-none border-2 border-gray-400 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 capitalize`}
+                style={{ backgroundColor: activeFilter === filter ? "#333" : "transparent", color: activeFilter === filter ? "#fff" : "#333" }}
+              >
                 {filter === 'all' ? 'Todos' : filter}
               </Button>
             ))
@@ -36,10 +39,10 @@ const Portfolio = () => {
               <div key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.name ? 'block' : "hidden"}`}>
                 <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.src} alt={item.name} objectCover="object-cover" />
                 <div className="p-5">
-                  <Text as="h5" className="mb-2 text-md font-bold tracking-tight text-gray-700 line-clamp-1">
+                  <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1">
                     {item.title}
                   </Text>
-                  <Text as="p" className="mb-3 text-sm text-gray-400 line-clamp-2">
+                  <Text as="p" className="mb-3 text-sm line-clamp-2 item__body" >
                     {item.text}
                   </Text>
                 </div>
@@ -50,7 +53,7 @@ const Portfolio = () => {
         </main>
 
       </div>
-    </section>
+    </section >
   )
 }
 

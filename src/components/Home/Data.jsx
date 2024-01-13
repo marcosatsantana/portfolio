@@ -19,7 +19,7 @@ const Data = () => {
         FullStack Developer
       </h3>
       <p className='home__description'>
-        Entusiasta de tecnologia, aficcionado em musica, e disposto a dedicar 100% do meu tempo ao seu projeto!
+        Me chamo Marcos Antonio, tenho 26 anos, 7 trabalhando com tecnologia, incluindo Sustentação, Suporte e Desenvolvimento.
       </p>
       <a href='#contact' className='button button--flex'>Fale comigo
         <svg
