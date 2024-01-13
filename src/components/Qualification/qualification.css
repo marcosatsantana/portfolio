@@ -104,8 +104,8 @@
 /* For medium devices */
 @media screen and (max-width: 768px) {
   .qualification__container {
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .qualification__sessions {
