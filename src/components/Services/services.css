@@ -149,6 +149,10 @@
     padding: 4.5rem 1.5rem 2.5rem;
   }
 
+  .services__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .services__modal-description {
     padding: 0;
   }
@@ -159,6 +163,7 @@
   .services__container {
     grid-template-columns: max-content;
   }
+
   .services__content {
     padding-right: 6rem;
   }

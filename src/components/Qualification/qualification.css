@@ -108,6 +108,12 @@
     margin-right: var(--mb-1-5);
   }
 
+  .qualification__sessions {
+    display: grid;
+    grid-template-columns: 0.5fr;
+    justify-content: center;
+  }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -121,6 +127,12 @@
 
   .qualification__data {
     column-gap: 0;
+  }
+
+  .qualification__sessions {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
 
