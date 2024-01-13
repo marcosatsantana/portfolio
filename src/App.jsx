@@ -11,10 +11,12 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import ScrollUp from './components/ScrollUp/ScrollUp'
 import Portfolio from './components/Portfolio/Portfolio'
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
     <>
+      <Analytics />
       <Header />
       <main className='main'>
         <Home />
