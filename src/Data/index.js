@@ -1,7 +1,7 @@
 export const filterableData = [
     {
         name: "UI/UX",
-        src: "https://drive.usercontent.google.com/download?id=1oJsgHJmLCtbi490gP1Jo1DMUA7t0w0xM",
+        src: "https://mkdesigners.online/assets/mimics.png",
         title: "Mimics - Mimicas",
         text: "Desenvolvimento de UI/UX de um aplicativo para mimicas com uma comidade para compartilhar pacotes de mimicas."
     },
