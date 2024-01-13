@@ -1,4 +1,5 @@
 import Mimics from '../assets/mimics.png';
+import MimicsBE from '../assets/backendmimics.jpg';
 
 export const filterableData = [
     {
@@ -21,9 +22,9 @@ export const filterableData = [
     },
     {
         name: "Backend",
-        src: "https://www.altaredesistemas.com.br/img/screens/dash.jpeg",
-        title: "Sistema de Gerenciamento",
-        text: "Descrição fictícia para um projeto de Backend."
+        src: MimicsBE,
+        title: "Backend Mimics",
+        text: "Projeto para controlar todo backend e persistência de dados do app Mimics."
     },
     {
         name: "UI/UX",
@@ -55,5 +56,4 @@ export const filterableData = [
         title: "Website de Música",
         text: "Descrição fictícia para um projeto de Frontend."
     }
-  ];
-  
+];
