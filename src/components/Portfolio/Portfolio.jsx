@@ -4,6 +4,7 @@ import Button from "./Button";
 import { Text } from "./Text";
 import { Image } from "./Image";
 import "./portfolio.css"
+import { useInView, useSpring, animated } from "@react-spring/web";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -13,6 +14,13 @@ const Portfolio = () => {
   const handleFilterClick = (filter) => {
     setActiveFilter(filter)
   }
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  const spring = useSpring({
+    from: { scale: 1 },
+    to: { scale: inView ? 1 : 0.8 }
+  });
+
   return (
     <section className="portfolio section" id="portfolio">
       <h2 className='section__title'>Portfolio</h2>
@@ -32,11 +40,10 @@ const Portfolio = () => {
           }
         </div>
         {/* filtered cards display */}
-        <main className="portfolio__content">
+        <main className="portfolio__content" ref={ref}>
           {
             filterableData.map((item, index) => (
-
-              <div key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.name ? 'block' : "hidden"}`}>
+              <animated.div style={{ ...spring }} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.name ? 'block' : "hidden"}`}>
                 <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.src} alt={item.name} objectCover="object-cover" />
                 <div className="p-5">
                   <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1">
@@ -46,7 +53,7 @@ const Portfolio = () => {
                     {item.text}
                   </Text>
                 </div>
-              </div>
+              </animated.div>
 
             ))
           }
