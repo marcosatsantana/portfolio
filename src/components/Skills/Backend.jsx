@@ -23,7 +23,7 @@ const Backend = () => {
               <h3 className="skills__name">
                 PHP
               </h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level">Medium</span>
             </div>
           </div>
 
@@ -33,7 +33,7 @@ const Backend = () => {
               <h3 className="skills__name">
                 NodeJS
               </h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level">Advanced</span>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ const Backend = () => {
               <h3 className="skills__name">
                 MySql
               </h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level">Advanced</span>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ const Backend = () => {
               <h3 className="skills__name">
                 Oracle
               </h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level">Medium</span>
             </div>
           </div>
 
