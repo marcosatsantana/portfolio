@@ -1,12 +1,62 @@
 import { useState } from "react"
-import { filterableData } from "../../Data";
 import Button from "./Button";
 import { Text } from "./Text";
 import { Image } from "./Image";
 import "./portfolio.css"
 import { useInView, useSpring, animated } from "@react-spring/web";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { api } from "../../services/api";
+import Modal from 'react-modal';
+import { Player } from '@lottiefiles/react-lottie-player';
+import loading from "../../assets/loading.json"
+
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-45%',
+    flex: 1,
+    zIndex: 9,
+    backgroundColor: 'white',
+    transform: 'translate(-50%, -50%)',
+  }
+};
 
 const Portfolio = () => {
+  const queryClient = useQueryClient()
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState({});
+
+  function openModal(project) {
+    setSelectedProject(project);
+    queryClient.invalidateQueries()
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  const { isPending, isError, data, error } = useQuery({
+    queryKey: ['portfolio'],
+    queryFn: () => api.get('/portfolio'),
+  })
+
+
+  const { data: dataList, isLoading, refetch } = useQuery({
+    queryKey: ['portfoliolist', selectedProject.id],
+    queryFn: () => api.get(`/portfolio/${selectedProject.id ?? 1}`),
+  })
+
   const [activeFilter, setActiveFilter] = useState('all')
 
   const buttonCaptions = ['all', 'UI/UX', 'Frontend', 'Backend'];
@@ -14,6 +64,7 @@ const Portfolio = () => {
   const handleFilterClick = (filter) => {
     setActiveFilter(filter)
   }
+
   const [ref, inView] = useInView({ triggerOnce: true });
 
   const spring = useSpring({
@@ -23,9 +74,44 @@ const Portfolio = () => {
 
   return (
     <section className="portfolio section" id="portfolio">
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <div className="portfolio__wrapper" >
+          <Image className="portfolio__image-modal" image={selectedProject.image_url} alt={selectedProject.name} objectCover="object-cover" />
+          <div>
+            <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1">
+              {selectedProject.title}
+            </Text>
+            <Text as="p" className="mb-3 text-sm item__body" >
+              {selectedProject.description}
+            </Text>
+            {dataList?.data.map((item) => {
+              if (isLoading) {
+                return (
+                  <Player
+                    src={loading}
+                    className="contact__player"
+                    loop
+                    autoplay
+                  />
+                )
+              }
+              return (
+                <Text as="p" className="mb-3 text-sm item__body" >
+                  - {item.content}
+                </Text>
+              )
+            })}
+          </div>
+        </div>
+      </Modal>
       <h2 className='section__title'>Portfolio</h2>
       <span className='section__subtitle'>Veja alguns de meus projetos</span>
-
       <div className="portfolio__container container">
         <div className="portfolio__options">
           {
@@ -42,15 +128,15 @@ const Portfolio = () => {
         {/* filtered cards display */}
         <main className="portfolio__content" ref={ref}>
           {
-            filterableData.map((item, index) => (
-              <animated.div style={{ ...spring }} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.name ? 'block' : "hidden"}`}>
-                <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.src} alt={item.name} objectCover="object-cover" />
+            data?.data.map((item, index) => (
+              <animated.div onClick={() => openModal(item)} style={{ ...spring }} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`}>
+                <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.image_url} alt={item.name} objectCover="object-cover" />
                 <div className="p-5">
                   <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1">
                     {item.title}
                   </Text>
                   <Text as="p" className="mb-3 text-sm line-clamp-2 item__body" >
-                    {item.text}
+                    {item.description}
                   </Text>
                 </div>
               </animated.div>

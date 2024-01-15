@@ -12,10 +12,13 @@ import Footer from './components/Footer/Footer'
 import ScrollUp from './components/ScrollUp/ScrollUp'
 import Portfolio from './components/Portfolio/Portfolio'
 import { Analytics } from '@vercel/analytics/react';
+import { QueryClient } from '@tanstack/query-core'
+import { QueryClientProvider } from '@tanstack/react-query'
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Analytics />
       <Header />
       <main className='main'>
@@ -30,7 +33,7 @@ function App() {
       </main>
       <Footer />
       <ScrollUp />
-    </>
+    </QueryClientProvider>
   )
 }
 
