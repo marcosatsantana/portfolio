@@ -46,13 +46,13 @@ const Portfolio = () => {
     setIsOpen(false);
   }
 
-  const { isPending, isError, data, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ['portfolio'],
     queryFn: () => api.get('/portfolio'),
   })
 
 
-  const { data: dataList, isLoading, refetch } = useQuery({
+  const { data: dataList, isLoading } = useQuery({
     queryKey: ['portfoliolist', selectedProject.id],
     queryFn: () => api.get(`/portfolio/${selectedProject.id ?? 1}`),
   })
@@ -68,8 +68,8 @@ const Portfolio = () => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   const spring = useSpring({
-    from: { scale: 1 },
-    to: { scale: inView ? 1 : 0.8 }
+    from: { opacity: 0 },
+    to: { opacity: inView ? 1 : 0 }
   });
 
   return (
@@ -90,23 +90,13 @@ const Portfolio = () => {
             <Text as="p" className="mb-3 text-sm item__body" >
               {selectedProject.description}
             </Text>
-            {dataList?.data.map((item) => {
-              if (isLoading) {
+            <div style={{display: 'flex', flexWrap: 'wrap', gap: 4}}>
+              {dataList?.data.map((item) => {
                 return (
-                  <Player
-                    src={loading}
-                    className="contact__player"
-                    loop
-                    autoplay
-                  />
+                  <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{item.content}</span>
                 )
-              }
-              return (
-                <Text as="p" className="mb-3 text-sm item__body" >
-                  - {item.content}
-                </Text>
-              )
-            })}
+              })}
+            </div>
           </div>
         </div>
       </Modal>

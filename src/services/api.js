@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://backendportfolio-cnty.onrender.com"
+  baseURL: "http://backendportfolio-cnty.onrender.com"
 });

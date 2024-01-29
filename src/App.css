@@ -175,8 +175,8 @@ img {
 /* For large devices */
 @media screen and (max-width: 992px) {
   .container {
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .button {
@@ -194,15 +194,18 @@ img {
   body {
     margin: 0;
   }
+
   .section {
     padding: 2rem 0;
   }
+
   .container {
     margin-left: 0;
     margin-right: 0;
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
   .section__subtitle {
     margin-bottom: var(--mb-3);
   }
