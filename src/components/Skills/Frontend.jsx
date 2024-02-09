@@ -10,37 +10,37 @@ const Frontend = () => {
   });
 
   return (
-    <animated.div className="skills__content" style={{ ...spring2 }}>
-      <h3 className="skills__title">Frontend Developer</h3>
+    <animated.div className="skills__content dark:bg-zinc-900 bg-white" style={{ ...spring2 }}>
+      <h3 className="skills__title text-slate-900 dark:text-stone-100">Frontend Developer</h3>
       <div className="skills__box" ref={ref2}>
         <div className="skills__group">
 
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
-              <h3 className="skills__name">
+              <h3 className="skills__name text-slate-900 dark:text-stone-200">
                 HTML
               </h3>
-              <span className="skills__level">Advanced</span>
+              <span className="skills__level text-slate-500 dark:text-stone-400">Advanced</span>
             </div>
           </div>
 
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
-              <h3 className="skills__name">
+              <h3 className="skills__name text-slate-900 dark:text-stone-200">
                 CSS
               </h3>
-              <span className="skills__level">Advanced</span>
+              <span className="skills__level text-slate-500 dark:text-stone-400">Advanced</span>
             </div>
           </div>
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
-              <h3 className="skills__name">
+              <h3 className="skills__name text-slate-900 dark:text-stone-200">
                 JavaScript
               </h3>
-              <span className="skills__level">Medium</span>
+              <span className="skills__level text-slate-500 dark:text-stone-400">Medium</span>
             </div>
           </div>
         </div>
@@ -49,30 +49,30 @@ const Frontend = () => {
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
-              <h3 className="skills__name">
+              <h3 className="skills__name text-slate-900 dark:text-stone-200">
                 Bootstrap
               </h3>
-              <span className="skills__level">Medium</span>
+              <span className="skills__level text-slate-500 dark:text-stone-400">Medium</span>
             </div>
           </div>
 
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
-              <h3 className="skills__name">
+              <h3 className="skills__name text-slate-900 dark:text-stone-200">
                 Git
               </h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level text-slate-500 dark:text-stone-400">Basic</span>
             </div>
           </div>
 
           <div className="skills__data">
             <i className="bx bx-badge-check"></i>
             <div>
-              <h3 className="skills__name">
+              <h3 className="skills__name text-slate-900 dark:text-stone-200">
                 React
               </h3>
-              <span className="skills__level">Medium</span>
+              <span className="skills__level text-slate-500 dark:text-stone-400">Medium</span>
             </div>
           </div>
 

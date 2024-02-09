@@ -10,18 +10,18 @@ const Services = () => {
 
   return (
     <section className="services section" id="services">
-      <h2 className='section__title'>Serviços</h2>
-      <span className='section__subtitle'>Veja meus serviços oferecidos</span>
+      <h2 className='section__title text-zinc-900 dark:text-white'>Serviços</h2>
+      <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja meus serviços oferecidos</span>
 
       <div className="services__container container grid">
-        <div className="services__content">
+        <div className="services__content dark:bg-zinc-900">
           <div>
-            <i className="uil uil-web-grid services__icon"></i>
-            <h3 className="services__title">
+            <i className="uil uil-web-grid services__icon dark:text-white"></i>
+            <h3 className="services__title dark:text-white">
               Designer <br /> Produtos
             </h3>
           </div>
-          <span className="services__button" onClick={() => toggleTab(1)}>
+          <span className="services__button dark:text-white" onClick={() => toggleTab(1)}>
             Veja Mais
             <i className="uil uil-arrow-right services__button-icon"></i>
           </span>
@@ -49,12 +49,12 @@ const Services = () => {
         </div>
 
 
-        <div className="services__content">
+        <div className="services__content dark:bg-zinc-900">
           <div>
-            <i className="uil uil-arrow services__icon"></i>
-            <h3 className="services__title">Ui/Ux <br /> Designer</h3>
+            <i className="uil uil-arrow services__icon dark:text-white"></i>
+            <h3 className="services__title dark:text-white">Ui/Ux <br /> Designer</h3>
           </div>
-          <span className="services__button" onClick={() => toggleTab(2)}>
+          <span className="services__button dark:text-white" onClick={() => toggleTab(2)}>
             Veja Mais
             <i className="uil uil-arrow-right services__button-icon"></i>
           </span>
@@ -81,12 +81,12 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="services__content">
+        <div className="services__content dark:bg-zinc-900">
           <div>
-            <i className="uil uil-edit services__icon"></i>
-            <h3 className="services__title">Visual <br /> Designer</h3>
+            <i className="uil uil-edit services__icon dark:text-white"></i>
+            <h3 className="services__title dark:text-white">Visual <br /> Designer</h3>
           </div>
-          <span className="services__button" onClick={() => toggleTab(3)}>
+          <span className="services__button dark:text-white" onClick={() => toggleTab(3)}>
             Veja Mais
             <i className="uil uil-arrow-right services__button-icon"></i>
           </span>

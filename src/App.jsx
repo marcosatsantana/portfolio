@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Header from './components/Header/Header'
 import "./App.css"
 import Home from './components/Home/Home'
@@ -21,7 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Analytics />
       <Header />
-      <main className='main'>
+      <main className='main dark:bg-zinc-950 bg-white'>
         <Home />
         <About />
         <Skills />

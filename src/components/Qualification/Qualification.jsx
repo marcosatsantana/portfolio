@@ -11,15 +11,15 @@ const Qualification = () => {
 
   return (
     <section className="qualification section" id="qualification">
-      <h2 className='section__title'>Qualificações</h2>
-      <span className='section__subtitle'>Minha jornada pessoal</span>
+      <h2 className='section__title text-zinc-900 dark:text-white'>Qualificações</h2>
+      <span className='section__subtitle text-slate-500 dark:text-stone-400'>Minha jornada pessoal</span>
       <div className="qualification__container container">
         <div className="qualification__tabs">
-          <div className={toggleState === 2 ? "qualification__button button--flex qualification__button-active" : "qualification__button button--flex"} onClick={() => toggleTab(2)}>
-            <i className="uil uil-graduation-cap qualification__icon"></i> Educação
+          <div className={toggleState === 2 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(2)}>
+            <i className="uil uil-graduation-cap qualification__icon "></i> Educação
           </div>
-          <div className={toggleState === 1 ? "qualification__button button--flex qualification__button-active" : "qualification__button button--flex"} onClick={() => toggleTab(1)}>
-            <i className="uil uil-briefcase-alt qualification__icon"></i> Experiencia
+          <div className={toggleState === 1 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(1)}>
+            <i className="uil uil-briefcase-alt qualification__icon "></i> Experiencia
           </div>
         </div>
         <div className="qualification__sessions">
@@ -27,10 +27,10 @@ const Qualification = () => {
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Ass. T.I.</h3>
-                <span className="qualification__subtitle">Carpal Tratores LTDA</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2023 - Atual
+                <h3 className="qualification__title dark:text-stone-400">Ass. T.I.</h3>
+                <span className="qualification__subtitle dark:text-white">Carpal Tratores LTDA</span>
+                <div className="qualification__calender dark:text-stone-400">
+                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2023 - Atual
                 </div>
               </div>
               <div>
@@ -46,20 +46,20 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
               <div>
-                <h3 className="qualification__title">Analista de Sistemas</h3>
-                <span className="qualification__subtitle">Drogaria Santa Marta - LTDA</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2021 - 2023
+                <h3 className="qualification__title dark:text-stone-400">Analista de Sistemas</h3>
+                <span className="qualification__subtitle dark:text-white">Drogaria Santa Marta - LTDA</span>
+                <div className="qualification__calender dark:text-stone-400">
+                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2021 - 2023
                 </div>
               </div>
             </div>
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Suporte Tecnico</h3>
-                <span className="qualification__subtitle">Thato LTDA</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2018 - 2020
+                <h3 className="qualification__title dark:text-stone-400">Suporte Tecnico</h3>
+                <span className="qualification__subtitle dark:text-white">Thato LTDA</span>
+                <div className="qualification__calender dark:text-stone-400">
+                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2018 - 2020
                 </div>
               </div>
               <div>
@@ -75,10 +75,10 @@ const Qualification = () => {
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Eng de Software</h3>
-                <span className="qualification__subtitle">Uni- cesumar</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2022 - Atual
+                <h3 className="qualification__title dark:text-stone-400">Eng de Software</h3>
+                <span className="qualification__subtitle dark:text-white">Uni- cesumar</span>
+                <div className="qualification__calender dark:text-stone-400">
+                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - Atual
                 </div>
               </div>
               <div>
@@ -94,20 +94,20 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
               <div>
-                <h3 className="qualification__title">Explorer e Ignite</h3>
-                <span className="qualification__subtitle">Rocketseat</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2022 - 2024
+                <h3 className="qualification__title dark:text-stone-400">Explorer e Ignite</h3>
+                <span className="qualification__subtitle dark:text-white">Rocketseat</span>
+                <div className="qualification__calender dark:text-stone-400">
+                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - 2024
                 </div>
               </div>
             </div>
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Anl. de Banco de Dados</h3>
-                <span className="qualification__subtitle">Sesc</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2022 - 2022
+                <h3 className="qualification__title dark:text-stone-400">Anl. de Banco de Dados</h3>
+                <span className="qualification__subtitle dark:text-white">Sesc</span>
+                <div className="qualification__calender dark:text-stone-400">
+                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - 2022
                 </div>
               </div>
               <div>

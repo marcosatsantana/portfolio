@@ -79,7 +79,7 @@ const Portfolio = () => {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Portfolio"
       >
         <div className="portfolio__wrapper" >
           <Image className="portfolio__image-modal" image={selectedProject.image_url} alt={selectedProject.name} objectCover="object-cover" />
@@ -90,7 +90,7 @@ const Portfolio = () => {
             <Text as="p" className="mb-3 text-sm item__body" >
               {selectedProject.description}
             </Text>
-            <div style={{display: 'flex', flexWrap: 'wrap', gap: 4}}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
               {dataList?.data.map((item) => {
                 return (
                   <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{item.content}</span>
@@ -99,16 +99,18 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
+
       </Modal>
-      <h2 className='section__title'>Portfolio</h2>
-      <span className='section__subtitle'>Veja alguns de meus projetos</span>
+      <h2 className='section__title text-slate-900 dark:text-white'>Portfolio</h2>
+      <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja alguns de meus projetos</span>
       <div className="portfolio__container container">
         <div className="portfolio__options">
           {
             buttonCaptions.map((filter) => (
               <Button key={filter} onClick={() => handleFilterClick(filter)} type="button"
-                className={`focus:outline-none border-2 border-gray-400 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 capitalize`}
-                style={{ backgroundColor: activeFilter === filter ? "#333" : "transparent", color: activeFilter === filter ? "#fff" : "#333" }}
+                className={`focus:outline-none border-2 border-gray-400 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 capitalize
+                ${activeFilter === filter ? "bg-zinc-950 dark:bg-zinc-900 text-white" : "dark:text-stone-400 text-zinc-600"}
+                `}
               >
                 {filter === 'all' ? 'Todos' : filter}
               </Button>
@@ -119,13 +121,13 @@ const Portfolio = () => {
         <main className="portfolio__content" ref={ref}>
           {
             data?.data.map((item, index) => (
-              <animated.div onClick={() => openModal(item)} style={{ ...spring }} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`}>
+              <animated.div onClick={() => openModal(item)} style={{ ...spring }} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`}>
                 <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.image_url} alt={item.name} objectCover="object-cover" />
                 <div className="p-5">
-                  <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1">
+                  <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1 text-slate-900 dark:text-white">
                     {item.title}
                   </Text>
-                  <Text as="p" className="mb-3 text-sm line-clamp-2 item__body" >
+                  <Text as="p" className="mb-3 text-sm line-clamp-2 item__body text-slate-500 dark:text-stone-400" >
                     {item.description}
                   </Text>
                 </div>

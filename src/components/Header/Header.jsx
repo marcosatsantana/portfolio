@@ -3,19 +3,26 @@ import "./header.css"
 
 
 const Header = () => {
-
-    window.addEventListener("scroll", function () {
-        const header = document.querySelector(".header");
-        if (this.scrollY >= 80) header.classList.add("scroll-header")
-        else header.classList.remove("scroll-header");
-    })
+    const [isDarkMode, setIsDarkMode] = useState(false); // Track dark mode state
     const [Toggle, showMenu] = useState(false)
     const [activeNav, setActiveNav] = useState("#home")
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode); // Invert the state on button click
+
+        // Apply Tailwind's dark mode classes dynamically
+        document.body.classList.toggle('dark');
+    };
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (this.scrollY >= 80) header.classList.add("shadow-md")
+        else header.classList.remove("shadow-md");
+    })
     return (
-        <header className='header'>
+        <header className='header dark:bg-zinc-950 bg-white'>
 
             <nav className='nav container'>
-                <a href='index.html' className='nav__logo'>
+                <a href='index.html' className='nav__logo text-slate-900 dark:text-white'>
                     MKDesigners
                 </a>
 
@@ -23,34 +30,39 @@ const Header = () => {
                 <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
                     <ul className='nav__list'>
                         <li className='nav__item'>
-                            <a href='#home' onClick={() => setActiveNav('#home')} className={activeNav === "#home" ? "nav__link active-link" : "nav__link"}>
+                            <a href='#home' onClick={() => setActiveNav('#home')} className={activeNav === "#home" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
                                 <i className='uil uil-estate nav__icon'></i> Inicio
                             </a>
                         </li>
                         <li className='nav__item'>
-                            <a href='#about' onClick={() => setActiveNav('#about')} className={activeNav === "#about" ? "nav__link active-link" : "nav__link"}>
+                            <a href='#about' onClick={() => setActiveNav('#about')} className={activeNav === "#about" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
                                 <i className='uil uil-user nav__icon'></i> Sobre
                             </a>
                         </li>
                         <li className='nav__item'>
-                            <a href='#skills' onClick={() => setActiveNav('#skills')} className={activeNav === "#skills" ? "nav__link active-link" : "nav__link"}>
+                            <a href='#skills' onClick={() => setActiveNav('#skills')} className={activeNav === "#skills" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
                                 <i className='uil uil-file-alt nav__icon'></i> Habilidades
                             </a>
                         </li>
                         <li className='nav__item'>
-                            <a href='#services' onClick={() => setActiveNav('#services')} className={activeNav === "#services" ? "nav__link active-link" : "nav__link"}>
+                            <a href='#services' onClick={() => setActiveNav('#services')} className={activeNav === "#services" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
                                 <i className='uil uil-briefcase-alt nav__icon'></i> Serviços
                             </a>
                         </li>
                         <li className='nav__item'>
-                            <a href='#portfolio' onClick={() => setActiveNav('#portfolio')} className={activeNav === "#portfolio" ? "nav__link active-link" : "nav__link"}>
+                            <a href='#portfolio' onClick={() => setActiveNav('#portfolio')} className={activeNav === "#portfolio" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
                                 <i className='uil uil-scenery nav__icon'></i> Portfolio
                             </a>
                         </li>
                         <li className='nav__item'>
-                            <a href='#contact' onClick={() => setActiveNav('#contact')} className={activeNav === "#contact" ? "nav__link active-link" : "nav__link"}>
+                            <a href='#contact' onClick={() => setActiveNav('#contact')} className={activeNav === "#contact" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
                                 <i className='uil uil-message nav__icon'></i> Contato
                             </a>
+                        </li>
+                        <li>
+                            <div className='toggle__theme' onClick={toggleDarkMode}>
+                                <i className={`uil ${isDarkMode ? 'uil-sun' : 'uil-moon'}`}></i>
+                            </div>
                         </li>
                     </ul>
                     <i className='uil uil-times nav__close' onClick={() => showMenu(!Toggle)}> </i>
