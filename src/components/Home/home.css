@@ -116,14 +116,13 @@
 }
 
 .home__player {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
 }
 
 .home__title-content {
     display: flex;
     align-items: center;
-    gap: 1rem;
 }
 
 /*=============== BREAKPOINTS ===============*/
@@ -192,8 +191,8 @@
     }
 
     .home__player {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 5.5rem;
+        height: 5.5rem;
     }
 }
 
