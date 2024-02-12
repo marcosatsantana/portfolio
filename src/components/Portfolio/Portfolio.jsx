@@ -22,8 +22,18 @@ const customStyles = {
     zIndex: 9,
     backgroundColor: 'white',
     transform: 'translate(-50%, -50%)',
+  },
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)'
   }
 };
+
+
 
 const Portfolio = () => {
   const queryClient = useQueryClient()
@@ -75,8 +85,10 @@ const Portfolio = () => {
   return (
     <section className="portfolio section" id="portfolio">
       <Modal
+        overlayElement={(props, contentElement) => <div style={{ backgroundColor: 'red' }} {...props}>{contentElement}</div>}
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
+        shouldCloseOnOverlayClick={true}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Portfolio"
@@ -100,7 +112,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-      </Modal>
+      </Modal >
       <h2 className='section__title text-slate-900 dark:text-white'>Portfolio</h2>
       <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja alguns de meus projetos</span>
       <div className="portfolio__container container">
