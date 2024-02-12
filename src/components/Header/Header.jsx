@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./header.css"
+import DarkModeToggle from "react-dark-mode-toggle";
 
 
 const Header = () => {
@@ -77,7 +78,12 @@ const Header = () => {
                         </li>
                         <li>
                             <a onClick={toggleDarkMode} style={{ cursor: 'pointer' }} className="text-slate-900 dark:text-stone-200 text-sm">
-                                <i className={`uil ${isDarkMode ? 'uil-moon' : 'uil-sun'} nav__theme`}></i>
+                                <DarkModeToggle
+                                    onChange={toggleDarkMode}
+                                    checked={isDarkMode}
+                                    size={45}
+                                    className='nav__theme mb-2'
+                                />
                                 <p className='nav__theme-text'>
                                     {isDarkMode ? 'Escuro' : 'Claro'}
                                 </p>
