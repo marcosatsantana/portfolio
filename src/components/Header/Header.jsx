@@ -1,23 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./header.css"
 
 
 const Header = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false); // Track dark mode state
     const [Toggle, showMenu] = useState(false)
     const [activeNav, setActiveNav] = useState("#home")
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    const [isDarkMode, setIsDarkMode] = useState(darkThemeMq.matches);
 
+    useEffect(() => {
+        document.body.classList.toggle('dark', isDarkMode);
+    }, [isDarkMode]);
+
+    useEffect(() => {
+        const handleMediaQueryChange = () => {
+            setIsDarkMode(darkThemeMq.matches);
+        };
+
+        window.addEventListener('mediaquerychange', handleMediaQueryChange);
+
+        return () => window.removeEventListener('mediaquerychange', handleMediaQueryChange);
+    }, []);
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode); // Invert the state on button click
 
         // Apply Tailwind's dark mode classes dynamically
         document.body.classList.toggle('dark');
     };
+
     window.addEventListener("scroll", function () {
         const header = document.querySelector(".header");
         if (this.scrollY >= 80) header.classList.add("shadow-md")
         else header.classList.remove("shadow-md");
     })
+
     return (
         <header className='header dark:bg-zinc-950 bg-white'>
 
