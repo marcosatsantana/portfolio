@@ -40,6 +40,15 @@
     display: none;
 }
 
+.nav__theme {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.nav__theme-text {
+    display: none;
+}
+
 .active-link,
 .nav__link:hover {
     color: var(--title-color-dark)
@@ -73,7 +82,6 @@
         bottom: -100%;
         left: 0;
         width: 100%;
-        background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
         box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
         border-radius: 1.5rem 1.5rem 0 0;
@@ -116,6 +124,13 @@
     .nav__icon,
     .nav__close,
     .nav__toggle {
+        display: block;
+    }
+
+    .nav__theme {
+        font-size: 1.2rem;
+    }
+    .nav__theme-text {
         display: block;
     }
 }

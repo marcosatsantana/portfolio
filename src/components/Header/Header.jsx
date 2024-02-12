@@ -27,7 +27,7 @@ const Header = () => {
                 </a>
 
 
-                <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+                <div className={Toggle ? "nav__menu show-menu dark:bg-zinc-950 bg-white" : "nav__menu"}>
                     <ul className='nav__list'>
                         <li className='nav__item'>
                             <a href='#home' onClick={() => setActiveNav('#home')} className={activeNav === "#home" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
@@ -60,9 +60,12 @@ const Header = () => {
                             </a>
                         </li>
                         <li>
-                            <div className='toggle__theme' onClick={toggleDarkMode}>
-                                <i className={`uil ${isDarkMode ? 'uil-sun' : 'uil-moon'}`}></i>
-                            </div>
+                            <a onClick={toggleDarkMode} style={{ cursor: 'pointer' }} className="text-slate-900 dark:text-stone-200 text-sm">
+                                <i className={`uil ${isDarkMode ? 'uil-moon' : 'uil-sun'} nav__theme`}></i>
+                                <p className='nav__theme-text'>
+                                    {isDarkMode ? 'Escuro' : 'Claro'}
+                                </p>
+                            </a>
                         </li>
                     </ul>
                     <i className='uil uil-times nav__close' onClick={() => showMenu(!Toggle)}> </i>
