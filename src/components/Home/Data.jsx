@@ -11,7 +11,6 @@ const Data = () => {
         <Player
           src={animation}
           className="home__player"
-          loop
           autoplay
         />
       </div>

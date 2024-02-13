@@ -20,7 +20,12 @@
   align-items: center;
 }
 
-
+.btn__close-modal{
+  position: relative;
+  top: -2rem;
+  right: -1rem;
+  padding-top: 2rem;
+}
 .portfolio__wrapper {
   width: 100%;
   max-width: 40rem;

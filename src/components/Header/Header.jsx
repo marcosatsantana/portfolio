@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./header.css"
 import DarkModeToggle from "react-dark-mode-toggle";
+import Social from '../Home/Social';
 
 
 const Header = () => {
@@ -31,8 +32,20 @@ const Header = () => {
 
     window.addEventListener("scroll", function () {
         const header = document.querySelector(".header");
-        if (this.scrollY >= 80) header.classList.add("shadow-md")
-        else header.classList.remove("shadow-md");
+        const social = document.querySelector(".social");
+        if (this.scrollY >= 80) {
+            header.classList.add("shadow-md")
+        }
+        else {
+            header.classList.remove("shadow-md")
+        }
+        
+        if (this.scrollY >= 280) {
+            social.classList.add("show-social-header")
+        }
+        else {
+            social.classList.remove("show-social-header")
+        }
     })
 
     return (
@@ -42,7 +55,9 @@ const Header = () => {
                 <a href='index.html' className='nav__logo text-slate-900 dark:text-white'>
                     MKDesigners
                 </a>
-
+                <div className="social">
+                    <Social isHorizontal={true} />
+                </div>
 
                 <div className={Toggle ? "nav__menu show-menu dark:bg-zinc-950 bg-white" : "nav__menu"}>
                     <ul className='nav__list'>

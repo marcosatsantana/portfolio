@@ -20,6 +20,7 @@ const customStyles = {
     marginRight: '-45%',
     flex: 1,
     zIndex: 9,
+    borderRadius: 25,
     backgroundColor: 'white',
     transform: 'translate(-50%, -50%)',
   },
@@ -93,6 +94,9 @@ const Portfolio = () => {
         style={customStyles}
         contentLabel="Portfolio"
       >
+        <div className="btn__close-modal">
+          <i className="uil uil-times services__modal-close" onClick={closeModal}></i>
+        </div>
         <div className="portfolio__wrapper" >
           <Image className="portfolio__image-modal" image={selectedProject.image_url} alt={selectedProject.name} objectCover="object-cover" />
           <div>
