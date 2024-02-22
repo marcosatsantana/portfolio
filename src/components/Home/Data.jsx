@@ -8,11 +8,13 @@ const Data = () => {
       <div className="home__title-content">
         <h1 className='home__title text-slate-900 dark:text-white'>MKDesigners {" "}
         </h1>
-        <Player
-          src={animation}
-          className="home__player"
-          autoplay
-        />
+        <div className="flex w-full">
+          <Player
+            src={animation}
+            className="home__player"
+            autoplay
+          />
+        </div>
       </div>
       <h3 className='home__subtitle text-slate-900 dark:text-white'>
         FullStack Developer
