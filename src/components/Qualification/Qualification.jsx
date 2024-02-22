@@ -75,8 +75,8 @@ const Qualification = () => {
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title dark:text-stone-400">Eng de Software</h3>
-                <span className="qualification__subtitle dark:text-white">Uni- cesumar</span>
+                <h3 className="qualification__title dark:text-stone-400">ADS</h3>
+                <span className="qualification__subtitle dark:text-white">UniGoias</span>
                 <div className="qualification__calender dark:text-stone-400">
                   <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - Atual
                 </div>
