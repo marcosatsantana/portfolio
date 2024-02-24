@@ -1,14 +1,13 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Button from "./Button";
 import { Text } from "./Text";
 import { Image } from "./Image";
 import "./portfolio.css"
-import { useInView, useSpring, animated } from "@react-spring/web";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "../../services/api";
 import Modal from 'react-modal';
-import { Player } from '@lottiefiles/react-lottie-player';
-import loading from "../../assets/loading.json"
+import { useAnimation, motion, useInView } from "framer-motion";
+import { AnimatedText } from "../AnimatedText";
 
 
 const customStyles = {
@@ -37,6 +36,9 @@ const customStyles = {
 
 
 const Portfolio = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const queryClient = useQueryClient()
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -76,15 +78,33 @@ const Portfolio = () => {
     setActiveFilter(filter)
   }
 
-  const [ref, inView] = useInView({ triggerOnce: true });
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
 
-  const spring = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: inView ? 1 : 0 }
-  });
+  const itemVariant = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView])
 
   return (
-    <section className="portfolio section" id="portfolio">
+    <section className="portfolio section" id="portfolio" ref={ref}>
       <Modal
         overlayElement={(props, contentElement) => <div style={{ backgroundColor: 'red' }} {...props}>{contentElement}</div>}
         isOpen={modalIsOpen}
@@ -109,7 +129,7 @@ const Portfolio = () => {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
               {dataList?.data.map((item) => {
                 return (
-                  <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{item.content}</span>
+                  <span key={item} className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{item.content}</span>
                 )
               })}
             </div>
@@ -117,9 +137,13 @@ const Portfolio = () => {
         </div>
 
       </Modal >
-      <h2 className='section__title text-slate-900 dark:text-white'>Portfolio</h2>
-      <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja alguns de meus projetos</span>
-      <div className="portfolio__container container">
+      <AnimatedText margin="auto" >
+        <h2 className='section__title text-slate-900 dark:text-white'>Portfolio</h2>
+      </AnimatedText>
+      <AnimatedText margin="auto" isInverse>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja alguns de meus projetos</span>
+      </AnimatedText>
+      <div className="portfolio__container container mt-8">
         <div className="portfolio__options">
           {
             buttonCaptions.map((filter) => (
@@ -134,10 +158,15 @@ const Portfolio = () => {
           }
         </div>
         {/* filtered cards display */}
-        <main className="portfolio__content" ref={ref}>
+        <motion.ul
+          className="portfolio__content"
+          initial="hidden"
+          variants={container}
+          animate={controls}
+        >
           {
             data?.data.map((item, index) => (
-              <animated.div onClick={() => openModal(item)} style={{ ...spring }} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`}>
+              <motion.li variants={itemVariant} transition={{ delay: index }} onClick={() => openModal(item)} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`} >
                 <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.image_url} alt={item.name} objectCover="object-cover" />
                 <div className="p-5">
                   <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1 text-slate-900 dark:text-white">
@@ -147,11 +176,10 @@ const Portfolio = () => {
                     {item.description}
                   </Text>
                 </div>
-              </animated.div>
-
+              </motion.li>
             ))
           }
-        </main>
+        </motion.ul>
 
       </div>
     </section >

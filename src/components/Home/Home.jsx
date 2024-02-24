@@ -1,29 +1,24 @@
 import React from 'react';
+import { motion } from "framer-motion"
 import './home.css'
 import Social from './Social';
 import ScrollDown from './ScrollDown';
 import Data from './Data';
-import { useSpring, animated } from '@react-spring/web';
-import { useInView } from 'react-intersection-observer';
+import { AnimatedImage } from '../AnimatedImage';
 
 const Home = () => {
-    const [ref, inView] = useInView({
-        triggerOnce: true, // Só dispara uma vez
-    });
-
-    const springsToLeft = useSpring({
-        from: { rotate: 150 },
-        to: { rotate: inView ? 0 : 150 },
-    });
-
     return (
-        <section className='home section' id='home'>
+        <section className='home section  h-screen flex justify-center items-around ' id='home'>
             <div className='home__container container grid'>
                 <div className='home__content grid'>
                     <Social isHorizontal={false} />
-                    <animated.div className='home__img' style={{ ...springsToLeft }} ref={ref}>
-
-                    </animated.div>
+                    <AnimatedImage>
+                        <motion.div
+                            className="home__img"
+                            whileHover={{ scale: 1.2, rotate: 9 }}
+                            whileTap={{ scale: 0.8, rotate: -9, borderRadius: "100%" }}
+                        />
+                    </AnimatedImage>
                     <Data />
                 </div>
                 <ScrollDown />

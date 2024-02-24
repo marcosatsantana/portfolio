@@ -8,15 +8,20 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
+import { AnimatedText } from "../AnimatedText";
 
 
 const Testimonials = () => {
   return (
     <section className="testimonials container section" id="testimonials">
-      <h2 className='section__title text-zinc-900 dark:text-white'>Avaliações</h2>
-      <span className='section__subtitle text-slate-500 dark:text-stone-400'>Avaliações de alguns clientes</span>
+      <AnimatedText margin="auto">
+        <h2 className='section__title text-zinc-900 dark:text-white'>Avaliações</h2>
+      </AnimatedText>
+      <AnimatedText margin="auto" isInverse>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Avaliações de alguns clientes</span>
+      </AnimatedText>
 
-      <Swiper className="testimonials__container"
+      <Swiper className="testimonials__container mt-8"
         loop
         grabCursor
         spaceBetween={24}
