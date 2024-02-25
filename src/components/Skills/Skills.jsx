@@ -114,7 +114,7 @@ const Skills = () => {
         animate={controls}
       >
         {array.map((item, index) => (
-          <motion.li variants={itemVariant} key={item.id} className="item mt-8" >
+          <motion.li variants={itemVariant} key={item.id} className="item" >
             <Item data={item} />
           </motion.li>
         ))}

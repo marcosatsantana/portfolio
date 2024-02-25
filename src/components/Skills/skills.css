@@ -1,4 +1,5 @@
 .skills__container {
+  margin-top: 1.5rem;
   grid-template-columns: repeat(2, 350px);
   column-gap: 3rem;
   justify-content: center;

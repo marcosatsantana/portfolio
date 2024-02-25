@@ -143,8 +143,8 @@ const Portfolio = () => {
       <AnimatedText margin="auto" isInverse>
         <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja alguns de meus projetos</span>
       </AnimatedText>
-      <div className="portfolio__container container mt-8">
-        <div className="portfolio__options">
+      <div className="portfolio__container container">
+        <div className="portfolio__options mt-8">
           {
             buttonCaptions.map((filter) => (
               <Button key={filter} onClick={() => handleFilterClick(filter)} type="button"

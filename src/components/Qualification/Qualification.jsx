@@ -18,7 +18,7 @@ const Qualification = () => {
       <AnimatedText margin="auto" isInverse>
         <span className='section__subtitle text-slate-500 dark:text-stone-400'>Minha jornada pessoal</span>
       </AnimatedText>
-      <div className="qualification__container container mt-8">
+      <div className="qualification__container container">
         <div className="qualification__tabs">
           <div className={toggleState === 2 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(2)}>
             <i className="uil uil-graduation-cap qualification__icon "></i> Educação
@@ -30,7 +30,7 @@ const Qualification = () => {
         <div className="qualification__sessions">
           <div className={toggleState === 1 ? "qualification__content qualification__content-active" : "qualification__content"} >
 
-            <div className="qualification__data mt-8">
+            <div className="qualification__data">
               <div>
                 <AnimatedText>
                   <h3 className="qualification__title dark:text-stone-400">Ass. T.I.</h3>
@@ -39,7 +39,9 @@ const Qualification = () => {
                   <span className="qualification__subtitle dark:text-white">Carpal Tratores LTDA</span>
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
-                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2023 - Atual
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2023 - Atual
+                  </AnimatedText>
                 </div>
               </div>
               <div>
@@ -62,7 +64,9 @@ const Qualification = () => {
                   <span className="qualification__subtitle dark:text-white">Drogaria Santa Marta - LTDA</span>
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
-                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2021 - 2023
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2021 - 2023
+                  </AnimatedText>
                 </div>
               </div>
             </div>
@@ -76,7 +80,9 @@ const Qualification = () => {
                   <span className="qualification__subtitle dark:text-white">Thato LTDA</span>
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
-                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2018 - 2020
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2018 - 2020
+                  </AnimatedText>
                 </div>
               </div>
               <div>
@@ -99,7 +105,9 @@ const Qualification = () => {
                   <span className="qualification__subtitle dark:text-white">UniGoias</span>
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
-                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - Atual
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - Atual
+                  </AnimatedText>
                 </div>
               </div>
               <div>
@@ -122,7 +130,9 @@ const Qualification = () => {
                   <span className="qualification__subtitle dark:text-white">Rocketseat</span>
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
-                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - 2024
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - 2024
+                  </AnimatedText>
                 </div>
               </div>
             </div>
@@ -136,7 +146,9 @@ const Qualification = () => {
                   <span className="qualification__subtitle dark:text-white">Sesc</span>
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
-                  <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - 2022
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2022 - 2022
+                  </AnimatedText>
                 </div>
               </div>
               <div>

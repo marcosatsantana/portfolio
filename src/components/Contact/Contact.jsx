@@ -26,8 +26,8 @@ const Contact = () => {
         <span className='section__subtitle text-slate-500 dark:text-stone-400'>Fale comigo agora mesmo!</span>
       </AnimatedText>
 
-      <div className="contact__container container grid mt-8">
-        <div className="contact__content">
+      <div className="contact__container container grid">
+        <div className="contact__content mt-8">
           <h3 className="contact__title dark:text-white">Fale comigo</h3>
           <div className="contact__info">
             <div className="contact__card dark:bg-zinc-900 bg-white">
@@ -52,7 +52,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="contact__content">
+        <div className="contact__content mt-8">
           <h3 className="contact__title dark:text-white">Conte-me sobre seu projeto</h3>
 
           <form className="contact__form" ref={form} onSubmit={sendEmail}>

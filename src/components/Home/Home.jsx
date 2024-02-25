@@ -14,7 +14,7 @@ const Home = () => {
                     <Social isHorizontal={false} />
                     <AnimatedImage>
                         <motion.div
-                            className="home__img"
+                            className="home__img rounded-full"
                             whileHover={{ scale: 1.2, rotate: 9 }}
                             whileTap={{ scale: 0.8, rotate: -9, borderRadius: "100%" }}
                         />

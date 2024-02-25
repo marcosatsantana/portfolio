@@ -12,7 +12,7 @@ const About = () => {
         <h2 className='section__title text-zinc-900 dark:text-white'>Sobre</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Designer e Programador, especialista em UI/UX com anos de experiencia no mercado</span>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Designer e Programador</span>
       </AnimatedText>
       <div className='about__container container grid mt-8'>
         <img className='about__img mt-8' src={AboutImg} alt='Image About' />

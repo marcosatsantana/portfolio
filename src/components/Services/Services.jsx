@@ -69,7 +69,7 @@ const Services = () => {
   };
   useEffect(() => {
     if (isInView) {
-      controls.start("visible"); 
+      controls.start("visible");
     }
   }, [isInView])
 
@@ -93,7 +93,7 @@ const Services = () => {
         animate={controls}
       >
         {servicesData.map((service, index) => (
-          <motion.li variants={itemVariant} key={index} className="mt-8 services__content dark:bg-zinc-900" >
+          <motion.li variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900" >
             <div>
               <i className={`uil ${service.icon} services__icon dark:text-white`}></i>
               <h3 className="services__title dark:text-white">{service.title}</h3>

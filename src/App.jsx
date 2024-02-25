@@ -15,23 +15,25 @@ import { QueryClient } from '@tanstack/query-core'
 import { QueryClientProvider } from '@tanstack/react-query'
 const queryClient = new QueryClient()
 
+
 function App() {
+
   return (
     <QueryClientProvider client={queryClient}>
-      <Analytics />
-      <Header />
-      <main className='main dark:bg-zinc-950 bg-white'>
-        <Home />
-        <About />
-        <Skills />
-        <Services />
-        <Qualification />
-        <Testimonials />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollUp />
+        <Analytics />
+        <Header />
+        <main className='main dark:bg-zinc-950 bg-white'>
+          <Home />
+          <About />
+          <Skills />
+          <Services />
+          <Qualification />
+          <Testimonials />
+          <Portfolio />
+          <Contact />
+        </main>
+        <Footer />
+        <ScrollUp />
     </QueryClientProvider>
   )
 }

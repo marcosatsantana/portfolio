@@ -594,6 +594,10 @@ video {
   position: relative;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -686,6 +690,10 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-t-lg {
@@ -795,6 +803,10 @@ video {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-sm {
