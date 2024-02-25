@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ReactSVG } from 'react-svg';
 import EnglishFlag from '../../assets/usa.svg'; // Importe o SVG da bandeira para inglês
 import PortugueseFlag from '../../assets/brazil.svg'; // Importe o SVG da bandeira para português
 
 function LanguageSelector() {
     const { i18n } = useTranslation();
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState();
 
     const changeLanguage = (event) => {
         i18n.changeLanguage(event);
@@ -17,9 +16,8 @@ function LanguageSelector() {
         // Função para identificar o idioma padrão do dispositivo
         const identifyDefaultLanguage = () => {
             const userLanguage = navigator.language.split('-')[0]; // Obtenha o idioma principal (excluindo a região)
-            setLanguage(userLanguage);
+            setLanguage(userLanguage.toString());
         };
-
         identifyDefaultLanguage(); // Chamada inicial para definir o idioma padrão
     }, []);
 

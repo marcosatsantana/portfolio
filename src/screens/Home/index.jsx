@@ -13,12 +13,26 @@ import animation from "../../assets/loadingPage.json"
 import { Player } from "@lottiefiles/react-lottie-player"
 import { useQuery } from "@tanstack/react-query"
 import { api } from "../../services/api"
+import { useTranslation } from "react-i18next"
+import { useEffect } from "react"
 
 function HomeScreen() {
+  const { i18n } = useTranslation();
   const { isLoading } = useQuery({
     queryKey: ['portfoliolist'],
     queryFn: () => api.get(`/portfolio/`),
   })
+
+  useEffect(() => {
+    // Função para identificar o idioma padrão do dispositivo
+    const identifyDefaultLanguage = () => {
+      const userLanguage = navigator.language.split('-')[0]; // Obtenha o idioma principal (excluindo a região)
+      i18n.changeLanguage(userLanguage);
+    };
+
+    identifyDefaultLanguage(); // Chamada inicial para definir o idioma padrão
+  }, []);
+
   if (isLoading) {
     return (
       <div className="h-screen bg-zinc-950 flex items-center justify-center">
