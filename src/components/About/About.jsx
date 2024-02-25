@@ -4,22 +4,24 @@ import AboutImg from '../../assets/about.jpg';
 import CV from "../../assets/Marcos-Cv.pdf";
 import Info from './Info';
 import { AnimatedText } from '../AnimatedText';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <section className='about section mt-16' id='about'>
       <AnimatedText margin="auto">
-        <h2 className='section__title text-zinc-900 dark:text-white'>Sobre</h2>
+        <h2 className='section__title text-zinc-900 dark:text-white'>{t('about.title')}</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Designer e Programador</span>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('about.description')}</span>
       </AnimatedText>
       <div className='about__container container grid mt-8'>
         <img className='about__img mt-8' src={AboutImg} alt='Image About' />
         <div className='about__data'>
           <Info />
           <p className='about__description  text-slate-500 dark:text-stone-400'>
-            Desenvolvedor Frontend e Backend, com experiencia em arquitetura SOLID, com cuidados em UI/UX designer.
+            {t('about.description_2')}
           </p>
           <a href={CV} download='' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>
             Download CV

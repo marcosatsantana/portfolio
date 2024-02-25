@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import "./header.css"
 import DarkModeToggle from "react-dark-mode-toggle";
 import Social from '../Home/Social';
-
+import LanguageSelector from '../LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+    const { t } = useTranslation();
     const [Toggle, showMenu] = useState(false)
     const [activeNav, setActiveNav] = useState("#home")
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -39,7 +41,7 @@ const Header = () => {
         else {
             header.classList.remove("shadow-md")
         }
-        
+
         if (this.scrollY >= 280) {
             social.classList.add("show-social-header")
         }
@@ -63,32 +65,40 @@ const Header = () => {
                     <ul className='nav__list'>
                         <li className='nav__item'>
                             <a href='#home' onClick={() => setActiveNav('#home')} className={activeNav === "#home" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
-                                <i className='uil uil-estate nav__icon'></i> Inicio
+                                <i className='uil uil-estate nav__icon'></i> {t('header.home')}
                             </a>
                         </li>
                         <li className='nav__item'>
                             <a href='#about' onClick={() => setActiveNav('#about')} className={activeNav === "#about" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
-                                <i className='uil uil-user nav__icon'></i> Sobre
+                                <i className='uil uil-user nav__icon'></i> {t('header.about')}
                             </a>
                         </li>
                         <li className='nav__item'>
                             <a href='#skills' onClick={() => setActiveNav('#skills')} className={activeNav === "#skills" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
-                                <i className='uil uil-file-alt nav__icon'></i> Habilidades
+                                <i className='uil uil-file-alt nav__icon'></i> {t('header.skills')}
                             </a>
                         </li>
                         <li className='nav__item'>
                             <a href='#services' onClick={() => setActiveNav('#services')} className={activeNav === "#services" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
-                                <i className='uil uil-briefcase-alt nav__icon'></i> Serviços
+                                <i className='uil uil-briefcase-alt nav__icon'></i> {t('header.services')}
                             </a>
                         </li>
                         <li className='nav__item'>
                             <a href='#portfolio' onClick={() => setActiveNav('#portfolio')} className={activeNav === "#portfolio" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
-                                <i className='uil uil-scenery nav__icon'></i> Portfolio
+                                <i className='uil uil-scenery nav__icon'></i> {t('header.portfolio')}
                             </a>
                         </li>
                         <li className='nav__item'>
                             <a href='#contact' onClick={() => setActiveNav('#contact')} className={activeNav === "#contact" ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-stone-400"}>
-                                <i className='uil uil-message nav__icon'></i> Contato
+                                <i className='uil uil-message nav__icon'></i> {t('header.contact')}
+                            </a>
+                        </li>
+                        <li className='nav__item'>
+                            <a href='#language' className='dark:text-white '>
+                                <LanguageSelector />
+                                <div className="nav__theme-text">
+                                    {t('header.language')}
+                                </div>
                             </a>
                         </li>
                         <li>
@@ -97,10 +107,10 @@ const Header = () => {
                                     onChange={toggleDarkMode}
                                     checked={isDarkMode}
                                     size={45}
-                                    className='nav__theme mb-2'
+                                    className='nav__theme'
                                 />
                                 <p className='nav__theme-text'>
-                                    {isDarkMode ? 'Escuro' : 'Claro'}
+                                    {isDarkMode ? t('header.dark') : t('header.light')}
                                 </p>
                             </a>
                         </li>

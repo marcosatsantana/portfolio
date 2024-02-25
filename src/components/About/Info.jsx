@@ -1,26 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from "framer-motion"
+import { useTranslation } from 'react-i18next';
 
 const Info = () => {
-    const ref = useRef(null);
+    const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(false);
     const controls = useAnimation();
     const array = [
         {
             "id": 1,
-            "title": "Experiencia",
-            "content": "8 Anos"
+            "title": t('about.items.experience.title'),
+            "content": t('about.items.experience.description')
         },
         {
             "id": 2,
-            "title": "Concluídos",
-            "content": "48+ Projetos"
+            "title": t('about.items.completed.title'),
+            "content": t('about.items.completed.description')
         },
         {
             "id": 3,
-            "title": "Suporte",
-            "content": "Online 24/7" 
+            "title": t('about.items.support.title'),
+            "content": t('about.items.support.description')
         }
     ]
     const { ref: inViewRef, inView } = useInView({

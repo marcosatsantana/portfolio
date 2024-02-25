@@ -8,6 +8,7 @@ import { api } from "../../services/api";
 import Modal from 'react-modal';
 import { useAnimation, motion, useInView } from "framer-motion";
 import { AnimatedText } from "../AnimatedText";
+import { useTranslation } from "react-i18next";
 
 
 const customStyles = {
@@ -36,6 +37,7 @@ const customStyles = {
 
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -138,10 +140,10 @@ const Portfolio = () => {
 
       </Modal >
       <AnimatedText margin="auto" >
-        <h2 className='section__title text-slate-900 dark:text-white'>Portfolio</h2>
+        <h2 className='section__title text-slate-900 dark:text-white'>{t('portfolio.title')}</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Veja alguns de meus projetos</span>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('portfolio.description')}</span>
       </AnimatedText>
       <div className="portfolio__container container">
         <div className="portfolio__options mt-8">
@@ -152,7 +154,7 @@ const Portfolio = () => {
                 ${activeFilter === filter ? "bg-zinc-950 dark:bg-zinc-900 text-white" : "dark:text-stone-400 text-zinc-600"}
                 `}
               >
-                {filter === 'all' ? 'Todos' : filter}
+                {filter === 'all' ? t('portfolio.all') : filter}
               </Button>
             ))
           }

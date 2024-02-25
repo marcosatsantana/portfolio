@@ -3,8 +3,10 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import animation from "../../assets/hand.json"
 import { AnimatedText } from '../AnimatedText';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Data = () => {
+  const { t } = useTranslation();
   return (
     <div className='home__data'>
       <div className="home__title-content">
@@ -23,12 +25,12 @@ const Data = () => {
       </div>
       <AnimatedText>
         <h3 className='home__subtitle text-slate-900 dark:text-white'>
-          FullStack Developer
+          {t('home.welcome')}
         </h3>
       </AnimatedText>
       <AnimatedText showBar={false}>
         <p className='home__description text-slate-500 dark:text-stone-400'>
-          Me chamo Marcos Antonio, tenho 26 anos, 7 trabalhando com tecnologia, incluindo Sustentação, Suporte e Desenvolvimento.
+          {t('home.description')}
         </p>
       </AnimatedText>
       <motion.div
@@ -44,7 +46,7 @@ const Data = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.8, borderRadius: "100%" }}
       >
-        <a href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>Fale comigo
+        <a href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('home.btn')}
           <svg
             className="button__icon"
             xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,171 @@
+{
+  "header": {
+    "home": "Início",
+    "dark": "Escuro",
+    "light": "Claro",
+    "language": "Português",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "services": "Serviços",
+    "qualification": "Qualificações",
+    "testimonials": "Depoimentos",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "home": {
+    "welcome": "Desenvolvedor FullStack",
+    "description": "Me chamo Marcos Antonio, tenho 26 anos, 7 trabalhando com tecnologia, incluindo Sustentação, Suporte e Desenvolvimento.",
+    "btn": "Fale comigo",
+    "scroll": "Deslize"
+  },
+  "about": {
+    "title": "Sobre",
+    "description": "Designer e Programador.",
+    "description_2": "Desenvolvedor Frontend e Backend, com experiência em arquitetura SOLID, com cuidados em UI/UX designer.",
+    "items": {
+      "experience": {
+        "title": "Experiencia",
+        "description": "8 Anos"
+      },
+      "completed": {
+        "title": "Concluídos",
+        "description": "48+ Projetos"
+      },
+      "support": {
+        "title": "Suporte",
+        "description": "Online 24/7"
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "description": "Minhas habilidades técnicas",
+    "backend": "Desenvolvedor Frontend",
+    "frontend": "Desenvolvedor Developer",
+    "skills": {
+      "1": {
+        "title": "HTML",
+        "level": "Avançado"
+      },
+      "2": {
+        "title": "JavaScript",
+        "level": "Médio"
+      },
+      "3": {
+        "title": "Git",
+        "level": "Básico"
+      },
+      "4": {
+        "title": "CSS",
+        "level": "Avançado"
+      },
+      "5": {
+        "title": "Bootstrap",
+        "level": "Médio"
+      },
+      "6": {
+        "title": "React",
+        "level": "Médio"
+      },
+      "7": {
+        "title": "PHP",
+        "level": "Médio"
+      },
+      "8": {
+        "title": "Firebase",
+        "level": "Básico"
+      },
+      "9": {
+        "title": "Oracle",
+        "level": "Médio"
+      },
+      "10": {
+        "title": "NodeJS",
+        "level": "Avançado"
+      },
+      "11": {
+        "title": "MySql",
+        "level": "Avançado"
+      },
+      "12": {
+        "title": "Python",
+        "level": "Básico"
+      }
+    }
+  },
+  "services": {
+    "title": "Serviços",
+    "btn": "Veja Mais",
+    "description": "Veja meus serviços oferecidos",
+    "service1": {
+      "title": "Designer Produtos",
+      "description": "Crio produtos digitais intuitivos e centrados no usuário, com foco em pesquisa, design de interação e design visual. Tenho mais de 3 anos de experiência e meus projetos resultaram em um aumento de 20% na conversão de usuários.",
+      "1": "Desenvolvimento de interfaces.",
+      "2": "Desenvolvimento de Landing Pages.",
+      "3": "Desenvolvimento de Apps."
+    },
+    "service2": {
+      "title": "Design Gráfico",
+      "description": "Criamos designs atraentes e personalizados que se destacam e fortalecem a identidade da sua marca.",
+      "1": "Design de Interfaces.",
+      "2": "Prototipagem.",
+      "3": "Testes de Usabilidade."
+    },
+    "service3": {
+      "title": "Marketing Digital",
+      "description": "Oferecemos estratégias de marketing digital eficazes para aumentar o alcance e a visibilidade da sua empresa online.",
+      "1": "Identidade Visual.",
+      "2": "Design de Marca.",
+      "3": "Ilustração.",
+      "4": "Tipografia."
+    }
+  },
+  "qualification": {
+    "title": "Qualificações",
+    "description": "Minha jornada pessoal",
+    "education": "Educação",
+    "experience": "Experiencia",
+    "jobs": {
+      "1": "Ass. T.I.",
+      "2": "Analista de Sistemas",
+      "3": "Suporte Técnico"
+    },
+    "educations": {
+      "1": "ADS",
+      "2": "Explorer e Ignite",
+      "3": "Anl. de Banco de Dados"
+    }
+  },
+  "testimonials": {
+    "title": "Avaliações",
+    "description": "Avaliações de alguns clientes"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Veja alguns de meus projetos",
+    "all": "Todos"
+  },
+  "contact": {
+    "title": "Contato",
+    "description": "Fale comigo agora mesmo!",
+    "subtitle_1": "Fale comigo",
+    "subtitle_2": "Conte-me sobre seu projeto",
+    "btn": "Enviar",
+    "name": {
+      "label": "Nome",
+      "placeholder": "Coloque seu nome"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Coloque seu e-mail"
+    },
+    "message": {
+      "label": "Projeto",
+      "placeholder": "Fale sobre seu projeto"
+    },
+    "send": "Enviar Mensagem"
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados."
+  }
+}

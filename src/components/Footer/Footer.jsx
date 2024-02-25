@@ -1,7 +1,9 @@
 import React from 'react'
 import "./footer.css"
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="footer__container container">
@@ -9,17 +11,17 @@ const Footer = () => {
         <ul className="footer__list">
           <li>
             <a href="#about" className="footer__link">
-              Sobre
+            {t('header.about')}
             </a>
           </li>
           <li>
             <a href="#portfolio" className="footer__link">
-              Projetos
+            {t('header.portfolio')}
             </a>
           </li>
           <li>
             <a href="#testimonials" className="footer__link">
-              Depoimentos
+            {t('header.testimonials')}
             </a>
           </li>
         </ul>
@@ -34,7 +36,7 @@ const Footer = () => {
             <i className='bx bxl-twitter' ></i>
           </a>
         </div>
-        <span className='footer__copy'>&#169; MKDesigners. All rights reserved</span>
+        <span className='footer__copy'>&#169; MKDesigners. {t('footer.copyright')}</span>
       </div>
     </footer>
   )

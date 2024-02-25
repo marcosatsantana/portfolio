@@ -3,69 +3,71 @@ import Item from "./Item";
 import "./skills.css"
 import { AnimatedText } from "../AnimatedText";
 import { useAnimation, motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
   const controls = useAnimation();
   const ref = useRef(null);
+  const { t } = useTranslation();
   const isInView = useInView(ref, { once: true });
   const array = [
     {
       "id": 1,
-      "title": "Frontend Developer",
+      "title": t('skills.frontend'),
       "data": [
         {
-          "title": "HTML",
-          "level": "Advanced"
+          "title": t('skills.skills.1.title'),
+          "level": t('skills.skills.1.level')
         },
         {
-          "title": "CSS",
-          "level": "Advanced"
+          "title": t('skills.skills.2.title'),
+          "level": t('skills.skills.2.level')
         },
         {
-          "title": "JavaScript",
-          "level": "Medium"
+          "title": t('skills.skills.3.title'),
+          "level": t('skills.skills.3.level')
+        }, 
+        {
+          "title": t('skills.skills.4.title'),
+          "level": t('skills.skills.4.level')
         },
         {
-          "title": "Bootstrap",
-          "level": "Medium"
+          "title": t('skills.skills.5.title'),
+          "level": t('skills.skills.5.level')
         },
         {
-          "title": "Git",
-          "level": "Basic"
-        },
-        {
-          "title": "React",
-          "level": "Medium"
+          "title": t('skills.skills.6.title'),
+          "level": t('skills.skills.6.level')
         },
       ]
     },
     {
       "id": 2,
-      "title": "Backend Developer",
+      "title": t('skills.backend'),
       "data": [
         {
-          "title": "PHP",
-          "level": "Medium"
+          "title": t('skills.skills.7.title'),
+          "level": t('skills.skills.7.level')
         },
         {
-          "title": "NodeJS",
-          "level": "Advanced"
+          "title": t('skills.skills.8.title'),
+          "level": t('skills.skills.8.level')
         },
         {
-          "title": "Firebase",
-          "level": "Basic"
+          "title": t('skills.skills.9.title'),
+          "level": t('skills.skills.9.level')
+        }, 
+        {
+          "title": t('skills.skills.10.title'),
+          "level": t('skills.skills.10.level')
         },
         {
-          "title": "MySql",
-          "level": "Advanced"
+          "title": t('skills.skills.11.title'),
+          "level": t('skills.skills.11.level')
         },
         {
-          "title": "Oracle",
-          "level": "Medium"
-        },
-        {
-          "title": "Python",
-          "level": "Basic"
+          "title": t('skills.skills.12.title'),
+          "level": t('skills.skills.12.level')
         },
       ]
     },
@@ -100,10 +102,10 @@ const Skills = () => {
   return (
     <section className="skills section" id="skills" >
       <AnimatedText margin="auto">
-        <h2 className='section__title text-slate-900 dark:text-white'>Habilidades</h2>
+        <h2 className='section__title text-slate-900 dark:text-white'>{t('skills.title')}</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Minhas habilidades técnicas</span>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('skills.description')}</span>
       </AnimatedText>
 
       <motion.ul

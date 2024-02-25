@@ -20,12 +20,16 @@
     "boxicons": "^2.1.4",
     "dotenv": "^16.3.1",
     "emailjs-com": "^3.2.0",
+    "flag-icons": "^7.1.0",
     "framer-motion": "^11.0.6",
+    "i18next": "^23.10.0",
     "react": "^18.2.0",
     "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.5",
     "react-intersection-observer": "^9.5.3",
     "react-modal": "^3.16.1",
+    "react-svg": "^16.1.33",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

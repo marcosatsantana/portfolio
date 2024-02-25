@@ -4,11 +4,12 @@ import "./contact.css"
 import { Player } from '@lottiefiles/react-lottie-player';
 import loading from "../../assets/loading.json"
 import { AnimatedText } from "../AnimatedText";
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false)
   const form = useRef();
-
+  const { t } = useTranslation();
   const sendEmail = (e) => {
     setIsLoading(true)
     e.preventDefault();
@@ -20,40 +21,40 @@ const Contact = () => {
     <section className="contact section" id='contact'>
       <AnimatedText margin="auto" >
 
-        <h2 className='section__title text-zinc-900 dark:text-white'>Contato</h2>
+        <h2 className='section__title text-zinc-900 dark:text-white'>{t('contact.title')}</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Fale comigo agora mesmo!</span>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('contact.description')}</span>
       </AnimatedText>
 
       <div className="contact__container container grid">
         <div className="contact__content mt-8">
-          <h3 className="contact__title dark:text-white">Fale comigo</h3>
+          <h3 className="contact__title dark:text-white">{t('contact.subtitle_1')}</h3>
           <div className="contact__info">
             <div className="contact__card dark:bg-zinc-900 bg-white">
               <i className="bx bx-mail-send contact__card-icon dark:text-white"></i>
               <h3 className="contact__card-title dark:text-stone-400">Email</h3>
               <span className="contact__card-data dark:text-white">contato@mkdesigners.com.br</span>
-              <a href="mailto:contato@mkdesigners.com.br" className="contact__button dark:text-stone-400">Enviar <i className="bx bx-right-arrow-alt contact__button-icon dark:text-stone-400"></i></a>
+              <a href="mailto:contato@mkdesigners.com.br" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon dark:text-stone-400"></i></a>
             </div>
 
             <div className="contact__card dark:bg-zinc-900 bg-white">
               <i className="bx bxl-whatsapp contact__card-icon dark:text-white"></i>
               <h3 className="contact__card-title dark:text-stone-400">WhatsApp</h3>
               <span className="contact__card-data dark:text-white">+55 (62) 9 8590-5272</span>
-              <a href="https://wa.link/19ywa0" className="contact__button dark:text-stone-400">Enviar <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
+              <a href="https://wa.link/19ywa0" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
             </div>
 
             <div className="contact__card dark:bg-zinc-900 bg-white">
               <i className="bx bxl-messenger contact__card-icon dark:text-white"></i>
-              <h3 className="contact__card-title dark:text-stone-400">Mensagem</h3>
+              <h3 className="contact__card-title dark:text-stone-400">Messenger</h3>
               <span className="contact__card-data dark:text-white">user.fb123</span>
-              <a href="https://google.com" className="contact__button dark:text-stone-400">Enviar <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
+              <a href="https://google.com" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
             </div>
           </div>
         </div>
         <div className="contact__content mt-8">
-          <h3 className="contact__title dark:text-white">Conte-me sobre seu projeto</h3>
+          <h3 className="contact__title dark:text-white">{t('contact.subtitle_2')}</h3>
 
           <form className="contact__form" ref={form} onSubmit={sendEmail}>
             {isLoading ? <Player
@@ -64,20 +65,20 @@ const Contact = () => {
             /> :
               <div>
                 <div className="contact__form-div">
-                  <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">Nome</label>
-                  <input type="text" name='name' className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder='Coloque seu nome' />
+                  <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.name.label')}</label>
+                  <input type="text" name='name' className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder={t('contact.name.placeholder')} />
                 </div>
 
                 <div className="contact__form-div">
-                  <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">Email</label>
-                  <input type="email" name='email' className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder='Coloque seu e-mail' />
+                  <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.email.label')}</label>
+                  <input type="email" name='email' className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder={t('contact.email.placeholder')} />
                 </div>
 
                 <div className="contact__form-div contact__form-area">
-                  <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">Projeto</label>
-                  <textarea name="project" cols="30" rows="10" className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder='Fale sobre seu projeto'></textarea>
+                  <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.message.label')}</label>
+                  <textarea name="project" cols="30" rows="10" className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder={t('contact.message.placeholder')}></textarea>
                 </div>
-                <button href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>Enviar Mensagem
+                <button href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('contact.send')}
                   <svg
                     className="button__icon"
                     xmlns="http://www.w3.org/2000/svg"

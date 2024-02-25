@@ -1,0 +1,171 @@
+{
+  "header": {
+    "home": "Home",
+    "dark": "Dark",
+    "light": "Light",
+    "about": "About",
+    "skills": "Skills",
+    "services": "Services",
+    "language": "English",
+    "qualification": "Qualification",
+    "testimonials": "Depositions",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "FullStack Developer",
+    "description": "My name is Marcos Antonio, I am 26 years old, and I have 7 years of experience working with technology, including Support, Maintenance, and Development.",
+    "btn": "Say Hello",
+    "scroll": "Scroll Down"
+  },
+  "about": {
+    "title": "About",
+    "description": "Designer and Programmer.",
+    "description_2": "Frontend and Backend developer, with experience in SOLID architecture, with care in UI/UX designer.",
+    "items": {
+      "experience": {
+        "title": "Experience",
+        "description": "8 Years"
+      },
+      "completed": {
+        "title": "Completed",
+        "description": "48+ Projects"
+      },
+      "support": {
+        "title": "Support",
+        "description": "Online 24/7"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "My technical skills",
+    "backend": "Frontend Developer",
+    "frontend": "Backend Developer",
+    "skills": {
+      "1": {
+        "title": "HTML",
+        "level": "Advanced"
+      },
+      "2": {
+        "title": "JavaScript",
+        "level": "Medium"
+      },
+      "3": {
+        "title": "Git",
+        "level": "Basic"
+      },
+      "4": {
+        "title": "CSS",
+        "level": "Advanced"
+      },
+      "5": {
+        "title": "Bootstrap",
+        "level": "Medium"
+      },
+      "6": {
+        "title": "React",
+        "level": "Medium"
+      },
+      "7": {
+        "title": "PHP",
+        "level": "Medium"
+      },
+      "8": {
+        "title": "Firebase",
+        "level": "Basic"
+      },
+      "9": {
+        "title": "Oracle",
+        "level": "Medium"
+      },
+      "10": {
+        "title": "NodeJS",
+        "level": "Advanced"
+      },
+      "11": {
+        "title": "MySql",
+        "level": "Advanced"
+      },
+      "12": {
+        "title": "Python",
+        "level": "Basic"
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "btn": "See Mor",
+    "description": "See my offered services",
+    "service1": {
+      "title": "Product Design",
+      "description": "I create intuitive, user-centered digital products, focusing on research, interaction design, and visual design. With over 3 years of experience, my projects have resulted in a 20% increase in user conversion.",
+      "1": "Interface Development",
+      "2": "Landing Page Development",
+      "3": "App Development"
+    },
+    "service2": {
+      "title": "Graphic Design",
+      "description": "We create attractive, customized designs that stand out and strengthen your brand identity.",
+      "1": "Interface Design",
+      "2": "Prototyping",
+      "3": "Usability Testing"
+    },
+    "service3": {
+      "title": "Digital Marketing",
+      "description": "We offer effective digital marketing strategies to increase your company's online reach and visibility.",
+      "1": "Visual Identity",
+      "2": "Brand Design",
+      "3": "Illustration",
+      "4": "Typography"
+    }
+  },
+  "qualification": {
+    "title": "Qualifications",
+    "description": "My Personal Journey",
+    "education": "Education",
+    "experience": "Experience",
+    "jobs": {
+      "1": "IT Assistant",
+      "2": "Systems Analyst",
+      "3": "Technical Support"
+    },
+    "educations": {
+      "1": "ADS",
+      "2": "Explorer and Ignite",
+      "3": "Database Analyst"
+    }
+  },
+  "testimonials": {
+    "title": "Reviews",
+    "description": "Reviews from some customers"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "See some of my projects",
+    "all": "All"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Get in touch with me right away!",
+    "subtitle_1": "Talk to me",
+    "subtitle_2": "Tell me about your project",
+    "btn": "Send",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "message": {
+      "label": "Project",
+      "placeholder": "Talk about your project"
+    },
+    "send": "Send Message"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}

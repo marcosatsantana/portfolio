@@ -145,6 +145,7 @@
 
     .nav__theme-text {
         display: block;
+        padding-top: .8rem;
     }
 }
 
