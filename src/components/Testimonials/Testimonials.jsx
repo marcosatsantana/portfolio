@@ -51,7 +51,7 @@ const Testimonials = () => {
               <img src={item.image} alt="" className="testimonial__img" />
               <h3 className="testimonial__name dark:text-white">{item.title}</h3>
               <p className={`testimonial__description dark:text-stone-400 line-clamp-${numberOfLines === index ? 10 : 3}`}>{item.description}</p>
-              <div className="flex items-center justify-between w-full py-2">
+              <div className="see-more">
                 <p className="text-xs">{item.role} - {item.date}</p>
                 <a className="text-xs text-cyan-600 cursor-pointer" onClick={() => showMore(index)}>Ver {numberOfLines === index ? "menos" : "mais"}</a>
               </div>

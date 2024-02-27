@@ -29,6 +29,14 @@
 .swiper {
   z-index: 0 !important;
 }
+/*flex items-center justify-between w-full py-2*/
+.see-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+}
 
 /*Swiper Class*/
 
@@ -50,5 +58,9 @@
 
   .testimonial__card {
     padding: 1.25rem 1.5rem;
+  }
+  .see-more {
+    display: block;
+    padding-top: .7rem;
   }
 }
