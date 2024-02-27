@@ -11,17 +11,20 @@ const Info = () => {
         {
             "id": 1,
             "title": t('about.items.experience.title'),
-            "content": t('about.items.experience.description')
+            "content": t('about.items.experience.description'),
+            "icon": "bx-badge-check"
         },
         {
             "id": 2,
             "title": t('about.items.completed.title'),
-            "content": t('about.items.completed.description')
+            "content": t('about.items.completed.description'),
+            "icon": "bx-time-five"
         },
         {
             "id": 3,
             "title": t('about.items.support.title'),
-            "content": t('about.items.support.description')
+            "content": t('about.items.support.description'),
+            "icon": "bx-help-circle"
         }
     ]
     const { ref: inViewRef, inView } = useInView({
@@ -69,7 +72,7 @@ const Info = () => {
                             whileTap={{ scale: 0.8, borderRadius: "100%" }}
                         >
                             <div className='about__box dark:bg-zinc-900 bg-white' >
-                                <i className='bx bx-award about__icon dark:text-stone-400 text-zinc-700 '></i>
+                                <i className={`bx ${item.icon} about__icon dark:text-stone-400 text-zinc-700`}></i>
                                 <h3 className='about__title text-slate-900 dark:text-white'>{item.title}</h3>
                                 <span className='about__subtitle text-slate-500 dark:text-stone-400'>{item.content}</span>
                             </div>

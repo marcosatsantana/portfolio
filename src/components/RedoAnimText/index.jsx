@@ -45,5 +45,15 @@ export default function RedoAnimText() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <motion.span className="inline home__description text-slate-500 dark:text-stone-400 py-4">{displayText}</motion.span>;
+  return (
+    <div className="w-full">
+      <motion.span className="inline home__description text-slate-500 dark:text-stone-400 py-4">
+        {displayText}
+      </motion.span>
+      <motion.span
+        className="fixed w-1 h-5 dark:bg-white bg-zinc-950 rounded-full ml-2"
+        animate={{ opacity: [1, 0], transition: { duration: 0.5, repeat: Infinity } }}
+      />
+    </div>
+  );
 }

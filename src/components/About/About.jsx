@@ -23,7 +23,7 @@ const About = () => {
           <p className='about__description  text-slate-500 dark:text-stone-400'>
             {t('about.description_2')}
           </p>
-          <a href={CV} download='' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>
+          <a href={CV} download='' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex hover:px-12'>
             Download CV
             <svg
               className="button__icon"

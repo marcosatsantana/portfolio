@@ -11,7 +11,7 @@ export const Data = [
     description: `
     Estou extremamente satisfeita com o trabalho excepcional da equipe! Eles superaram todas as expectativas, entregando um produto final de alta qualidade. A abordagem inovadora e a atenção aos detalhes fizeram toda a diferença. Recomendo sem hesitar!
     `,
-    role: "Santa Marta (Gestão de Pessoas)",
+    role: "Santa Marta (R.H.)",
     date: "01/01/2021"
   },
   {
@@ -21,7 +21,7 @@ export const Data = [
     description: `
     Trabalhar com essa equipe foi uma experiência incrível. Eles não apenas entenderam nossas necessidades, mas também trouxeram insights valiosos que aprimoraram significativamente o projeto. Profissionais comprometidos e talentosos. Recomendo totalmente!
     `,
-    role: "Santa Marta (Gerente de T.I.)",
+    role: "Santa Marta (T.I.)",
     date: "01/11/2021"
   },
   {
@@ -31,7 +31,7 @@ export const Data = [
     description: `
     Os serviços prestados foram além das minhas expectativas. A equipe mostrou grande profissionalismo, comunicação eficiente e entregou no prazo. O resultado final foi impressionante e refletiu exatamente o que eu tinha em mente. Definitivamente uma parceria para futuros projetos!
     `,
-    role: "Carpal Tratores (Gerente Contábil)",
+    role: "Carpal Tratores (Contador)",
     date: "01/11/2022"
   }
 ]

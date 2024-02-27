@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import "./header.css"
-import DarkModeToggle from "react-dark-mode-toggle";
 import Social from '../Home/Social';
 import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from 'react-i18next';
@@ -26,9 +25,7 @@ const Header = () => {
         return () => window.removeEventListener('mediaquerychange', handleMediaQueryChange);
     }, []);
     const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode); // Invert the state on button click
-
-        // Apply Tailwind's dark mode classes dynamically
+        setIsDarkMode(!isDarkMode);
         document.body.classList.toggle('dark');
     };
 
@@ -54,8 +51,10 @@ const Header = () => {
         <header className='header dark:bg-zinc-950 bg-white'>
 
             <nav className='nav container'>
-                <a href='index.html' className='nav__logo text-slate-900 dark:text-white'>
-                    MKDesigners
+                <a href='index.html' className='nav__logo text-slate-900 dark:text-slate-200'>
+                    <span className='text-white'>
+                        MK
+                    </span>Designers
                 </a>
                 <div className="social">
                     <Social isHorizontal={true} />
@@ -103,8 +102,8 @@ const Header = () => {
                         </li>
                         <li>
                             <a onClick={toggleDarkMode} style={{ cursor: 'pointer' }} className="text-slate-900 dark:text-stone-200 text-sm">
-                               
-                                {isDarkMode ?  <i className='bx bx-moon dark:text-stone-400'></i> :  <i className='bx bx-sun dark:text-stone-400'></i>}
+
+                                {isDarkMode ? <i className='bx bx-moon dark:text-stone-400'></i> : <i className='bx bx-sun dark:text-stone-400'></i>}
 
                                 <p className='nav__theme-text'>
                                     {isDarkMode ? t('header.dark') : t('header.light')}

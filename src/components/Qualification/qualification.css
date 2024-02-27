@@ -10,10 +10,6 @@
 }
 
 .qualification__button {
-  /* Adicione isso para garantir que a transição ocorra */
-  border-bottom: 2px solid transparent;
-  /* Adicione essa linha para configurar a animação */
-  transition: border-bottom-width 0.3s ease;
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   margin: 0 var(--mb-1);
@@ -21,11 +17,6 @@
 }
 
 
-.qualification__button-active {
-  border-color: var(--title-color-dark);
-  /* Adicione isso para definir a largura do borda ativa */
-  border-bottom-width: 2px;
-}
 
 .qualification__icon {
   font-size: 1.8rem;

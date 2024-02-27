@@ -20,12 +20,16 @@ const Qualification = () => {
         <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('qualification.description')}</span>
       </AnimatedText>
       <div className="qualification__container container">
-        <div className="qualification__tabs">
-          <div className={toggleState === 2 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(2)}>
-            <i className="uil uil-graduation-cap qualification__icon "></i> {t('qualification.education')}
+        <div className="qualification__tabs hover:text-red-500">
+          <div className={toggleState === 2 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200 border-b-2 px-2 pb-1" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(2)}>
+            <p className="hover:text-white transition flex items-center gap-1">
+              <i className="bx bxs-graduation qualification__icon "></i> {t('qualification.education')}
+            </p>
           </div>
-          <div className={toggleState === 1 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(1)}>
-            <i className="uil uil-briefcase-alt qualification__icon "></i> {t('qualification.experience')}
+          <div className={toggleState === 1 ? "qualification__button button--flex qualification__button-active text-zinc-900 border-zinc-950 dark:text-white dark:border-stone-200 border-b-2 px-2 pb-1" : "dark:text-stone-600 qualification__button button--flex"} onClick={() => toggleTab(1)}>
+            <p className="hover:text-white transition-colors flex items-center gap-1 ">
+              <i className="bx bxs-briefcase-alt-2 qualification__icon"></i> {t('qualification.experience')}
+            </p>
           </div>
         </div>
         <div className="qualification__sessions">

@@ -39,7 +39,7 @@ const Data = () => {
       <div className="min-h-24">
         <RedoAnimText />
       </div>
-      <a href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('home.btn')}
+      <a href='#contact' className='bg-zinc-900 hover:px-12 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('home.btn')}
         <svg
           className="button__icon"
           xmlns="http://www.w3.org/2000/svg"

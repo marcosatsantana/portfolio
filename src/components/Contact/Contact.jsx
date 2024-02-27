@@ -24,7 +24,7 @@ const Contact = () => {
         <h2 className='section__title text-zinc-900 dark:text-white'>{t('contact.title')}</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('contact.description')}</span>
+        <span className='section__subtitle text-stone-500 dark:text-stone-400'>{t('contact.description')}</span>
       </AnimatedText>
 
       <div className="contact__container container grid">
@@ -66,19 +66,19 @@ const Contact = () => {
               <div>
                 <div className="contact__form-div">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.name.label')}</label>
-                  <input type="text" name='name' className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder={t('contact.name.placeholder')} />
+                  <input type="text" name='name' className='contact__form-input dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.name.placeholder')} />
                 </div>
 
                 <div className="contact__form-div">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.email.label')}</label>
-                  <input type="email" name='email' className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder={t('contact.email.placeholder')} />
+                  <input type="email" name='email' className='contact__form-input dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.email.placeholder')} />
                 </div>
 
                 <div className="contact__form-div contact__form-area">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.message.label')}</label>
-                  <textarea name="project" cols="30" rows="10" className='contact__form-input dark:border-zinc-50 border-zinc-700 border' placeholder={t('contact.message.placeholder')}></textarea>
+                  <textarea name="project" cols="30" rows="10" className='contact__form-input dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.message.placeholder')}></textarea>
                 </div>
-                <button href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('contact.send')}
+                <button href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white button button--flex hover:px-12'>{t('contact.send')}
                   <svg
                     className="button__icon"
                     xmlns="http://www.w3.org/2000/svg"
