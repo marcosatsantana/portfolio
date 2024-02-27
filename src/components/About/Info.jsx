@@ -61,11 +61,19 @@ const Info = () => {
             >
                 {array.map((item, index) => (
                     <motion.li key={item.id} className="item" variants={itemVariants} transition={{ delay: index / 2 }}>
-                        <div className='about__box dark:bg-zinc-900 bg-white' >
-                            <i className='bx bx-award about__icon dark:text-stone-400 text-zinc-700 '></i>
-                            <h3 className='about__title text-slate-900 dark:text-white'>{item.title}</h3>
-                            <span className='about__subtitle text-slate-500 dark:text-stone-400'>{item.content}</span>
-                        </div>
+                        <motion.div
+                            transition={{
+                                duration: 0.5,
+                            }}
+                            whileHover={{ scale: 1.05, rotate: 5 }}
+                            whileTap={{ scale: 0.8, borderRadius: "100%" }}
+                        >
+                            <div className='about__box dark:bg-zinc-900 bg-white' >
+                                <i className='bx bx-award about__icon dark:text-stone-400 text-zinc-700 '></i>
+                                <h3 className='about__title text-slate-900 dark:text-white'>{item.title}</h3>
+                                <span className='about__subtitle text-slate-500 dark:text-stone-400'>{item.content}</span>
+                            </div>
+                        </motion.div>
                     </motion.li>
                 ))}
             </motion.ul>

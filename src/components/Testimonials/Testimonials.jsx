@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./testimonials.css"
 import { Data } from "./Data";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,6 +11,13 @@ import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
   const { t } = useTranslation();
+  const [numberOfLines, setNumberOfLines] = useState(null);
+  function showMore(index){
+    if(numberOfLines === index){
+      return setNumberOfLines(null);
+    }
+    return setNumberOfLines(index);
+  }
   return (
     <section className="testimonials container section" id="testimonials">
       <AnimatedText margin="auto">
@@ -38,12 +45,16 @@ const Testimonials = () => {
         }}
         modules={[Pagination]}
       >
-        {Data.map(({ id, image, title, description }) => {
+        {Data.map((item, index) => {
           return (
-            <SwiperSlide className="testimonial__card dark:bg-zinc-900 bg-white" key={id} style={{ zIndex: 1 }}>
-              <img src={image} alt="" className="testimonial__img" />
-              <h3 className="testimonial__name dark:text-white">{title}</h3>
-              <p className="testimonial__description dark:text-stone-400">{description}</p>
+            <SwiperSlide className="testimonial__card dark:bg-zinc-900 bg-white" key={item.id} style={{ zIndex: 1 }}>
+              <img src={item.image} alt="" className="testimonial__img" />
+              <h3 className="testimonial__name dark:text-white">{item.title}</h3>
+              <p className={`testimonial__description dark:text-stone-400 line-clamp-${numberOfLines === index ? 10 : 3}`}>{item.description}</p>
+              <div className="flex items-center justify-between w-full py-2">
+                <p className="text-xs">Carpal Tratores (Gerente de T.I) - 01/01/2020</p>
+                <a className="text-xs text-cyan-600 cursor-pointer" onClick={() => showMore(index)}>Ver {numberOfLines === index ? "menos" : "mais"}</a>
+              </div>
             </SwiperSlide>
           )
         })}

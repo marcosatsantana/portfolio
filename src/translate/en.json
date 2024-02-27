@@ -14,7 +14,11 @@
   },
   "home": {
     "welcome": "FullStack Developer",
-    "description": "My name is Marcos Antonio, I am 26 years old, and I have 7 years of experience working with technology, including Support, Maintenance, and Development.",
+    "description_01": "Hello! I'm Marcos Antonio, passionate about technology, with 7 years of experience in Support, Maintenance, and Development.",
+    "description_02": "I got into the programming field early on, being passionate and fascinated by everything involving computers.",
+    "description_03": "Currently, I'm graduating from UniGoias in Systems Analysis and Development.",
+    "description_04": "However, I've been working for several years in various companies, working both in support and development.",
+    "description_05": "I have several certification courses in programming, some from Rocketseat, Full Cycle, among others.",
     "btn": "Say Hello",
     "scroll": "Scroll Down"
   },
@@ -25,7 +29,7 @@
     "items": {
       "experience": {
         "title": "Experience",
-        "description": "8 Years"
+        "description": "Years"
       },
       "completed": {
         "title": "Completed",

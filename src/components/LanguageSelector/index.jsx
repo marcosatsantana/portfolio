@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import EnglishFlag from '../../assets/usa.svg'; // Importe o SVG da bandeira para inglês
-import PortugueseFlag from '../../assets/brazil.svg'; // Importe o SVG da bandeira para português
 
 function LanguageSelector() {
     const { i18n } = useTranslation();
     const [language, setLanguage] = useState();
 
     const changeLanguage = (event) => {
-        i18n.changeLanguage(event);
-        setLanguage(event);
+        i18n.changeLanguage(event.target.value);
+        setLanguage(event.target.value);
     };
 
     useEffect(() => {
@@ -22,14 +20,12 @@ function LanguageSelector() {
     }, []);
 
     return (
-        <div className="flex gap-2 items-center">
-            <a onClick={() => changeLanguage('en')} className={`${language === 'en' ? 'border-b-2' : 'border-b-0'} rounded-sm p-1 cursor-pointer`}>
-                <img src={EnglishFlag} style={{ width: 14, height: 14 }} alt="English" />
-            </a>
-            <a onClick={() => changeLanguage('pt')} className={`${language === 'pt' ? 'border-b-2' : 'border-b-0'} rounded-sm p-1 cursor-pointer`}>
-                <img src={PortugueseFlag} style={{ width: 14, height: 14 }} alt="Português" />
-            </a>
-        </div>
+        <form className="max-w-sm mx-auto">
+            <select defaultValue={language} onChange={changeLanguage} id="countries" className=" text-sm dark:bg-zinc-950 ">
+                <option selected={language === "us"} value="en">US</option>
+                <option selected={language === "pt"} value="pt">PT</option>
+            </select>
+        </form>
     );
 }
 

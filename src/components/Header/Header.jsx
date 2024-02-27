@@ -103,12 +103,9 @@ const Header = () => {
                         </li>
                         <li>
                             <a onClick={toggleDarkMode} style={{ cursor: 'pointer' }} className="text-slate-900 dark:text-stone-200 text-sm">
-                                <DarkModeToggle
-                                    onChange={toggleDarkMode}
-                                    checked={isDarkMode}
-                                    size={45}
-                                    className='nav__theme'
-                                />
+                               
+                                {isDarkMode ?  <i className='bx bx-moon dark:text-stone-400'></i> :  <i className='bx bx-sun dark:text-stone-400'></i>}
+
                                 <p className='nav__theme-text'>
                                     {isDarkMode ? t('header.dark') : t('header.light')}
                                 </p>

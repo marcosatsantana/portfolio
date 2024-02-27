@@ -93,11 +93,12 @@ const Portfolio = () => {
   };
 
   const itemVariant = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { scale: 0, opacity: 0 },
     visible: {
-      y: 0,
+      scale: 1,
       opacity: 1
-    }
+    },
+    transition: { type: "spring", stiffness: 900, damping: 40 }
   };
   useEffect(() => {
     if (isInView) {
@@ -168,7 +169,7 @@ const Portfolio = () => {
         >
           {
             data?.data.map((item, index) => (
-              <motion.li variants={itemVariant} transition={{ delay: index }} onClick={() => openModal(item)} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`} >
+              <motion.li variants={itemVariant} transition={{ delay: index / 2 }} onClick={() => openModal(item)} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.category ? 'block' : "hidden"}`} >
                 <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.image_url} alt={item.name} objectCover="object-cover" />
                 <div className="p-5">
                   <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1 text-slate-900 dark:text-white">
