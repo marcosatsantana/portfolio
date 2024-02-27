@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function RedoAnimText() {
@@ -20,6 +20,7 @@ export default function RedoAnimText() {
     baseText.get().slice(0, latest)
   );
   const updatedThisRound = useMotionValue(true);
+  const [showBar, setShowBar] = useState(false);
 
   useEffect(() => {
     animate(count, 160, {
@@ -40,20 +41,28 @@ export default function RedoAnimText() {
           }
           updatedThisRound.set(true);
         }
+        // Show the bar when the text animation is about to finish
+        if (latest > 150) {
+          setShowBar(true);
+        } else {
+          setShowBar(false);
+        }
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       <motion.span className="inline home__description text-slate-500 dark:text-stone-400 py-4">
         {displayText}
       </motion.span>
-      <motion.span
-        className="fixed w-1 h-5 dark:bg-white bg-zinc-950 rounded-full ml-2"
-        animate={{ opacity: [1, 0], transition: { duration: 0.5, repeat: Infinity } }}
-      />
+      {showBar && (
+        <motion.span
+          className="absolute w-1 h-5 dark:bg-white bg-zinc-950 rounded-full ml-2"
+          animate={{ opacity: [1, 0], transition: { duration: 0.5, repeat: Infinity } }}
+        />
+      )}
     </div>
   );
 }

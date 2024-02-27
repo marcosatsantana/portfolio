@@ -594,14 +594,6 @@ video {
   position: relative;
 }
 
-.right-0 {
-  right: 0px;
-}
-
-.top-1\/2 {
-  top: 50%;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -619,16 +611,16 @@ video {
   margin-inline-end: 0.5rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
 }
 
 .line-clamp-1 {
@@ -669,6 +661,10 @@ video {
   display: none;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-\[100px\] {
   height: 100px;
 }
@@ -681,37 +677,20 @@ video {
   height: 100vh;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
 .min-h-24 {
   min-height: 6rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .w-1 {
   width: 0.25rem;
 }
 
-.w-0 {
-  width: 0px;
-}
-
-.w-0\.5 {
-  width: 0.125rem;
+.w-full {
+  width: 100%;
 }
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
@@ -732,10 +711,6 @@ video {
 
 .justify-center {
   justify-content: center;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-1 {
@@ -793,11 +768,6 @@ video {
 .border-zinc-950 {
   --tw-border-opacity: 1;
   border-color: rgb(9 9 11 / var(--tw-border-opacity));
-}
-
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-gray-100 {
@@ -952,15 +922,6 @@ video {
   color: rgb(24 24 27 / var(--tw-text-opacity));
 }
 
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1038,42 +999,9 @@ video {
   color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
-.hover\:border-2:hover {
-  border-width: 2px;
-}
-
-.hover\:border-b-2:hover {
-  border-bottom-width: 2px;
-}
-
-.hover\:py-16:hover {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.hover\:px-16:hover {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-.hover\:px-8:hover {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.hover\:px-10:hover {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .hover\:px-12:hover {
   padding-left: 3rem;
   padding-right: 3rem;
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-red-500:hover {
@@ -1081,9 +1009,9 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.hover\:text-red-400:hover {
+.hover\:text-white:hover {
   --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:ring-1:hover {
@@ -1103,32 +1031,6 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.hover\:transition-colors:hover {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.placeholder\:hover\:text-stone-200:hover::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(231 229 228 / var(--tw-text-opacity));
-}
-
-.placeholder\:hover\:text-stone-200:hover::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(231 229 228 / var(--tw-text-opacity));
-}
-
-.hover\:placeholder\:text-stone-200:hover::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(231 229 228 / var(--tw-text-opacity));
-}
-
-.hover\:placeholder\:text-stone-200:hover::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
 .hover\:placeholder\:text-stone-400:hover::-moz-placeholder {
