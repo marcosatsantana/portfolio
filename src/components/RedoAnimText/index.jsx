@@ -13,19 +13,19 @@ export default function RedoAnimText() {
     t('home.description_04'),
     t('home.description_05'),
   ];
-  const codeString = '(num) => num + 1';
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
-  const displayText = useTransform(rounded, (latest) =>
-    baseText.get().slice(0, latest)
-  );
+  const displayText = useTransform(rounded, (latest) => {
+    return baseText.get().slice(0, latest)
+  });
   const updatedThisRound = useMotionValue(true);
-  const [showBar, setShowBar] = useState(false);
+
+  const array = Array.from({ length: 9 }, (_, index) => index);
 
   useEffect(() => {
-    animate(count, 160, {
+    animate(count, 660, {
       type: "tween",
       duration: 4,
       ease: "easeIn",
@@ -44,15 +44,11 @@ export default function RedoAnimText() {
           updatedThisRound.set(true);
         }
         // Show the bar when the text animation is about to finish
-        if (latest > 150) {
-          setShowBar(true);
-        } else {
-          setShowBar(false);
-        }
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div className="h-22 w-full relative ring-1 dark:ring-white ring-zinc-400 rounded-lg hover:ring-2 transition-all">
       <div className="w-full dark:bg-zinc-950 bg-stone-200 opacity-30 rounded-t-sm flex justify-between items-center px-2">
@@ -67,12 +63,14 @@ export default function RedoAnimText() {
       </div>
       <div className="gap-2 flex p-2">
         <div className="w-2 h-full text-sm line leading-6 font-thin	">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <p>4</p>
+
+          {array.map((index) => {
+            return (
+              <p>{index + 1}</p>
+            )
+          })}
         </div>
-        <motion.p className="text-xs tracking-wider leading-6 home__description text-zinc-950 dark:text-gray-200 ">
+        <motion.p style={{ whiteSpace: "pre-wrap" }} className="text-xs tracking-wider leading-6 home__description text-zinc-950 dark:text-gray-200 ">
           {displayText}
         </motion.p>
       </div>

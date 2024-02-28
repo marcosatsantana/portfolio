@@ -14,11 +14,11 @@
   },
   "home": {
     "welcome": "FullStack Developer",
-    "description_01": "Hello! I'm Marcos Antonio, passionate about technology, with 7 years of experience in Support, Maintenance, and Development.",
-    "description_02": "I got into the programming field early on, being passionate and fascinated by everything involving computers.",
-    "description_03": "Currently, I'm graduating from UniGoias in Systems Analysis and Development.",
-    "description_04": "However, I've been working for several years in various companies, working both in support and development.",
-    "description_05": "I have several certification courses in programming, some from Rocketseat, Full Cycle, among others.",
+    "description_01": "const name = 'Marcos Antonio'; \nconst age = 28;\nconst position = 'Developer';",
+    "description_02": "const aboutMe = 'Conheci a area da programação\nlogo cedo, era apaixonado e fissurado por tudo que envolvia computadores.';",
+    "description_03": "<h1>Education</h1>\n<ul>\n  <li>ADS - UniGoias</li>\n  <li>Database Analysis - Sesi</li>\n</ul>",
+    "description_04": "const Skills = [\n   'HTML', \n   'CSS', \n   'PHP', \n   'TypeScript', \n   'SQL', \n   'Linux/Windows'\n];",
+    "description_05": "const experience = [{\n       'location': 'Carpal Tratores LTDA',\n       'year': '2023',\n       'position': 'T.I.'\n     },{\n       'location': 'Santa Marta LTDA',\n       'year': '2022',\n       'position': 'Analista de Sistemas N3'\n     }];",
     "btn": "Say Hello",
     "scroll": "Scroll Down"
   },
