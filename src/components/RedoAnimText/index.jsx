@@ -54,9 +54,9 @@ export default function RedoAnimText() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="h-22 w-full relative ring-1 ring-white rounded-lg hover:ring-2 transition-all">
-      <div className="w-full bg-zinc-950 opacity-30 rounded-t-sm flex justify-between items-center px-2">
-        <p className="text-xs">
+    <div className="h-22 w-full relative ring-1 dark:ring-white ring-zinc-400 rounded-lg hover:ring-2 transition-all">
+      <div className="w-full dark:bg-zinc-950 bg-stone-200 opacity-30 rounded-t-sm flex justify-between items-center px-2">
+        <p className="text-xs text-black dark:text-white">
           aLittleAboutMe.jsx
         </p>
         <div className="">
@@ -72,7 +72,7 @@ export default function RedoAnimText() {
           <p>3</p>
           <p>4</p>
         </div>
-        <motion.p className="text-xs tracking-wider leading-6 home__description text-slate-800 dark:text-gray-200 ">
+        <motion.p className="text-xs tracking-wider leading-6 home__description text-zinc-950 dark:text-gray-200 ">
           {displayText}
         </motion.p>
       </div>
