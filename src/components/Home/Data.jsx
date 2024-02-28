@@ -6,6 +6,7 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import RedoAnimText from '../RedoAnimText';
 
+
 const Data = () => {
   const { t } = useTranslation();
   const text = t('home.description').split(" ");
@@ -36,7 +37,7 @@ const Data = () => {
           {t('home.welcome')}
         </h3>
       </AnimatedText>
-      <div className="min-h-24">
+      <div className="max-h-22 mb-4 rounded-sm bg-zinc-800 shadow-xs shadow-white">
         <RedoAnimText />
       </div>
       <a href='#contact' className='bg-zinc-900 hover:px-12 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('home.btn')}

@@ -2,6 +2,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+
 export default function RedoAnimText() {
   const textIndex = useMotionValue(0);
   const { t } = useTranslation();
@@ -12,6 +13,7 @@ export default function RedoAnimText() {
     t('home.description_04'),
     t('home.description_05'),
   ];
+  const codeString = '(num) => num + 1';
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);
@@ -51,18 +53,29 @@ export default function RedoAnimText() {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
-    <div className="w-full relative">
-      <motion.span className="inline home__description text-slate-500 dark:text-stone-400 py-4">
-        {displayText}
-      </motion.span>
-      {showBar && (
-        <motion.span
-          className="absolute w-1 h-5 dark:bg-white bg-zinc-950 rounded-full ml-2"
-          animate={{ opacity: [1, 0], transition: { duration: 0.5, repeat: Infinity } }}
-        />
-      )}
+    <div className="h-22 w-full relative ring-1 ring-white rounded-lg hover:ring-2 transition-all">
+      <div className="w-full bg-zinc-950 opacity-30 rounded-t-sm flex justify-between items-center px-2">
+        <p className="text-xs">
+          aLittleAboutMe.jsx
+        </p>
+        <div className="">
+          <i className="bx bx-space-bar"></i>
+          <i className="bx bx-expand-horizontal"></i>
+          <i className="bx bx-x"></i>
+        </div>
+      </div>
+      <div className="gap-2 flex p-2">
+        <div className="w-2 h-full text-sm line leading-6 font-thin	">
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+        </div>
+        <motion.p className="text-xs tracking-wider leading-6 home__description text-slate-800 dark:text-gray-200 ">
+          {displayText}
+        </motion.p>
+      </div>
     </div>
   );
 }

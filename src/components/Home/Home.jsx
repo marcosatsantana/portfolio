@@ -4,6 +4,7 @@ import './home.css'
 import Social from './Social';
 import ScrollDown from './ScrollDown';
 import Data from './Data';
+
 import { AnimatedImage } from '../AnimatedImage';
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
                         />
                     </AnimatedImage>
                     <Data />
+
                 </div>
                 <ScrollDown />
             </div>

@@ -29,6 +29,7 @@
     "react-intersection-observer": "^9.5.3",
     "react-modal": "^3.16.1",
     "react-svg": "^16.1.33",
+    "react-syntax-highlighter": "^15.5.0",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

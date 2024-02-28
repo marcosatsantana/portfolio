@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+
 function LanguageSelector() {
     const { i18n } = useTranslation();
     const [language, setLanguage] = useState();
@@ -25,6 +26,7 @@ function LanguageSelector() {
                 <option selected={language === "us"} value="en">US</option>
                 <option selected={language === "pt"} value="pt">PT</option>
             </select>
+
         </form>
     );
 }
