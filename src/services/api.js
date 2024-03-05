@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://backendportfolio-cnty.onrender.com"
+  baseURL: "https://naughty-dog-sweatpants.cyclic.app"
 });
