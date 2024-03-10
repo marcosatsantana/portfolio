@@ -10,7 +10,7 @@ import { useAnimation, motion, useInView } from "framer-motion";
 import { AnimatedText } from "../AnimatedText";
 import { useTranslation } from "react-i18next";
 import Carousel from "./Carousel";
-
+import { AnimatePresence } from "framer-motion";
 
 const customStyles = {
   content: {
@@ -113,8 +113,8 @@ const Portfolio = () => {
         contentLabel="Portfolio"
         className="w-fit max-w-full dark:bg-zinc-950 mx-8 dark:ring-stone-200 ring-1 ring-zinc-950 bg-white dark:text-stone-200 text-zinc-950 mb-8 rounded-sm p-8"
       >
-        <div className="btn__close-modal">
-          <i className="uil uil-times services__modal-close" onClick={closeModal}></i>
+        <div className="btn__close-modal  w-full flex justify-end cursor-pointer">
+          <i className="uil uil-times text-stone-400 transition hover:text-white" onClick={closeModal}></i>
         </div>
         <div className="portfolio__wrapper w-full">
           <div className="pb-8 mx-auto">
@@ -124,12 +124,18 @@ const Portfolio = () => {
           <div>
             {selectedProject.portfolio &&
               <>
-                <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1 dark:text-white text-zinc-950">
-                  {selectedProject.portfolio.title}
-                </Text>
+                <div className="flex items-center justify-between my-2">
+                  <AnimatedText>
+                    <p className="text-md font-bold item__title line-clamp-1 dark:text-white text-zinc-950">
+                      {selectedProject.portfolio.title}
+                    </p>
+                  </AnimatedText>
+                  <p className="text-xs text-stone-400">
+                    <i className="bx bx-calendar"></i> 02/2024 a 03/2023
+                  </p>
+                </div>
                 <Text as="p" className={`mb-3 text-sm item__body dark:text-stone-300 text-zinc-800 line-clamp-${show === 'desc' ? 9 : 1}`} >
                   <a onClick={() => handleShow('desc')}>
-
                     {selectedProject.portfolio.description}
                   </a>
                 </Text>
@@ -150,47 +156,99 @@ const Portfolio = () => {
                 </div>
               </>
             }
-            <button className="flex w-full justify-between items-center bg-zinc-950 ring-1 ring-zinc-600 my-2 rounded-md px-2 cursor-pointer hover:bg-zinc-900 hover:transition " onClick={() => handleShow('tec')}>
-              <p className="text-xs p-2 font-bold flex gap-1 items-center">
-                Tecnologias <p className="text-stone-400 font-thin">({dataList?.data?.length})</p>
-              </p>
-              {show === 'tec' ?
-                <i class='bx bx-chevrons-up'></i>
-                :
-                <i class='bx bx-chevrons-down'></i>
-              }
-            </button>
-            {show === 'tec' &&
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, padding: 8 }}>
-
-                {dataList?.data.map((item) => {
-                  return (
-                    <span key={item} className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{item.content}</span>
-                  )
-                })}
-              </div>
-            }
-            <button className="flex w-full justify-between items-center bg-zinc-950 ring-1 ring-zinc-600 my-2 rounded-md px-2 cursor-pointer hover:bg-zinc-900 hover:transition transition" onClick={() => handleShow('cha')}>
-              <p className="text-xs p-2 font-bold flex gap-1 items-center">
-                Desafios
-                <p className="text-stone-400 font-thin">
-                  ({selectedProject?.listArray?.length})
+            <motion.header
+              initial={false}
+              className="ring-1 ring-zinc-400"
+              animate={{ backgroundColor: show === 'tec' ? "#111827" : "#09090b", borderRadius: 5, color: show === 'tec' ? "#fafaf9" : "#e7e5e4" }}
+              onClick={() => setExpanded(show === 'tec' ? false : i)}
+            >
+              <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('tec')}>
+                <p className="text-xs p-2 font-bold flex gap-1 items-center">
+                  Tecnologias
+                  <p className="text-stone-400 font-thin">
+                    ({dataList?.data?.length})
+                  </p>
                 </p>
-              </p>
-              {show === 'cha' ?
-                <i class='bx bx-chevrons-up'></i>
-                :
-                <i class='bx bx-chevrons-down'></i>
-              }
-            </button>
-            {show === 'cha' &&
-              <ul style={{ padding: 8 }}>
-                {
-                  selectedProject.listArray && selectedProject.listArray.map((project) => <li className="text-xs font-thin text-stone-400">{project.content}</li>)
-                }
 
-              </ul>
-            }
+                {show === 'tec' ?
+                  <i class='bx bx-chevrons-up'></i>
+                  :
+                  <i class='bx bx-chevrons-down'></i>
+                }
+              </button>
+            </motion.header>
+
+            <AnimatePresence initial={false}>
+              {show === 'tec' &&
+                <motion.section
+                  key="content"
+                  initial="collapsed"
+                  animate="open"
+                  exit="collapsed"
+                  variants={{
+                    open: { opacity: 1, height: "auto" },
+                    collapsed: { opacity: 0, height: 0 }
+                  }}
+                  transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                >
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, padding: 8 }}>
+
+                    {dataList?.data.map((item) => {
+                      return (
+                        <div className="flex bg-gradient-to-r from-cyan-500 to-blue-500 p-1 rounded-md">
+
+                          <span key={item} className="bg-gray-100 text-gray-800 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-zinc-900 dark:ring-stone-600 ring-zinc-950 ring-1 dark:text-gray-300">
+                            {item.content}
+                          </span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </motion.section>
+              }
+            </AnimatePresence>
+            <motion.header
+              initial={false}
+              className="ring-1 ring-zinc-400"
+              animate={{ backgroundColor: show === 'cha' ? "#111827" : "#09090b", borderRadius: 5, color: show === 'cha' ? "#fafaf9" : "#e7e5e4" }}
+              onClick={() => setExpanded(show === 'cha' ? false : i)}
+            >
+              <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('cha')}>
+                <p className="text-xs p-2 font-bold flex gap-1 items-center">
+                  Desafios
+                  <p className="text-stone-400 font-thin">
+                    ({selectedProject?.listArray?.length})
+                  </p>
+                </p>
+
+                {show === 'cha' ?
+                  <i class='bx bx-chevrons-up'></i>
+                  :
+                  <i class='bx bx-chevrons-down'></i>
+                }
+              </button>
+            </motion.header>
+            <AnimatePresence initial={false}>
+              {show === 'cha' &&
+                <motion.section
+                  key="content"
+                  initial="collapsed"
+                  animate="open"
+                  exit="collapsed"
+                  variants={{
+                    open: { opacity: 1, height: "auto" },
+                    collapsed: { opacity: 0, height: 0 }
+                  }}
+                  transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                >
+                  <ul style={{ padding: 8 }}>
+                    {
+                      selectedProject.listArray && selectedProject.listArray.map((project) => <li className="text-xs font-thin text-stone-400">{project.content}</li>)
+                    }
+                  </ul>
+                </motion.section>
+              }
+            </AnimatePresence>
             <div className="flex gap-4 w-full justify-end mt-4">
               <button onClick={() => setIsOpen(false)} className='text-zinc-400 text-sm'>
                 Fechar
