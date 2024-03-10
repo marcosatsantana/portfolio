@@ -17,8 +17,8 @@
     "description_01": "const nome = 'Marcos Antonio'; \nconst idade = 28;\nconst profissao = 'Desenvolvedor';",
     "description_02": "const historia = 'Conheci a area da programação\nlogo cedo, era apaixonado e fissurado por tudo que envolvia computadores.';",
     "description_03": "<h1>Formação</h1>\n<ul>\n  <li>ADS - UniGoias</li>\n  <li>Analise de Banco de Dados - Sesi</li>\n</ul>",
-    "description_04": "const habilidades = [\n   'HTML', \n   'CSS', \n   'PHP', \n   'TypeScript', \n   'SQL', \n   'Linux/Windows'\n];",
-    "description_05": "const experiencia = [{\n       'local': 'Carpal Tratores LTDA',\n       'ano': '2023',\n       'função': 'T.I.'\n     },{\n       'local': 'Santa Marta LTDA',\n       'ano': '2022',\n       'função': 'Analista de Sistemas N3'\n     }];",
+    "description_04": "const habilidades = [\n   'HTML', 'CSS', 'PHP',  'TypeScript',   'SQL',  'Linux/Windows'\n];",
+    "description_05": "const experiencia = [\n{'local': 'Carpal Tratores LTDA', 'ano': '2023', 'função': 'T.I.'},\n{'local': 'Santa Marta LTDA', 'ano': '2022', 'função': 'Analista de Sistemas N3'}\n];",
     "btn": "Fale comigo",
     "scroll": "Deslize"
   },

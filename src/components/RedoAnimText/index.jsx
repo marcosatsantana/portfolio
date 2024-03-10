@@ -22,7 +22,7 @@ export default function RedoAnimText() {
   });
   const updatedThisRound = useMotionValue(true);
 
-  const array = Array.from({ length: 9 }, (_, index) => index);
+  const array = Array.from({ length: 6 }, (_, index) => index);
 
   useEffect(() => {
     animate(count, 660, {

@@ -114,6 +114,13 @@ img {
   height: auto;
 }
 
+.slick-dots li.slick-active button:before {
+  color: #fff !important;
+}
+.slick-dots li button:before {
+  color: #ccc !important;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 6rem 0 2rem;

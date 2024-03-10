@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "tailwind:watch": "tailwindcss -i src/tailwind.css -o src/tailwindoutput.css --watch"
+    "tw": "tailwindcss -i ./src/tailwind.css -o ./src/tailwindoutput.css --watch"
   },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
@@ -28,9 +28,12 @@
     "react-i18next": "^14.0.5",
     "react-intersection-observer": "^9.5.3",
     "react-modal": "^3.16.1",
+    "react-slick": "^0.30.2",
     "react-svg": "^16.1.33",
+    "react-swiper": "^0.1.5",
     "react-syntax-highlighter": "^15.5.0",
-    "swiper": "^11.0.5"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
