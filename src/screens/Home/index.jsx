@@ -51,27 +51,13 @@ function HomeScreen() {
       <Header />
       <main className='main dark:bg-zinc-950 bg-white'>
         <Home />
-        <div className="h-screen flex-col justify-center items-center">
-          <About />
-        </div>
-        <div className="h-screen flex-col justify-center items-center">
-          <Skills />
-        </div>
-        <div className="h-screen flex-col justify-center items-center">
-          <Services />
-        </div>
-        <div className="h-screen flex-col justify-center items-center">
-          <Qualification />
-        </div>
-        <div className="h-screen flex-col justify-center items-center">
-          <Testimonials />
-        </div>
-        <div className="h-screen flex-col justify-center items-center">
-          <Portfolio />
-        </div>
-        <div className="h-screen flex-col justify-center items-center">
-          <Contact />
-        </div>
+        <About />
+        <Skills />
+        <Services />
+        <Qualification />
+        <Testimonials />
+        <Portfolio />
+        <Contact />
       </main>
       <Footer />
       <ScrollUp />

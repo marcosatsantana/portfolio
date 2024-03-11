@@ -70,67 +70,7 @@ const Skills = () => {
           "level": t('skills.skills.12.level')
         },
       ]
-    },
-    {
-      "id": 3,
-      "title": t('skills.backend'),
-      "data": [
-        {
-          "title": t('skills.skills.7.title'),
-          "level": t('skills.skills.7.level')
-        },
-        {
-          "title": t('skills.skills.8.title'),
-          "level": t('skills.skills.8.level')
-        },
-        {
-          "title": t('skills.skills.9.title'),
-          "level": t('skills.skills.9.level')
-        },
-        {
-          "title": t('skills.skills.10.title'),
-          "level": t('skills.skills.10.level')
-        },
-        {
-          "title": t('skills.skills.11.title'),
-          "level": t('skills.skills.11.level')
-        },
-        {
-          "title": t('skills.skills.12.title'),
-          "level": t('skills.skills.12.level')
-        },
-      ]
-    },
-    {
-      "id": 4,
-      "title": t('skills.backend'),
-      "data": [
-        {
-          "title": t('skills.skills.7.title'),
-          "level": t('skills.skills.7.level')
-        },
-        {
-          "title": t('skills.skills.8.title'),
-          "level": t('skills.skills.8.level')
-        },
-        {
-          "title": t('skills.skills.9.title'),
-          "level": t('skills.skills.9.level')
-        },
-        {
-          "title": t('skills.skills.10.title'),
-          "level": t('skills.skills.10.level')
-        },
-        {
-          "title": t('skills.skills.11.title'),
-          "level": t('skills.skills.11.level')
-        },
-        {
-          "title": t('skills.skills.12.title'),
-          "level": t('skills.skills.12.level')
-        },
-      ]
-    },
+    }
   ]
 
 
@@ -160,8 +100,7 @@ const Skills = () => {
   }, [isInView])
 
   return (
-    <section className="skills section h-screen flex items-center justify-center" id="skills" >
-      <div className="h-fit w-fit">
+    <section className="skills section h-screen" id="skills" >
         <AnimatedText margin="auto">
           <h2 className='section__title text-slate-900 dark:text-white'>{t('skills.title')}</h2>
         </AnimatedText>
@@ -186,7 +125,6 @@ const Skills = () => {
             </motion.li>
           ))}
         </motion.ul>
-      </div>
     </section>
   )
 }

@@ -66,7 +66,7 @@ export default function RedoAnimText() {
 
           {array.map((index) => {
             return (
-              <p>{index + 1}</p>
+              <p key={index}>{index + 1}</p>
             )
           })}
         </div>

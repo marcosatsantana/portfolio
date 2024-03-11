@@ -8,22 +8,13 @@ const Header = () => {
     const { t } = useTranslation();
     const [Toggle, showMenu] = useState(false)
     const [activeNav, setActiveNav] = useState("#home")
-    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-    const [isDarkMode, setIsDarkMode] = useState(darkThemeMq.matches);
+    const [isDarkMode, setIsDarkMode] = useState(true);
 
     useEffect(() => {
         document.body.classList.toggle('dark', isDarkMode);
     }, [isDarkMode]);
 
-    useEffect(() => {
-        const handleMediaQueryChange = () => {
-            setIsDarkMode(darkThemeMq.matches);
-        };
 
-        window.addEventListener('mediaquerychange', handleMediaQueryChange);
-
-        return () => window.removeEventListener('mediaquerychange', handleMediaQueryChange);
-    }, []);
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
         document.body.classList.toggle('dark');

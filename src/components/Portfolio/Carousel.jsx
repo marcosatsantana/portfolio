@@ -17,7 +17,7 @@ export default function Carousel({ imagesArray }) {
       <Slider {...settings} >
         {imagesArray.map((image_url) => {
           return (
-            <img className="rounded-md" alt="a" src={image_url.url} objectCover="object-cover" />
+            <img className="rounded-md w-24" alt="a" src={image_url.url} objectCover="object-cover" />
           )
         })}
       </Slider>

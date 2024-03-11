@@ -112,7 +112,7 @@ const Portfolio = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Portfolio"
-        className="w-fit max-w-full dark:bg-zinc-950 mx-8 dark:ring-stone-200 ring-1 ring-zinc-950 bg-white dark:text-stone-200 text-zinc-950 mb-8 rounded-sm p-8"
+        className="dark:bg-zinc-950 max-w-min max-h-min mx-8 my-auto mt-16 dark:ring-stone-200 ring-1 ring-zinc-950 bg-white dark:text-stone-200 text-zinc-950 mb-8 rounded-sm p-8"
       >
         <div className="btn__close-modal  w-full flex justify-end cursor-pointer">
           <i className="uil uil-times text-stone-400 transition hover:text-white text-lg" onClick={closeModal}></i>
@@ -161,7 +161,7 @@ const Portfolio = () => {
               initial={false}
               className="ring-1 ring-zinc-400"
               animate={{ backgroundColor: show === 'tec' ? "rgba(0,0,0,.1)" : "transparent", borderRadius: 5, color: show === 'tec' ? "#fafaf9" : "#e7e5e4", opacity: .4 }}
-              onClick={() => setExpanded(show === 'tec' ? false : i)}
+              onClick={() => handleShow(show === 'tec' ? false : i)}
             >
               <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('tec')}>
                 <p className="text-xs p-2 font-bold flex gap-1 items-center dark:text-stone-200 text-stone-900">
@@ -212,17 +212,17 @@ const Portfolio = () => {
               initial={false}
               className="ring-1 ring-zinc-400"
               animate={{ backgroundColor: show === 'cha' ? "rgba(0,0,0,.1)" : "transparent", borderRadius: 5, color: show === 'cha' ? "#fafaf9" : "#e7e5e4", opacity: .4 }}
-              onClick={() => setExpanded(show === 'cha' ? false : i)}
+              onClick={() => handleShow(show === 'cha' ? false : i)}
             >
               <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('cha')}>
                 <p className="text-xs p-2 font-bold flex gap-1 items-center dark:text-stone-200 text-stone-900">
-                Desafios
+                  Desafios
                   <p className="text-stone-400 font-thin">
-                    ({dataList?.data?.length})
+                    ({selectedProject?.listArray?.length})
                   </p>
                 </p>
 
-                {show === 'tec' ?
+                {show === 'cha' ?
                   <i class='bx bx-chevrons-up dark:text-white text-zinc-950'></i>
                   :
                   <i class='bx bx-chevrons-down dark:text-white text-zinc-950'></i>

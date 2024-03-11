@@ -22,8 +22,8 @@ const Home = () => {
                     </AnimatedImage>
                     <Data />
 
+                    <ScrollDown />
                 </div>
-                <ScrollDown />
             </div>
         </section>
     )
