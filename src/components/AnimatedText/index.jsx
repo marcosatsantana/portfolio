@@ -42,13 +42,13 @@ export const AnimatedText = ({ children, showBar = true, margin, isInverse = fal
       </motion.div>
       {showBar && <motion.div
         variants={isInverse ? variantsRight : variantsLeft}
+        className="dark:bg-zinc-950 bg-red-5000"
         style={{
           position: "absolute",
           top: 4,
           bottom: 4,
           left: 0,
           right: 0,
-          background: "#FFF",
           zIndex: 20
         }}
         initial="hidden"

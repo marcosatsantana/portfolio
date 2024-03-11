@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Item from "./Item";
 import "./skills.css"
 import { AnimatedText } from "../AnimatedText";
-import { useAnimation, motion, useInView } from "framer-motion";
+import { useAnimation, motion, useInView, useTransform  } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const Skills = () => {
@@ -26,7 +26,7 @@ const Skills = () => {
         {
           "title": t('skills.skills.3.title'),
           "level": t('skills.skills.3.level')
-        }, 
+        },
         {
           "title": t('skills.skills.4.title'),
           "level": t('skills.skills.4.level')
@@ -56,7 +56,67 @@ const Skills = () => {
         {
           "title": t('skills.skills.9.title'),
           "level": t('skills.skills.9.level')
-        }, 
+        },
+        {
+          "title": t('skills.skills.10.title'),
+          "level": t('skills.skills.10.level')
+        },
+        {
+          "title": t('skills.skills.11.title'),
+          "level": t('skills.skills.11.level')
+        },
+        {
+          "title": t('skills.skills.12.title'),
+          "level": t('skills.skills.12.level')
+        },
+      ]
+    },
+    {
+      "id": 3,
+      "title": t('skills.backend'),
+      "data": [
+        {
+          "title": t('skills.skills.7.title'),
+          "level": t('skills.skills.7.level')
+        },
+        {
+          "title": t('skills.skills.8.title'),
+          "level": t('skills.skills.8.level')
+        },
+        {
+          "title": t('skills.skills.9.title'),
+          "level": t('skills.skills.9.level')
+        },
+        {
+          "title": t('skills.skills.10.title'),
+          "level": t('skills.skills.10.level')
+        },
+        {
+          "title": t('skills.skills.11.title'),
+          "level": t('skills.skills.11.level')
+        },
+        {
+          "title": t('skills.skills.12.title'),
+          "level": t('skills.skills.12.level')
+        },
+      ]
+    },
+    {
+      "id": 4,
+      "title": t('skills.backend'),
+      "data": [
+        {
+          "title": t('skills.skills.7.title'),
+          "level": t('skills.skills.7.level')
+        },
+        {
+          "title": t('skills.skills.8.title'),
+          "level": t('skills.skills.8.level')
+        },
+        {
+          "title": t('skills.skills.9.title'),
+          "level": t('skills.skills.9.level')
+        },
         {
           "title": t('skills.skills.10.title'),
           "level": t('skills.skills.10.level')
@@ -100,27 +160,33 @@ const Skills = () => {
   }, [isInView])
 
   return (
-    <section className="skills section" id="skills" >
-      <AnimatedText margin="auto">
-        <h2 className='section__title text-slate-900 dark:text-white'>{t('skills.title')}</h2>
-      </AnimatedText>
-      <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('skills.description')}</span>
-      </AnimatedText>
+    <section className="skills section h-screen flex items-center justify-center" id="skills" >
+      <div className="h-fit w-fit">
+        <AnimatedText margin="auto">
+          <h2 className='section__title text-slate-900 dark:text-white'>{t('skills.title')}</h2>
+        </AnimatedText>
+        <AnimatedText margin="auto" isInverse>
+          <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('skills.description')}</span>
+        </AnimatedText>
 
-      <motion.ul
-        className="skills__container container grid"
-        initial="hidden"
-        ref={ref}
-        variants={container}
-        animate={controls}
-      >
-        {array.map((item, index) => (
-          <motion.li variants={itemVariant} key={item.id} className="item" >
-            <Item data={item} />
-          </motion.li>
-        ))}
-      </motion.ul>
+        <motion.ul
+          className="skills__container container grid"
+          initial="hidden"
+          ref={ref}
+          variants={container}
+          animate={controls}
+        >
+          {array.map((item, index) => (
+            <motion.li transition={{
+              duration: 0.5,
+            }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.8, borderRadius: "100%" }} variants={itemVariant} key={item.id} className="item" >
+              <Item data={item} />
+            </motion.li>
+          ))}
+        </motion.ul>
+      </div>
     </section>
   )
 }

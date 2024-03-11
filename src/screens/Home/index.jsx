@@ -15,6 +15,7 @@ import { useQuery } from "@tanstack/react-query"
 import { api } from "../../services/api"
 import { useTranslation } from "react-i18next"
 import { useEffect } from "react"
+import { motion } from 'framer-motion';
 
 function HomeScreen() {
   const { i18n } = useTranslation();
@@ -50,13 +51,27 @@ function HomeScreen() {
       <Header />
       <main className='main dark:bg-zinc-950 bg-white'>
         <Home />
-        <About />
-        <Skills />
-        <Services />
-        <Qualification />
-        <Testimonials />
-        <Portfolio />
-        <Contact />
+        <div className="h-screen flex-col justify-center items-center">
+          <About />
+        </div>
+        <div className="h-screen flex-col justify-center items-center">
+          <Skills />
+        </div>
+        <div className="h-screen flex-col justify-center items-center">
+          <Services />
+        </div>
+        <div className="h-screen flex-col justify-center items-center">
+          <Qualification />
+        </div>
+        <div className="h-screen flex-col justify-center items-center">
+          <Testimonials />
+        </div>
+        <div className="h-screen flex-col justify-center items-center">
+          <Portfolio />
+        </div>
+        <div className="h-screen flex-col justify-center items-center">
+          <Contact />
+        </div>
       </main>
       <Footer />
       <ScrollUp />

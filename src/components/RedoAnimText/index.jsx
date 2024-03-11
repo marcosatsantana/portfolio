@@ -50,7 +50,7 @@ export default function RedoAnimText() {
   }, []);
 
   return (
-    <div className="h-22 w-full relative ring-1 dark:ring-white ring-zinc-400 rounded-lg hover:ring-2 transition-all">
+    <div className="h-22 w-full relative ring-1 dark:ring-zinc-400 ring-zinc-400 rounded-sm transition-all">
       <div className="w-full dark:bg-zinc-950 bg-stone-200 opacity-30 rounded-t-sm flex justify-between items-center px-2">
         <p className="text-xs text-black dark:text-white">
           aLittleAboutMe.jsx

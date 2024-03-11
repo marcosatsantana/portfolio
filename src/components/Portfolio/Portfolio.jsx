@@ -11,6 +11,7 @@ import { AnimatedText } from "../AnimatedText";
 import { useTranslation } from "react-i18next";
 import Carousel from "./Carousel";
 import { AnimatePresence } from "framer-motion";
+import { format } from "date-fns";
 
 const customStyles = {
   content: {
@@ -114,7 +115,7 @@ const Portfolio = () => {
         className="w-fit max-w-full dark:bg-zinc-950 mx-8 dark:ring-stone-200 ring-1 ring-zinc-950 bg-white dark:text-stone-200 text-zinc-950 mb-8 rounded-sm p-8"
       >
         <div className="btn__close-modal  w-full flex justify-end cursor-pointer">
-          <i className="uil uil-times text-stone-400 transition hover:text-white" onClick={closeModal}></i>
+          <i className="uil uil-times text-stone-400 transition hover:text-white text-lg" onClick={closeModal}></i>
         </div>
         <div className="portfolio__wrapper w-full">
           <div className="pb-8 mx-auto">
@@ -124,14 +125,14 @@ const Portfolio = () => {
           <div>
             {selectedProject.portfolio &&
               <>
-                <div className="flex items-center justify-between my-2">
+                <div className="max-sm:flex-col flex items-start justify-between my-2">
                   <AnimatedText>
                     <p className="text-md font-bold item__title line-clamp-1 dark:text-white text-zinc-950">
                       {selectedProject.portfolio.title}
                     </p>
                   </AnimatedText>
                   <p className="text-xs text-stone-400">
-                    <i className="bx bx-calendar"></i> 02/2024 a 03/2023
+                    <i className="bx bx-calendar"></i> {format(selectedProject.portfolio.created_at, 'dd/MM/yyyy')} a {format(selectedProject.portfolio.updated_at, 'dd/MM/yyyy')}
                   </p>
                 </div>
                 <Text as="p" className={`mb-3 text-sm item__body dark:text-stone-300 text-zinc-800 line-clamp-${show === 'desc' ? 9 : 1}`} >
@@ -159,11 +160,11 @@ const Portfolio = () => {
             <motion.header
               initial={false}
               className="ring-1 ring-zinc-400"
-              animate={{ backgroundColor: show === 'tec' ? "#111827" : "#09090b", borderRadius: 5, color: show === 'tec' ? "#fafaf9" : "#e7e5e4" }}
+              animate={{ backgroundColor: show === 'tec' ? "rgba(0,0,0,.1)" : "transparent", borderRadius: 5, color: show === 'tec' ? "#fafaf9" : "#e7e5e4", opacity: .4 }}
               onClick={() => setExpanded(show === 'tec' ? false : i)}
             >
               <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('tec')}>
-                <p className="text-xs p-2 font-bold flex gap-1 items-center">
+                <p className="text-xs p-2 font-bold flex gap-1 items-center dark:text-stone-200 text-stone-900">
                   Tecnologias
                   <p className="text-stone-400 font-thin">
                     ({dataList?.data?.length})
@@ -171,9 +172,9 @@ const Portfolio = () => {
                 </p>
 
                 {show === 'tec' ?
-                  <i class='bx bx-chevrons-up'></i>
+                  <i class='bx bx-chevrons-up dark:text-white text-zinc-950'></i>
                   :
-                  <i class='bx bx-chevrons-down'></i>
+                  <i class='bx bx-chevrons-down dark:text-white text-zinc-950'></i>
                 }
               </button>
             </motion.header>
@@ -210,21 +211,21 @@ const Portfolio = () => {
             <motion.header
               initial={false}
               className="ring-1 ring-zinc-400"
-              animate={{ backgroundColor: show === 'cha' ? "#111827" : "#09090b", borderRadius: 5, color: show === 'cha' ? "#fafaf9" : "#e7e5e4" }}
+              animate={{ backgroundColor: show === 'cha' ? "rgba(0,0,0,.1)" : "transparent", borderRadius: 5, color: show === 'cha' ? "#fafaf9" : "#e7e5e4", opacity: .4 }}
               onClick={() => setExpanded(show === 'cha' ? false : i)}
             >
               <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('cha')}>
-                <p className="text-xs p-2 font-bold flex gap-1 items-center">
-                  Desafios
+                <p className="text-xs p-2 font-bold flex gap-1 items-center dark:text-stone-200 text-stone-900">
+                Desafios
                   <p className="text-stone-400 font-thin">
-                    ({selectedProject?.listArray?.length})
+                    ({dataList?.data?.length})
                   </p>
                 </p>
 
-                {show === 'cha' ?
-                  <i class='bx bx-chevrons-up'></i>
+                {show === 'tec' ?
+                  <i class='bx bx-chevrons-up dark:text-white text-zinc-950'></i>
                   :
-                  <i class='bx bx-chevrons-down'></i>
+                  <i class='bx bx-chevrons-down dark:text-white text-zinc-950'></i>
                 }
               </button>
             </motion.header>
@@ -250,10 +251,10 @@ const Portfolio = () => {
               }
             </AnimatePresence>
             <div className="flex gap-4 w-full justify-end mt-4">
-              <button onClick={() => setIsOpen(false)} className='text-zinc-400 text-sm'>
+              <button onClick={() => setIsOpen(false)} className='text-zinc-400 text-xs'>
                 Fechar
               </button>
-              <button className='bg-zinc-950 hover:bg-white hover:font-bold hover:ring-zinc-800 hover:text-zinc-950 font-thin text-sm px-4 py-2 rounded-md ring-1 ring-zinc-600 hover:px-8 flex items-center gap-2 justify-center'>
+              <button className='bg-zinc-950 hover:bg-white text-stone-200 hover:font-bold hover:ring-zinc-800 hover:text-zinc-950 font-thin text-xs px-4 py-2 rounded-md ring-1 ring-zinc-600 hover:px-8 flex items-center gap-2 justify-center'>
                 Ver projeto <i class='bx bx-link-alt'></i>
               </button>
             </div>

@@ -40,7 +40,7 @@ const Data = () => {
       <div className="max-h-22 mb-4 rounded-sm dark:bg-zinc-800 bg-slate-50 shadow-xs shadow-white">
         <RedoAnimText />
       </div>
-      <a href='#contact' className='bg-zinc-900 hover:px-12 dark:bg-white dark:text-zinc-950 text-white button button--flex'>{t('home.btn')}
+      <a href='#contact' className='bg-zinc-900 px-8 dark:hover:text-zinc-800 hover:transition-all dark:hover:bg-stone-50 dark:bg-white dark:text-zinc-950 text-white flex rounded-sm items-center justify-between w-fit py-4 font-bold'>{t('home.btn')}
         <svg
           className="button__icon"
           xmlns="http://www.w3.org/2000/svg"

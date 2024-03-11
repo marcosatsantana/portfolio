@@ -76,63 +76,65 @@ const Services = () => {
   }, [isInView])
 
   return (
-    <section className="services section" id="services">
-      <AnimatedText margin="auto">
-        <h2 className="section__title text-zinc-900 dark:text-white">{t('services.title')}</h2>
-      </AnimatedText>
-      <AnimatedText margin="auto" isInverse>
-        <span className="section__subtitle text-slate-500 dark:text-stone-400">
-        {t('services.description')}
-        </span>
-      </AnimatedText>
+    <section className="services h-screen section flex items-center justify-center" id="services">
+      <div className="h-fit w-fit">
+        <AnimatedText margin="auto">
+          <h2 className="section__title text-zinc-900 dark:text-white">{t('services.title')}</h2>
+        </AnimatedText>
+        <AnimatedText margin="auto" isInverse>
+          <span className="section__subtitle text-slate-500 dark:text-stone-400">
+            {t('services.description')}
+          </span>
+        </AnimatedText>
 
 
-      <motion.ul
-        className="services__container container grid"
-        initial="hidden"
-        ref={ref}
-        variants={container}
-        animate={controls}
-      >
-        {servicesData.map((service, index) => (
-          <motion.li variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
-            <div>
-              <i className={`uil ${service.icon} services__icon dark:text-white`}></i>
-              <h3 className="services__title dark:text-white">{service.title}</h3>
-            </div>
-            <span
-              className="services__button dark:text-white"
-              onClick={() => toggleTab(index + 1)}
-            >
-              {t('services.btn')}
-              <i className="uil uil-arrow-right services__button-icon"></i>
-            </span>
-            <div
-              className={
-                toggleState === index + 1 ? "services__modal active-modal" : "services__modal"
-              }
-            >
-              <div className="services__modal-background" onClick={() => toggleTab(0)}></div>
-              <div className="services__modal-content">
-                <i
-                  className="uil uil-times services__modal-close"
-                  onClick={() => toggleTab(0)}
-                ></i>
-                <h3 className="services__modal-title">{service.title}</h3>
-                <p className="services__modal-description">{service.description}</p>
-                <ul className="services__modal-services grid">
-                  {service.services.map((serviceItem, serviceIndex) => (
-                    <li className="services__modal-service" key={serviceIndex}>
-                      <i className="uil uil-check-circle services__modal-icon"></i>
-                      <p className="services__modal-info">{serviceItem}</p>
-                    </li>
-                  ))}
-                </ul>
+        <motion.ul
+          className="services__container container grid"
+          initial="hidden"
+          ref={ref}
+          variants={container}
+          animate={controls}
+        >
+          {servicesData.map((service, index) => (
+            <motion.li variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
+              <div>
+                <i className={`uil ${service.icon} services__icon dark:text-white`}></i>
+                <h3 className="services__title dark:text-white">{service.title}</h3>
               </div>
-            </div>
-          </motion.li>
-        ))}
-      </motion.ul>
+              <span
+                className="services__button dark:text-white"
+                onClick={() => toggleTab(index + 1)}
+              >
+                {t('services.btn')}
+                <i className="uil uil-arrow-right services__button-icon"></i>
+              </span>
+              <div
+                className={
+                  toggleState === index + 1 ? "services__modal active-modal" : "services__modal"
+                }
+              >
+                <div className="services__modal-background" onClick={() => toggleTab(0)}></div>
+                <div className="services__modal-content">
+                  <i
+                    className="uil uil-times services__modal-close"
+                    onClick={() => toggleTab(0)}
+                  ></i>
+                  <h3 className="services__modal-title">{service.title}</h3>
+                  <p className="services__modal-description">{service.description}</p>
+                  <ul className="services__modal-services grid">
+                    {service.services.map((serviceItem, serviceIndex) => (
+                      <li className="services__modal-service" key={serviceIndex}>
+                        <i className="uil uil-check-circle services__modal-icon"></i>
+                        <p className="services__modal-info">{serviceItem}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </div>
     </section>
   );
 }
