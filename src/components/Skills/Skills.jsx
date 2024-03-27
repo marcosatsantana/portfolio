@@ -100,7 +100,7 @@ const Skills = () => {
   }, [isInView])
 
   return (
-    <section className="skills section h-screen" id="skills" >
+    <section className="skills section" id="skills" >
         <AnimatedText margin="auto">
           <h2 className='section__title text-slate-900 dark:text-white'>{t('skills.title')}</h2>
         </AnimatedText>

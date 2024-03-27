@@ -47,7 +47,7 @@ const Testimonials = () => {
       >
         {Data.map((item, index) => {
           return (
-            <SwiperSlide className="testimonial__card dark:bg-zinc-900 bg-white" key={item.id} style={{ zIndex: 1 }}>
+            <SwiperSlide className="testimonial__card rounded-sm  dark:bg-zinc-900 bg-white" key={item.id} style={{ zIndex: 1 }}>
               <img src={item.image} alt="" className="testimonial__img" />
               <h3 className="testimonial__name dark:text-white">{item.title}</h3>
               <p className={`testimonial__description dark:text-stone-400 line-clamp-${numberOfLines === index ? 10 : 2}`}>{item.description}</p>

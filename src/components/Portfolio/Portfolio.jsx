@@ -282,7 +282,7 @@ const Portfolio = () => {
           {
             buttonCaptions.map((filter) => (
               <Button key={filter} onClick={() => handleFilterClick(filter)} type="button"
-                className={`focus:outline-none border-2 border-gray-400 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 capitalize
+                className={`focus:outline-none border-2 border-gray-400 font-medium rounded-xs text-sm px-5 py-2.5 mb-2 capitalize
                 ${activeFilter === filter ? "bg-zinc-950 dark:bg-zinc-900 text-white" : "dark:text-stone-400 text-zinc-600"}
                 `}
               >

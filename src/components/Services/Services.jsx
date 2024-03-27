@@ -81,7 +81,7 @@ const Services = () => {
         <h2 className="section__title text-zinc-900 dark:text-white">{t('services.title')}</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className="section__subtitle text-slate-500 dark:text-stone-400">
+        <span className="section__subtitle mb-4 text-slate-500 dark:text-stone-400">
           {t('services.description')}
         </span>
       </AnimatedText>
@@ -95,7 +95,8 @@ const Services = () => {
         animate={controls}
       >
         {servicesData.map((service, index) => (
-          <motion.li variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
+          <motion.li whileHover={{ translateY: -20 }}
+          whileTap={{ translateY: 0.8, borderRadius: "100%" }} variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
             <div>
               <i className={`uil ${service.icon} services__icon dark:text-white`}></i>
               <h3 className="services__title dark:text-white">{service.title}</h3>
