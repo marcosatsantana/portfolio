@@ -96,7 +96,7 @@ const Services = () => {
       >
         {servicesData.map((service, index) => (
           <motion.li whileHover={{ translateY: -20 }}
-          whileTap={{ translateY: 0.8, borderRadius: "100%" }} variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
+          whileTap={{ translateY: 0.8 }} variants={itemVariant} key={index} className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
             <div>
               <i className={`uil ${service.icon} services__icon dark:text-white`}></i>
               <h3 className="services__title dark:text-white">{service.title}</h3>
