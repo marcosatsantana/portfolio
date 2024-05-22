@@ -13,7 +13,7 @@ export default function Carousel({ imagesArray }) {
     slidesToScroll: 1
   };
   return (
-    <div className="max-w-96">
+    <div className="max-w-96 mx-auto">
       <Slider {...settings} >
         {imagesArray.map((image_url) => {
           return (
