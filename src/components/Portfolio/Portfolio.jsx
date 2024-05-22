@@ -113,7 +113,7 @@ const Portfolio = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Portfolio"
-        className="mx-auto p-100  ring-1 ring-zinc-400 rounded-sm"
+        className="mx-auto p-100  ring-1 ring-zinc-400 rounded-sm mt-[5%]"
       >
         <AnimatePresence>
           <motion.div
