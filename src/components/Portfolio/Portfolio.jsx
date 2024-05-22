@@ -13,7 +13,7 @@ import Carousel from "./Carousel";
 import { AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 
-const customStyles = {
+const customStyles2 = {
   content: {
     zIndex: 9,
     transition: 'background-color 0.3s ease-in-out',
@@ -35,6 +35,28 @@ const customStyles = {
     boxSizing: 'border-box',
   },
 };
+
+const customStyles = {
+  content: {
+    zIndex: 9,
+    overflow: 'hidden',
+    padding: '20px',
+    transition: 'background-color 0.3s ease-in-out', // Add transition for smooth color change
+  },
+  overlay: {
+    position: 'fixed',
+    display: 'flex',
+    alignItems: 'center',
+    padding: 8,
+    justifyContent: 'center',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 14,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+};
+
 
 
 const Portfolio = () => {
@@ -122,14 +144,14 @@ const Portfolio = () => {
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm ring-1 ring-zinc-400"
+            className="p-4 dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm ring-1 ring-zinc-400"
             transition={{
               duration: ".5",
               ease: "easeIn"
             }}
           >
             <div className="portfolio__wrapper">
-              <div className="my-4 mb-8">
+              <div className="pb-8 mx-auto">
                 <Carousel imagesArray={selectedProject.imagesArray} />
               </div>
 
