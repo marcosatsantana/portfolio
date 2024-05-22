@@ -16,21 +16,26 @@ import { format } from "date-fns";
 const customStyles = {
   content: {
     zIndex: 9,
-    transition: 'background-color 0.3s ease-in-out', // Add transition for smooth color change
+    transition: 'background-color 0.3s ease-in-out',
+    margin: 'auto',
+    padding: '20px',
+    overflow: 'auto',
   },
   overlay: {
     position: 'fixed',
     display: 'flex',
     alignItems: 'center',
-    padding: 8,
     justifyContent: 'center',
     top: 0,
     left: 0,
     right: 0,
-    bottom: 14,
+    bottom: 0,
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    padding: '0 10px',
+    boxSizing: 'border-box',
   },
 };
+
 
 
 
@@ -113,7 +118,7 @@ const Portfolio = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Portfolio"
-        className="max-w-min max-h-min mx-8 my-auto mt-18"
+        className="mx-auto"
       >
         <AnimatePresence>
           <motion.div
@@ -125,10 +130,8 @@ const Portfolio = () => {
               ease: "easeIn"
             }}
           >
-            <div className="portfolio__wrapper w-full">
-              <div className="pb-8 mx-auto">
-                <Carousel imagesArray={selectedProject.imagesArray} />
-              </div>
+            <div className="portfolio__wrapper">
+              <Carousel imagesArray={selectedProject.imagesArray} />
 
               <div>
                 {selectedProject.portfolio &&

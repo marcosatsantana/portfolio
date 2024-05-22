@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 
 export default function Carousel({ imagesArray }) {
-  console.log(imagesArray);
   var settings = {
     dots: true,
     infinite: true,
@@ -13,7 +12,7 @@ export default function Carousel({ imagesArray }) {
     slidesToScroll: 1,
   };
   return (
-    <div className="mx-auto max-w-96 ">
+    <div className="">
       <Slider {...settings} >
         {imagesArray.map((image_url) => {
           return (
