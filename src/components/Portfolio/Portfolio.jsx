@@ -37,8 +37,6 @@ const customStyles = {
 };
 
 
-
-
 const Portfolio = () => {
 
   const { t } = useTranslation();
@@ -124,14 +122,16 @@ const Portfolio = () => {
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm p-8 ring-1 ring-zinc-400"
+            className="dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm ring-1 ring-zinc-400"
             transition={{
               duration: ".5",
               ease: "easeIn"
             }}
           >
             <div className="portfolio__wrapper">
-              <Carousel imagesArray={selectedProject.imagesArray} />
+              <div className="my-4 mb-8">
+                <Carousel imagesArray={selectedProject.imagesArray} />
+              </div>
 
               <div>
                 {selectedProject.portfolio &&
