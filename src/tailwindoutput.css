@@ -604,11 +604,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -619,10 +614,6 @@ video {
 
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
 }
 
 .mt-16 {
@@ -700,15 +691,11 @@ video {
   width: 100%;
 }
 
-.max-w-sm {
+.max-w-96 {
   max-width: 24rem;
 }
 
-.max-w-full {
-  max-width: 100%;
-}
-
-.max-w-96 {
+.max-w-sm {
   max-width: 24rem;
 }
 

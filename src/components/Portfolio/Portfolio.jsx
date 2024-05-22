@@ -13,34 +13,10 @@ import Carousel from "./Carousel";
 import { AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 
-const customStyles2 = {
-  content: {
-    zIndex: 9,
-    transition: 'background-color 0.3s ease-in-out',
-    margin: 'auto',
-    padding: '20px',
-    overflow: 'auto',
-  },
-  overlay: {
-    position: 'fixed',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    padding: '0 10px',
-    boxSizing: 'border-box',
-  },
-};
-
 const customStyles = {
   content: {
     zIndex: 9,
     overflow: 'hidden',
-    padding: '20px',
     transition: 'background-color 0.3s ease-in-out', // Add transition for smooth color change
   },
   overlay: {
@@ -56,7 +32,6 @@ const customStyles = {
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
 };
-
 
 
 const Portfolio = () => {
@@ -138,13 +113,13 @@ const Portfolio = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Portfolio"
-        className="mx-auto"
+        className="mx-auto p-100  ring-1 ring-zinc-400 rounded-sm"
       >
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-4 dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm ring-1 ring-zinc-400"
+            className="p-4 dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm"
             transition={{
               duration: ".5",
               ease: "easeIn"
