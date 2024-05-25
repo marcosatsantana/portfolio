@@ -34,8 +34,8 @@ const Contact = () => {
             <div className="contact__card rounded-sm dark:bg-zinc-900 bg-white">
               <i className="bx bx-mail-send contact__card-icon dark:text-white"></i>
               <h3 className="contact__card-title dark:text-stone-400">Email</h3>
-              <span className="contact__card-data dark:text-white">contato@mkdesigners.com.br</span>
-              <a href="mailto:contato@mkdesigners.com.br" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon dark:text-stone-400"></i></a>
+              <span className="contact__card-data dark:text-white">marcost.santana@hotmail.com</span>
+              <a href="mailto:marcost.santana@hotmail.com" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon dark:text-stone-400"></i></a>
             </div>
 
             <div className="contact__card rounded-sm dark:bg-zinc-900 bg-white">
