@@ -140,7 +140,7 @@ const Portfolio = () => {
                         </p>
                       </AnimatedText>
                       <p className="text-xs text-stone-400">
-                        <i className="bx bx-calendar"></i> {format(selectedProject.portfolio.created_at, 'dd/MM/yyyy')} a {format(selectedProject.portfolio.updated_at, 'dd/MM/yyyy')}
+                        <i className="bx bx-calendar"></i> {format(selectedProject.portfolio.time_start, 'dd/MM/yyyy')} a {format(selectedProject.portfolio.time_end, 'dd/MM/yyyy')}
                       </p>
                     </div>
                     <Text as="p" className={`mb-3 text-sm item__body dark:text-stone-300 text-zinc-800 line-clamp-${show === 'desc' ? 9 : 1}`} >

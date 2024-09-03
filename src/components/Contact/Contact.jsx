@@ -66,17 +66,17 @@ const Contact = () => {
               <div>
                 <div className="contact__form-div">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.name.label')}</label>
-                  <input type="text" name='name' className='contact__form-input rounded-sm dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.name.placeholder')} />
+                  <input type="text" name='name' className='contact__form-input rounded-lg dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.name.placeholder')} />
                 </div>
 
                 <div className="contact__form-div">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.email.label')}</label>
-                  <input type="email" name='email' className='contact__form-input rounded-sm dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.email.placeholder')} />
+                  <input type="email" name='email' className='contact__form-input rounded-lg dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.email.placeholder')} />
                 </div>
 
                 <div className="contact__form-div contact__form-area">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.message.label')}</label>
-                  <textarea name="project" cols="30" rows="10" className='contact__form-input rounded-sm dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.message.placeholder')}></textarea>
+                  <textarea name="project" cols="30" rows="10" className='contact__form-input rounded-lg dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.message.placeholder')}></textarea>
                 </div>
                 <button href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white flex px-8 rounded-sm font-bold py-4 hover:px-12'>{t('contact.send')}
                   <svg

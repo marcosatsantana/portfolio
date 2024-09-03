@@ -91,7 +91,7 @@ const Services = () => {
         className="services__container container grid"
       >
         {servicesData.map((service, index) => (
-          <div className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
+          <div  className=" services__content dark:bg-zinc-900 hover:ring-white hover:ring-1 hover:transition" >
             <div>
               <i className={`uil ${service.icon} services__icon dark:text-white`}></i>
               <h3 className="services__title dark:text-white">{service.title}</h3>
