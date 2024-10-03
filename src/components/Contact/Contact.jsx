@@ -34,8 +34,8 @@ const Contact = () => {
             <div className="contact__card rounded-sm dark:bg-zinc-900 bg-white">
               <i className="bx bx-mail-send contact__card-icon dark:text-white"></i>
               <h3 className="contact__card-title dark:text-stone-400">Email</h3>
-              <span className="contact__card-data dark:text-white">contato@mkdesigners.com.br</span>
-              <a href="mailto:contato@mkdesigners.com.br" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon dark:text-stone-400"></i></a>
+              <span className="contact__card-data dark:text-white">marcost.santana@hotmail.com</span>
+              <a href="mailto:marcost.santana@hotmail.com" className="contact__button dark:text-stone-400">{t('contact.btn')} <i className="bx bx-right-arrow-alt contact__button-icon dark:text-stone-400"></i></a>
             </div>
 
             <div className="contact__card rounded-sm dark:bg-zinc-900 bg-white">
@@ -66,17 +66,17 @@ const Contact = () => {
               <div>
                 <div className="contact__form-div">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.name.label')}</label>
-                  <input type="text" name='name' className='contact__form-input rounded-sm dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.name.placeholder')} />
+                  <input type="text" name='name' className='contact__form-input rounded-lg dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.name.placeholder')} />
                 </div>
 
                 <div className="contact__form-div">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.email.label')}</label>
-                  <input type="email" name='email' className='contact__form-input rounded-sm dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.email.placeholder')} />
+                  <input type="email" name='email' className='contact__form-input rounded-lg dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.email.placeholder')} />
                 </div>
 
                 <div className="contact__form-div contact__form-area">
                   <label className="bg-white dark:bg-zinc-950 contact__form-tag dark:text-stone-200">{t('contact.message.label')}</label>
-                  <textarea name="project" cols="30" rows="10" className='contact__form-input rounded-sm dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.message.placeholder')}></textarea>
+                  <textarea name="project" cols="30" rows="10" className='contact__form-input rounded-lg dark:border-zinc-50 placeholder:text-stone-200 hover:placeholder:text-stone-400 border-zinc-700 border-2' placeholder={t('contact.message.placeholder')}></textarea>
                 </div>
                 <button href='#contact' className='bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white flex px-8 rounded-sm font-bold py-4 hover:px-12'>{t('contact.send')}
                   <svg
