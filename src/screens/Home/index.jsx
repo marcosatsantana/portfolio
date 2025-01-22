@@ -19,10 +19,6 @@ import { motion } from 'framer-motion';
 
 function HomeScreen() {
   const { i18n } = useTranslation();
-  const { isLoading } = useQuery({
-    queryKey: ['portfoliolist'],
-    queryFn: () => api.get(`/portfolio/`),
-  })
 
   useEffect(() => {
     // Função para identificar o idioma padrão do dispositivo
@@ -34,18 +30,7 @@ function HomeScreen() {
     identifyDefaultLanguage(); // Chamada inicial para definir o idioma padrão
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="h-screen bg-zinc-950 flex items-center justify-center">
-        <Player
-          src={animation}
-          className="w-98 h-98"
-          loop
-          autoplay
-        />
-      </div>
-    )
-  }
+
   return (
     <>
       <Header />

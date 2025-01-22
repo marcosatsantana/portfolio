@@ -1,23 +1,24 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { Text } from "./Text";
 import { Image } from "./Image";
-import "./portfolio.css"
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { api } from "../../services/api";
+import "./portfolio.css";
 import Modal from 'react-modal';
-import { useAnimation, motion, useInView, useSpring } from "framer-motion";
+import { useAnimation, motion, useInView } from "framer-motion";
 import { AnimatedText } from "../AnimatedText";
-import { useTranslation } from "react-i18next";
 import Carousel from "./Carousel";
 import { AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
+import Ferramenta01 from '../../assets/ferramentaria/01.png';
+import Ferramenta02 from '../../assets/ferramentaria/02.png';
+import Ferramenta03 from '../../assets/ferramentaria/03.png';
+import Ferramenta04 from '../../assets/ferramentaria/04.png';
 
 const customStyles = {
   content: {
     zIndex: 9,
     overflow: 'hidden',
-    transition: 'background-color 0.3s ease-in-out', // Add transition for smooth color change
+    transition: 'background-color 0.3s ease-in-out',
   },
   overlay: {
     position: 'fixed',
@@ -33,77 +34,42 @@ const customStyles = {
   },
 };
 
-
 const Portfolio = () => {
-
-  const { t } = useTranslation();
-  const [show, setShow] = useState('false')
+  const [show, setShow] = useState('false');
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const queryClient = useQueryClient()
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
 
+  const projects = [
+    {
+      portfolio: {
+        id: 1,
+        title: "Projeto A",
+        description: `Desenvolvi um projeto utilizando ReactJS no front-end e Node.js no back-end, com ferramentas como TailwindCSS para estilização, React Query para gerenciamento de dados assíncronos, Puppeteer para automação de tarefas, Date-fns para manipulação de datas e Shadcn UI para criação de interfaces modernas. O projeto oferece uma interface responsiva, alta performance e integração eficiente entre front-end e back-end, refletindo boas práticas de desenvolvimento e design.`,
+        time_start: new Date(2023, 0, 1),
+        time_end: new Date(2023, 11, 31),
+      },
+      imagesArray: [{ url: Ferramenta01 }, { url: Ferramenta02 }, { url: Ferramenta03 }, { url: Ferramenta04 }],
+      listArray: [{ content: "Desafio A" }],
+    },
+  ];
+
   function openModal(project) {
     setSelectedProject(project);
-    queryClient.invalidateQueries()
     setIsOpen(true);
-  }
-  function handleShow(item) {
-    if (show === item) {
-      return setShow('')
-    }
-    setShow(item)
   }
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  const { data } = useQuery({
-    queryKey: ['portfolio'],
-    queryFn: () => api.get('/portfolio'),
-  })
-
-  const { data: dataList } = useQuery({
-    queryKey: ['portfolio_list', selectedProject],
-    queryFn: () => selectedProject.portfolio.id && api.get(`/portfolio/${selectedProject.portfolio.id ?? 1}`),
-  })
-
-  const [activeFilter, setActiveFilter] = useState('all')
-
-  const buttonCaptions = ['all', 'UI/UX', 'Frontend', 'Backend'];
-
-  const handleFilterClick = (filter) => {
-    setActiveFilter(filter)
-  }
-
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariant = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1
-    },
-    transition: { type: "spring", stiffness: 900, damping: 40 }
-  };
   useEffect(() => {
     if (isInView) {
       controls.start("visible");
     }
-  }, [isInView])
+  }, [isInView]);
 
   return (
     <section className="portfolio section" id="portfolio" ref={ref}>
@@ -113,7 +79,7 @@ const Portfolio = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Portfolio"
-        className="mx-auto p-100  ring-1 ring-zinc-400 rounded-sm mt-[5%]"
+        className="mx-auto p-100 ring-1 ring-zinc-400 rounded-sm mt-[5%]"
       >
         <AnimatePresence>
           <motion.div
@@ -122,7 +88,7 @@ const Portfolio = () => {
             className="p-4 dark:bg-zinc-950 dark:ring-stone-200 bg-white dark:text-stone-200 text-zinc-950 rounded-sm"
             transition={{
               duration: ".5",
-              ease: "easeIn"
+              ease: "easeIn",
             }}
           >
             <div className="portfolio__wrapper">
@@ -131,7 +97,7 @@ const Portfolio = () => {
               </div>
 
               <div>
-                {selectedProject.portfolio &&
+                {selectedProject.portfolio && (
                   <>
                     <div className="max-sm:flex-col flex items-start justify-between my-2">
                       <AnimatedText>
@@ -144,179 +110,63 @@ const Portfolio = () => {
                       </p>
                     </div>
                     <Text as="p" className={`mb-3 text-sm item__body dark:text-stone-300 text-zinc-800 line-clamp-${show === 'desc' ? 9 : 1}`} >
-                      <a onClick={() => handleShow('desc')}>
+                      <a onClick={() => setShow(show === 'desc' ? '' : 'desc')}>
                         {selectedProject.portfolio.description}
                       </a>
                     </Text>
-                    <div className="w-full flex justify-end items-center">
-                      <button href="" onClick={() => handleShow('desc')} className="text-xs text-stone-700 pb-2 rounded-sm font-thin">
-                        {show === 'desc' ?
-                          <p>
-                            <i class='text-sm bx bx-chevrons-up'></i>
-                            Menos
-                          </p>
-                          :
-                          <p>
-                            <i className='text-sm bx bx-chevrons-down'></i>
-                            Mais
-                          </p>
-                        }
-                      </button>
-                    </div>
                   </>
-                }
-                <motion.header
-                  initial={false}
-                  className="ring-1 ring-zinc-400"
-                  animate={{ backgroundColor: show === 'tec' ? "rgba(0,0,0,.1)" : "transparent", borderRadius: 5, color: show === 'tec' ? "#fafaf9" : "#e7e5e4", opacity: .4 }}
-                  onClick={() => handleShow(show === 'tec' ? false : i)}
-                >
-                  <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('tec')}>
-                    <p className="text-xs p-2 font-bold flex gap-1 items-center dark:text-stone-200 text-stone-900">
-                      Tecnologias
-                      <p className="text-stone-400 font-thin">
-                        ({dataList?.data?.length})
-                      </p>
-                    </p>
-
-                    {show === 'tec' ?
-                      <i class='bx bx-chevrons-up dark:text-white text-zinc-950'></i>
-                      :
-                      <i class='bx bx-chevrons-down dark:text-white text-zinc-950'></i>
-                    }
-                  </button>
-                </motion.header>
-
-                <AnimatePresence initial={false}>
-                  {show === 'tec' &&
-                    <motion.section
-                      key="content"
-                      initial="collapsed"
-                      animate="open"
-                      exit="collapsed"
-                      variants={{
-                        open: { opacity: 1, height: "auto" },
-                        collapsed: { opacity: 0, height: 0 }
-                      }}
-                      transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                    >
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, padding: 8 }}>
-
-                        {dataList?.data.map((item) => {
-                          return (
-                            <div className="flex bg-gradient-to-r from-cyan-500 to-blue-500 p-1 rounded-md">
-
-                              <span key={item} className="bg-gray-100 text-gray-800 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-zinc-900 dark:ring-stone-600 ring-zinc-950 ring-1 dark:text-gray-300">
-                                {item.content}
-                              </span>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    </motion.section>
-                  }
-                </AnimatePresence>
-                <motion.header
-                  initial={false}
-                  className="ring-1 ring-zinc-400"
-                  animate={{ backgroundColor: show === 'cha' ? "rgba(0,0,0,.1)" : "transparent", borderRadius: 5, color: show === 'cha' ? "#fafaf9" : "#e7e5e4", opacity: .4 }}
-                  onClick={() => handleShow(show === 'cha' ? false : i)}
-                >
-                  <button className="flex w-full justify-between items-center my-2 rounded-md px-2 cursor-pointer transition" onClick={() => handleShow('cha')}>
-                    <p className="text-xs p-2 font-bold flex gap-1 items-center dark:text-stone-200 text-stone-900">
-                      Desafios
-                      <p className="text-stone-400 font-thin">
-                        ({selectedProject?.listArray?.length})
-                      </p>
-                    </p>
-
-                    {show === 'cha' ?
-                      <i class='bx bx-chevrons-up dark:text-white text-zinc-950'></i>
-                      :
-                      <i class='bx bx-chevrons-down dark:text-white text-zinc-950'></i>
-                    }
-                  </button>
-                </motion.header>
-                <AnimatePresence initial={false}>
-                  {show === 'cha' &&
-                    <motion.section
-                      key="content"
-                      initial="collapsed"
-                      animate="open"
-                      exit="collapsed"
-                      variants={{
-                        open: { opacity: 1, height: "auto" },
-                        collapsed: { opacity: 0, height: 0 }
-                      }}
-                      transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                    >
-                      <ul style={{ padding: 8 }}>
-                        {
-                          selectedProject.listArray && selectedProject.listArray.map((project) => <li className="text-xs font-thin text-stone-400">{project.content}</li>)
-                        }
-                      </ul>
-                    </motion.section>
-                  }
-                </AnimatePresence>
-                <div className="flex gap-4 w-full justify-end mt-4">
-                  <button onClick={() => setIsOpen(false)} className='text-zinc-400 text-xs'>
-                    Fechar
-                  </button>
-                  <button className='bg-zinc-950 hover:bg-white text-stone-200 hover:font-bold hover:ring-zinc-800 hover:text-zinc-950 font-thin text-xs px-4 py-2 rounded-md ring-1 ring-zinc-600 hover:px-8 flex items-center gap-2 justify-center'>
-                    Ver projeto <i class='bx bx-link-alt'></i>
-                  </button>
-                </div>
+                )}
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
       </Modal >
-      <AnimatedText margin="auto" >
-        <h2 className='section__title text-slate-900 dark:text-white'>{t('portfolio.title')}</h2>
+
+      <AnimatedText margin="auto">
+        <h2 className='section__title text-slate-900 dark:text-white'>Portfólio</h2>
       </AnimatedText>
       <AnimatedText margin="auto" isInverse>
-        <span className='section__subtitle text-slate-500 dark:text-stone-400'>{t('portfolio.description')}</span>
+        <span className='section__subtitle text-slate-500 dark:text-stone-400'>Alguns de meus projetos</span>
       </AnimatedText>
+
       <div className="portfolio__container container">
-        <div className="portfolio__options mt-8">
-          {
-            buttonCaptions.map((filter) => (
-              <Button key={filter} onClick={() => handleFilterClick(filter)} type="button"
-                className={`focus:outline-none border-2 border-gray-400 font-medium rounded-xs text-sm px-5 py-2.5 mb-2 capitalize
-                ${activeFilter === filter ? "bg-zinc-950 dark:bg-zinc-900 text-white" : "dark:text-stone-400 text-zinc-600"}
-                `}
-              >
-                {filter === 'all' ? t('portfolio.all') : filter}
-              </Button>
-            ))
-          }
-        </div>
         <motion.ul
           className="portfolio__content"
           initial="hidden"
-          variants={container}
           animate={controls}
         >
-          {
-            data && data.data.map((item, index) => (
-              <motion.li variants={itemVariant} transition={{ delay: index / 2 }} onClick={() => openModal(item)} key={index} className={`w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200 ${activeFilter === 'all' || activeFilter === item.portfolio.category ? 'block' : "hidden"}`} >
-                <Image className="rounded-t-lg w-full h-[100px] overflow-hidden" image={item.imagesArray[0].url} alt={item.name} objectCover="object-cover" />
-                <div className="p-5">
-                  <Text as="h5" className="mb-2 text-md font-bold item__title line-clamp-1 text-slate-900 dark:text-white">
-                    {item.portfolio.title}
-                  </Text>
-                  <Text as="p" className="mb-3 text-sm line-clamp-2 item__body text-slate-500 dark:text-stone-400" >
-                    {item.portfolio.description}
-                  </Text>
-                </div>
-              </motion.li>
-            ))
-          }
+          {projects.map((item, index) => (
+            <motion.li
+              key={index}
+              className="w-full cursor-pointer transition-all duration-200 rounded-lg shadow dark:bg-zinc-900 bg-white border border-gray-200"
+              onClick={() => openModal(item)}
+            >
+              <Image
+                className="rounded-t-lg w-full h-[100px] overflow-hidden"
+                image={item.imagesArray[0].url}
+                alt={item.portfolio.title}
+                objectCover="object-cover"
+              />
+              <div className="p-5">
+                <Text
+                  as="h5"
+                  className="mb-2 text-md font-bold item__title line-clamp-1 text-slate-900 dark:text-white"
+                >
+                  {item.portfolio.title}
+                </Text>
+                <Text
+                  as="p"
+                  className="mb-3 text-sm line-clamp-2 item__body text-slate-500 dark:text-stone-400"
+                >
+                  {item.portfolio.description}
+                </Text>
+              </div>
+            </motion.li>
+          ))}
         </motion.ul>
-
       </div>
-    </section >
-  )
-}
+    </section>
+  );
+};
 
-export default Portfolio
+export default Portfolio;

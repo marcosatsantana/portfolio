@@ -13,11 +13,11 @@ export default function Carousel({ imagesArray }) {
     slidesToScroll: 1
   };
   return (
-    <div className="max-w-96 mx-auto">
+    <div className=" mx-auto">
       <Slider {...settings} >
         {imagesArray.map((image_url) => {
           return (
-            <img className="rounded-md w-24" alt="a" src={image_url.url} objectCover="object-cover" />
+            <img className="rounded-md p-2" alt="a" src={image_url.url} objectCover="object-cover" />
           )
         })}
       </Slider>
