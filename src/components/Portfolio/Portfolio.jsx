@@ -13,6 +13,8 @@ import Ferramenta01 from '../../assets/ferramentaria/01.png';
 import Ferramenta02 from '../../assets/ferramentaria/02.png';
 import Ferramenta03 from '../../assets/ferramentaria/03.png';
 import Ferramenta04 from '../../assets/ferramentaria/04.png';
+import Chamados01 from '../../assets/chamados/dashboard1.png';
+import Chamados02 from '../../assets/chamados/dashboard2.png';
 
 const customStyles = {
   content: {
@@ -46,14 +48,25 @@ const Portfolio = () => {
     {
       portfolio: {
         id: 1,
-        title: "Projeto A",
+        title: "Chamados Carpal",
         description: `Desenvolvi um projeto utilizando ReactJS no front-end e Node.js no back-end, com ferramentas como TailwindCSS para estilização, React Query para gerenciamento de dados assíncronos, Puppeteer para automação de tarefas, Date-fns para manipulação de datas e Shadcn UI para criação de interfaces modernas. O projeto oferece uma interface responsiva, alta performance e integração eficiente entre front-end e back-end, refletindo boas práticas de desenvolvimento e design.`,
         time_start: new Date(2023, 0, 1),
         time_end: new Date(2023, 11, 31),
       },
       imagesArray: [{ url: Ferramenta01 }, { url: Ferramenta02 }, { url: Ferramenta03 }, { url: Ferramenta04 }],
-      listArray: [{ content: "Desafio A" }],
+      listArray: [{ content: "Chamados Carpal" }],
     },
+    {
+      portfolio: {
+        id: 1,
+        title: "Dashboard Chamados",
+        description: `Desenvolvi um dashboard de desempenho para que seja monitorada a porcentagem de chamados por atendente e o tempo de atendimento.`,
+        time_start: new Date(2024, 12, 1),
+        time_end: new Date(2024, 12, 20),
+      },
+      imagesArray: [{ url: Chamados01 }, { url: Chamados02 }],
+      listArray: [{ content: "Dashboard Chamados" }],
+    }
   ];
 
   function openModal(project) {
