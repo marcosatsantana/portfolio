@@ -15,6 +15,7 @@ import Ferramenta03 from '../../assets/ferramentaria/03.png';
 import Ferramenta04 from '../../assets/ferramentaria/04.png';
 import Chamados01 from '../../assets/chamados/dashboard1.png';
 import Chamados02 from '../../assets/chamados/dashboard2.png';
+import Chamados03 from '../../assets/chamados/dashboard3.png';
 
 const customStyles = {
   content: {
@@ -48,7 +49,7 @@ const Portfolio = () => {
     {
       portfolio: {
         id: 1,
-        title: "Chamados Carpal",
+        title: "Ferramentaria Carpal",
         description: `Desenvolvi um projeto utilizando ReactJS no front-end e Node.js no back-end, com ferramentas como TailwindCSS para estilização, React Query para gerenciamento de dados assíncronos, Puppeteer para automação de tarefas, Date-fns para manipulação de datas e Shadcn UI para criação de interfaces modernas. O projeto oferece uma interface responsiva, alta performance e integração eficiente entre front-end e back-end, refletindo boas práticas de desenvolvimento e design.`,
         time_start: new Date(2023, 0, 1),
         time_end: new Date(2023, 11, 31),
@@ -64,7 +65,7 @@ const Portfolio = () => {
         time_start: new Date(2024, 12, 1),
         time_end: new Date(2024, 12, 20),
       },
-      imagesArray: [{ url: Chamados01 }, { url: Chamados02 }],
+      imagesArray: [{ url: Chamados01 }, { url: Chamados02 }, { url: Chamados03 }],
       listArray: [{ content: "Dashboard Chamados" }],
     }
   ];
