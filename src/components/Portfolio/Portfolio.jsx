@@ -54,7 +54,7 @@ const Portfolio = () => {
               return (
                 <motion.div
                   key={index}
-                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
+                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex items-center gap-8 mb-12`}
                 >
                   <div className="portfolio__media w-1/2">
                     <video
@@ -97,7 +97,7 @@ const Portfolio = () => {
               return (
                 <motion.div
                   key={index}
-                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
+                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex items-center gap-8 mb-12`}
                 >
                   <div className="portfolio__info w-1/2 p-5">
                     <Text
