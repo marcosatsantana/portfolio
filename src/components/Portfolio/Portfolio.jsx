@@ -54,7 +54,7 @@ const Portfolio = () => {
               return (
                 <motion.div
                   key={index}
-                  className={`portfolio__item bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
+                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
                 >
                   <div className="portfolio__media w-1/2">
                     <video
@@ -83,7 +83,7 @@ const Portfolio = () => {
                       {item.portfolio.skills.map((skill, i) => (
                         <div
                           key={i}
-                          className="bg-zinc-950 p-3 rounded-full text-sm font-medium"
+                          className="dark:bg-zinc-950 bg-zinc-200 px-2 py-1 rounded-full text-sm font-medium"
                         >
                           {skill}
                         </div>
@@ -97,7 +97,7 @@ const Portfolio = () => {
               return (
                 <motion.div
                   key={index}
-                  className={`portfolio__item bg-zinc-900 border rounded-md flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
+                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
                 >
                   <div className="portfolio__info w-1/2 p-5">
                     <Text
@@ -116,7 +116,7 @@ const Portfolio = () => {
                       {item.portfolio.skills.map((skill, i) => (
                         <div
                           key={i}
-                          className="bg-zinc-700 m-3 rounded-full text-sm font-medium"
+                          className="dark:bg-zinc-950 bg-zinc-200 px-2 py-1 rounded-full text-sm font-medium"
                         >
                           {skill}
                         </div>
