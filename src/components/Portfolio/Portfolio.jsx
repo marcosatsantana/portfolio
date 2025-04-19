@@ -10,6 +10,18 @@ const Portfolio = () => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const videoRefs = useRef([]);
+
+  const handleFullScreen = (index) => {
+    const video = videoRefs.current[index];
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen(); // Safari
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen(); // IE11
+    }
+  };
 
   const projects = [
     {
@@ -50,92 +62,50 @@ const Portfolio = () => {
       <div className="portfolio__container container">
         <motion.div className="portfolio__content" initial="hidden" animate={controls}>
           {projects.map((item, index) => {
-            if (index % 2 === 0) {
-              return (
-                <motion.div
-                  key={index}
-                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex items-center gap-8 mb-12`}
-                >
-                  <div className="portfolio__media w-1/2">
-                    <video
-                      className="rounded-lg w-full h-auto max-h-[300px] object-cover"
-                      src={item.videoUrl}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
+            return (
+              <motion.div
+                key={index}
+                className={`portfolio__item bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
+              >
+                <div className="portfolio__media w-1/2">
+                  <video
+                    ref={(el) => (videoRefs.current[index] = el)}
+                    onClick={() => handleFullScreen(index)}
+                    className="cursor-pointer rounded-lg w-full h-auto max-h-[300px] object-cover"
+                    src={item.videoUrl}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
+                <div className="portfolio__info w-1/2 p-5">
+                  <Text
+                    as="h5"
+                    className="mb-2 text-2xl font-bold item__title text-slate-900 dark:text-white"
+                  >
+                    {item.portfolio.title}
+                  </Text>
+                  <Text
+                    as="p"
+                    className="text-lg item__body text-slate-500 dark:text-stone-400"
+                  >
+                    {item.portfolio.description}
+                  </Text>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {item.portfolio.skills.map((skill, i) => (
+                      <div
+                        key={i}
+                        className="bg-zinc-950 p-3 rounded-full text-sm font-medium"
+                      >
+                        {skill}
+                      </div>
+                    ))}
                   </div>
-                  <div className="portfolio__info w-1/2 p-5">
-                    <Text
-                      as="h5"
-                      className="mb-2 text-2xl font-bold item__title text-slate-900 dark:text-white"
-                    >
-                      {item.portfolio.title}
-                    </Text>
-                    <Text
-                      as="p"
-                      className="text-lg item__body text-slate-500 dark:text-stone-400"
-                    >
-                      {item.portfolio.description}
-                    </Text>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {item.portfolio.skills.map((skill, i) => (
-                        <div
-                          key={i}
-                          className="dark:bg-zinc-950 bg-zinc-200 px-2 py-1 rounded-full text-sm font-medium"
-                        >
-                          {skill}
-                        </div>
-                      ))}
-                    </div>
 
-                  </div>
-                </motion.div>
-              )
-            } else {
-              return (
-                <motion.div
-                  key={index}
-                  className={`portfolio__item bg-zinc-50 dark:bg-zinc-900 border rounded-md my-2 flex items-center gap-8 mb-12`}
-                >
-                  <div className="portfolio__info w-1/2 p-5">
-                    <Text
-                      as="h5"
-                      className="mb-2 text-2xl font-bold item__title text-slate-900 dark:text-white"
-                    >
-                      {item.portfolio.title}
-                    </Text>
-                    <Text
-                      as="p"
-                      className="text-lg item__body text-slate-500 dark:text-stone-400"
-                    >
-                      {item.portfolio.description}
-                    </Text>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {item.portfolio.skills.map((skill, i) => (
-                        <div
-                          key={i}
-                          className="dark:bg-zinc-950 bg-zinc-200 px-2 py-1 rounded-full text-sm font-medium"
-                        >
-                          {skill}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="portfolio__media w-1/2">
-                    <video
-                      className="rounded-lg w-full h-auto max-h-[300px] object-cover"
-                      src={item.videoUrl}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
-                  </div>
-                </motion.div>
-              )
-            }
+                </div>
+              </motion.div>
+            )
           }
           )}
         </motion.div>
