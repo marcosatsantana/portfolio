@@ -5,6 +5,7 @@ import { useAnimation, motion, useInView } from "framer-motion";
 import { AnimatedText } from "../AnimatedText";
 import FerramentaVideo from '../../assets/ferramentaria.mp4';
 import ChamadosVideo from '../../assets/Chamados.mp4';
+import BarbeariasAppImage from '../../assets/barbearias.png';
 
 const Portfolio = () => {
   const controls = useAnimation();
@@ -41,6 +42,39 @@ const Portfolio = () => {
         skills: ['ReactJS', 'NodeJS', 'TailwindCSS', 'Datefns', 'ShadcnUI']
       },
       videoUrl: ChamadosVideo,
+    },
+    {
+      portfolio: {
+        id: 1,
+        title: "Barbearias.app",
+        description: `Desenvolvi uma plataforma SaaS completa para gestão e agendamento de barbearias. O sistema conecta clientes a estabelecimentos através de geolocalização e permite agendamento online com pagamentos integrados (Stripe). Para os proprietários, criei um dashboard administrativo robusto com gráficos de desempenho (Recharts), gestão de equipe e um sistema automatizado de notificações via WhatsApp e E-mail para redução de no-shows.`,
+        skills: [
+          'ReactJS',
+          'TypeScript',
+          'NodeJS',
+          'Express',
+          'PostgreSQL',
+          'Knex',
+          'TailwindCSS',
+          'ShadcnUI',
+          'Stripe',
+          'React Query',
+          'Zod',
+          'Leaflet'
+        ],
+        // Campos adicionais sugeridos para valorizar o projeto
+        type: "Full Stack / SaaS",
+        role: "Lead Developer",
+        features: [
+          "Agendamento e Pagamentos Online",
+          "Dashboard Financeiro e de Performance",
+          "Notificações Automáticas (WhatsApp/Email)",
+          "Busca por Geolocalização",
+          "Gestão de Barbearias e Profissionais"
+        ]
+      },
+      imageUrl: BarbeariasAppImage,
+      link: 'https://barbearias.app'
     }
   ];
 
@@ -68,7 +102,7 @@ const Portfolio = () => {
                 className={`portfolio__item bg-zinc-900 border rounded-md my-2 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 mb-12`}
               >
                 <div className="portfolio__media w-1/2">
-                  <video
+                  {item.videoUrl ? <video
                     ref={(el) => (videoRefs.current[index] = el)}
                     onClick={() => handleFullScreen(index)}
                     className="cursor-pointer rounded-lg w-full h-auto max-h-[300px] object-cover"
@@ -78,6 +112,8 @@ const Portfolio = () => {
                     muted
                     playsInline
                   />
+                    :
+                    <img src={item.imageUrl} alt={item.portfolio.title} className="rounded-lg w-full h-auto max-h-[300px] object-cover" />}
                 </div>
                 <div className="portfolio__info w-1/2 p-5">
                   <Text
@@ -102,7 +138,19 @@ const Portfolio = () => {
                       </div>
                     ))}
                   </div>
+                  <div className="mt-8">
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-zinc-900 dark:bg-white dark:text-zinc-950 text-white flex px-8 rounded-sm font-bold py-4 hover:px-12 w-fit"
+                      >
+                        Ver Projeto
+                      </a>
+                    )}
 
+                  </div>
                 </div>
               </motion.div>
             )
