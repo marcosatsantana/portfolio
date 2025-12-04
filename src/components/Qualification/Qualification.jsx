@@ -36,6 +36,27 @@ const Qualification = () => {
           <div className={toggleState === 1 ? "qualification__content qualification__content-active" : "qualification__content"} >
 
             <div className="qualification__data">
+              <div></div>
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+              <div>
+                <AnimatedText>
+                  <h3 className="qualification__title dark:text-stone-400">{t('qualification.jobs.4')}</h3>
+                </AnimatedText>
+                <AnimatedText>
+                  <span className="qualification__subtitle dark:text-white">Carpal Tratores LTDA</span>
+                </AnimatedText>
+                <div className="qualification__calender dark:text-stone-400">
+                  <AnimatedText isInverse>
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2025 - Atual
+                  </AnimatedText>
+                </div>
+              </div>
+            </div>
+
+            <div className="qualification__data">
               <div>
                 <AnimatedText>
                   <h3 className="qualification__title dark:text-stone-400">{t('qualification.jobs.1')}</h3>
@@ -45,7 +66,7 @@ const Qualification = () => {
                 </AnimatedText>
                 <div className="qualification__calender dark:text-stone-400">
                   <AnimatedText isInverse>
-                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2023 - Atual
+                    <i className="uil uil-calendar-alt dark:text-stone-400"></i> 2023 - 2025
                   </AnimatedText>
                 </div>
               </div>

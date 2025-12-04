@@ -132,7 +132,8 @@
     "jobs": {
       "1": "IT Assistant",
       "2": "Systems Analyst",
-      "3": "Technical Support"
+      "3": "Technical Support",
+      "4": "Dev. FullStack"
     },
     "educations": {
       "1": "ADS",
