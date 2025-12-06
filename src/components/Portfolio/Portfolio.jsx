@@ -7,6 +7,7 @@ import FerramentaVideo from '../../assets/ferramentaria.mp4';
 import ChamadosVideo from '../../assets/Chamados.mp4';
 import BarbeariasAppImage from '../../assets/barbearias.png';
 import VTEXAutomationImage from '../../assets/vtex.png';
+import TotemDashboardImage from '../../assets/totem.png';
 
 const Portfolio = () => {
   const controls = useAnimation();
@@ -79,7 +80,7 @@ const Portfolio = () => {
     },
     {
       portfolio: {
-        id: 2,
+        id: 4,
         title: "VTEX Catalog Automation",
         description: `Desenvolvi uma solução robusta para automação e enriquecimento de catálogo VTEX. O sistema processa dados extraídos via scraping de sites de fabricantes (imagens, descrições e especificações técnicas), realiza o tratamento e upload de imagens para CDN (Cloudinary) e sincroniza as informações com a VTEX via API. O projeto inclui um dashboard administrativo para controle total do fluxo de integração, com monitoramento em tempo real via Server-Sent Events (SSE) e logs detalhados de sucesso e erro.`,
         skills: [
@@ -107,6 +108,39 @@ const Portfolio = () => {
         ]
       },
       imageUrl: VTEXAutomationImage,
+    },
+    {
+      portfolio: {
+        id: 5, // Ajuste conforme a ordem no seu portfólio
+        title: "Totem Interativo & CMS",
+        description: `Desenvolvi um ecossistema completo para autoatendimento digital composto por um Totem Interativo (PWA) e um Painel Administrativo (CMS). O sistema foi projetado para oferecer controle total sobre a manipulação de dados de catálogo, permitindo a gestão hierárquica de Categorias, Subcategorias e Produtos. 
+        
+        No backend, implementei uma API RESTful robusta com PostgreSQL e Knex, destacando-se o controlador de vídeo dedicado para streaming otimizado de mídia e gestão de uploads (Multer). O frontend do totem consome esses dados para criar uma experiência de navegação fluida e imersiva.`,
+        skills: [
+          'ReactJS',
+          'TypeScript',
+          'NodeJS',
+          'Express',
+          'PostgreSQL',
+          'Knex',
+          'TailwindCSS',
+          'ShadcnUI',
+          'React Query',
+          'Zod',
+          'Video Streaming', // Diferencial encontrado no seu VideoController
+          'PWA'
+        ],
+        type: "Full Stack / Digital Signage",
+        role: "Lead Developer",
+        features: [
+          "Gestão Hierárquica de Produtos (CRUD Completo)",
+          "Streaming de Vídeo e Upload de Mídia",
+          "Totem PWA com Navegação Intuitiva",
+          "Painel Administrativo Moderno (ShadcnUI)",
+          "Sincronização de Conteúdo em Tempo Real"
+        ]
+      },
+      imageUrl: TotemDashboardImage, // Substitua pela variável da sua imagem
     }
   ];
 
