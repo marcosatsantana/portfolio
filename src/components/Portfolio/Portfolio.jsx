@@ -6,6 +6,7 @@ import { AnimatedText } from "../AnimatedText";
 import FerramentaVideo from '../../assets/ferramentaria.mp4';
 import ChamadosVideo from '../../assets/Chamados.mp4';
 import BarbeariasAppImage from '../../assets/barbearias.png';
+import VTEXAutomationImage from '../../assets/vtex.png';
 
 const Portfolio = () => {
   const controls = useAnimation();
@@ -45,7 +46,7 @@ const Portfolio = () => {
     },
     {
       portfolio: {
-        id: 1,
+        id: 3,
         title: "Barbearias.app",
         description: `Desenvolvi uma plataforma SaaS completa para gestão e agendamento de barbearias. O sistema conecta clientes a estabelecimentos através de geolocalização e permite agendamento online com pagamentos integrados (Stripe). Para os proprietários, criei um dashboard administrativo robusto com gráficos de desempenho (Recharts), gestão de equipe e um sistema automatizado de notificações via WhatsApp e E-mail para redução de no-shows.`,
         skills: [
@@ -75,6 +76,37 @@ const Portfolio = () => {
       },
       imageUrl: BarbeariasAppImage,
       link: 'https://barbearias.app'
+    },
+    {
+      portfolio: {
+        id: 2,
+        title: "VTEX Catalog Automation",
+        description: `Desenvolvi uma solução robusta para automação e enriquecimento de catálogo VTEX. O sistema processa dados extraídos via scraping de sites de fabricantes (imagens, descrições e especificações técnicas), realiza o tratamento e upload de imagens para CDN (Cloudinary) e sincroniza as informações com a VTEX via API. O projeto inclui um dashboard administrativo para controle total do fluxo de integração, com monitoramento em tempo real via Server-Sent Events (SSE) e logs detalhados de sucesso e erro.`,
+        skills: [
+          "ReactJS",
+          "TypeScript",
+          "NodeJS",
+          "Express",
+          "PostgreSQL",
+          "Knex",
+          "TailwindCSS",
+          "ShadcnUI",
+          "Cloudinary",
+          "VTEX API",
+          "React Query",
+          "Zod"
+        ],
+        type: "Full Stack / Automation",
+        role: "Lead Developer",
+        features: [
+          "Processamento de Dados de Scraping",
+          "Integração Bidirecional VTEX API",
+          "Upload e Otimização de Imagens (Cloudinary)",
+          "Monitoramento em Tempo Real (SSE)",
+          "Gestão de Logs e Tratamento de Erros"
+        ]
+      },
+      imageUrl: VTEXAutomationImage,
     }
   ];
 
